@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Travel & Hospitality</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="hotels.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-items">
+            <a href="index.html" class="nav-logo">
+                <img src="./assets/Stackly-logo-Blue.webp" alt="Logo" class="logo">
+            </a>
+
+            <ul class="nav-links" id="navMenu" data-lenis-prevent>
+                <button class="menu-close-btn" aria-label="Close Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="experience.html">Experiences</a></li>
+                <li><a href="hotel.html" class="active">Hotels</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="mob-view">
+                    <a href="signup.html" class="sign-in-link">Sign up</a>
+                    <a href="login.html" class="btn-solid-white">Login</a>
+                </div>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="signup.html" class="sign-in-link">Sign up</a>
+                <a href="login.html" class="btn-solid-white">Login</a>
+            </div>
+            <button class="menu-open-btn" aria-label="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hotel-editorial-hero">
+        <div class="canvas-bg" id="hotelHerog"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.577), rgba(0, 0, 0, 0.489)), url('./assets/exp-hero.webp');">
+        </div>
+        <!-- Left Column: Image Canvas & Search Widget -->
+        <div class="hero-left-canvas">
+
+            <div class="canvas-overlay"></div>
+
+            <!-- Embedded Search Widget -->
+            <div class="search-panel-embedded">
+                <span class="panel-subtitle"><i class="fa-solid fa-sliders"></i> FIND YOUR STAY</span>
+
+                <form class="embedded-form" id="hotelSearchForm" novalidate>
+                    <div class="form-row">
+                        <label for="destinationInput">Destination</label>
+                        <div class="input-wrap" id="destinationWrap">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <input type="text" id="destinationInput" placeholder="e.g. Amalfi Coast, Italy" required>
+                        </div>
+                        <span class="error-message" id="destinationError"></span>
+                    </div>
+
+                    <!-- <div class="form-row-group"> -->
+                        <!-- <div class="form-row">
+                            <label for="datesInput">Dates</label>
+                            <div class="input-wrap" id="datesWrap">
+                                <i class="fa-regular fa-calendar"></i>
+                                <input type="text" id="datesInput" placeholder="Check In - Out" required>
+                            </div>
+                            <span class="error-message" id="datesError"></span>
+                        </div> -->
+                        <div class="form-row">
+                            <label for="guestsInput">Guests</label>
+                            <div class="input-wrap" id="guestsWrap">
+                                <i class="fa-regular fa-user"></i>
+                                <input type="number" id="guestsInput" placeholder="2 Guests, 1 Room" required>
+                            </div>
+                            <span class="error-message" id="guestsError"></span>
+                        </div>
+                    <!-- </div> -->
+
+                    <button type="submit" class="btn-search-solid" id="hotelSearchBtn">
+                        Search Stays <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Column: Narrative & Metrics -->
+        <div class="hero-right-content">
+            <div class="content-wrapper">
+                <span class="badge-text tag-gold">
+                    <i class="fa-solid fa-crown"></i> LUXURY ACCOMMODATIONS
+                </span>
+
+                <h1 class="hero-editorial-title">Stays that feel like home, elevated.</h1>
+
+                <p class="hero-editorial-p">
+                    From cliffside infinity pools in Santorini to private chalets in the Swiss Alps—discover curated
+                    sanctuaries tailored to your rhythm.
+                </p>
+
+                <!-- Quick Category Pill Filters -->
+                <div class="quick-filter-pills">
+                    <span class="pill-label">Popular Categories:</span>
+                    <div class="pills-container">
+                        <a href="404page.html" class="pill active"><i class="fa-solid fa-water-pool"></i> Villas</a>
+                        <a href="404page.html" class="pill"><i class="fa-solid fa-hotel"></i> Boutique</a>
+                        <a href="404page.html" class="pill"><i class="fa-solid fa-umbrella-beach"></i> Beachfront</a>
+                        <a href="404page.html" class="pill"><i class="fa-solid fa-mountain"></i> Chalets</a>
+                    </div>
+                </div>
+
+                <!-- Key Metric Counters -->
+                <div class="hero-stats-row">
+                    <div class="stat-item">
+                        <span class="stat-number">1,200+</span>
+                        <span class="stat-label">Verified Stays</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">4.95</span>
+                        <span class="stat-label"><i class="fa-solid fa-star gold-star"></i> Guest Rating</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Personal Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Editor's Collection: 3D Tilt & Reveal Section -->
+    <section class=" editors-collection-section">
+        <div class="editors-container">
+
+            <div class="editors-header">
+                <span class="badge-text">CURATED SANCTUARIES</span>
+                <h2 class="section-title editors-title">Editor’s collection</h2>
+                <p class="section-subtitle">Six extraordinary stays chosen for exceptional architecture and service.</p>
+            </div>
+
+            <div class="editors-3d-grid">
+
+                <!-- Hotel 1 -->
+                <div class="tilt-card-wrapper">
+                    <div class="tilt-card">
+                        <!-- Glass Sheen Overlay -->
+                        <div class="tilt-sheen"></div>
+
+                        <div class="card-media">
+                            <div class="card-bg" style="background-image: url('./assets/destination3.webp');">
+                            </div>
+                            <div class="rating-chip"><i class="fa-solid fa-star"></i> 4.9</div>
+                        </div>
+
+                        <div class="card-info">
+                            <span class="card-loc"><i class="fa-solid fa-location-dot"></i> Zermatt, Switzerland</span>
+                            <h3 class="card-title">Alpine Reserve</h3>
+
+                            <!-- Hidden Reveal Drawer -->
+                            <div class="reveal-drawer">
+                                <ul class="amenity-list">
+                                    <li><i class="fa-solid fa-check"></i> Ski-in / Ski-out</li>
+                                    <li><i class="fa-solid fa-check"></i> Heated Alpine Spa</li>
+                                    <li><i class="fa-solid fa-check"></i> Michelin Star Dining</li>
+                                </ul>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="price-box">
+                                    <span class="unit">per night</span>
+                                    <span class="amount">$620</span>
+                                </div>
+                                <a href="404page.html" class="btn-action-fill">
+                                    <span>Explore Stay</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 2 -->
+                <div class="tilt-card-wrapper">
+                    <div class="tilt-card">
+                        <div class="tilt-sheen"></div>
+
+                        <div class="card-media">
+                            <div class="card-bg" style="background-image: url('./assets/destination1.webp');">
+                            </div>
+                            <div class="rating-chip"><i class="fa-solid fa-star"></i> 4.8</div>
+                        </div>
+
+                        <div class="card-info">
+                            <span class="card-loc"><i class="fa-solid fa-location-dot"></i> Uluwatu, Bali</span>
+                            <h3 class="card-title">Bali Cliff Villa</h3>
+
+                            <div class="reveal-drawer">
+                                <ul class="amenity-list">
+                                    <li><i class="fa-solid fa-check"></i> Private Infinity Pool</li>
+                                    <li><i class="fa-solid fa-check"></i> 24/7 Butler Service</li>
+                                    <li><i class="fa-solid fa-check"></i> Oceanfront Terrace</li>
+                                </ul>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="price-box">
+                                    <span class="unit">per night</span>
+                                    <span class="amount">$480</span>
+                                </div>
+                                <a href="404page.html"  class="btn-action-fill">
+                                    <span>Explore Stay</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 3 -->
+                <div class="tilt-card-wrapper">
+                    <div class="tilt-card">
+                        <div class="tilt-sheen"></div>
+
+                        <div class="card-media">
+                            <div class="card-bg" style="background-image: url('./assets/destination6.webp');">
+                            </div>
+                            <div class="rating-chip"><i class="fa-solid fa-star"></i> 5.0</div>
+                        </div>
+
+                        <div class="card-info">
+                            <span class="card-loc"><i class="fa-solid fa-location-dot"></i> Oia, Greece</span>
+                            <h3 class="card-title">Santorini Sky Suites</h3>
+
+                            <div class="reveal-drawer">
+                                <ul class="amenity-list">
+                                    <li><i class="fa-solid fa-check"></i> Caldera Sunset Views</li>
+                                    <li><i class="fa-solid fa-check"></i> Private Cave Jacuzzi</li>
+                                    <li><i class="fa-solid fa-check"></i> Complimentary Wine</li>
+                                </ul>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="price-box">
+                                    <span class="unit">per night</span>
+                                    <span class="amount">$720</span>
+                                </div>
+                                <a href="404page.html"  class="btn-action-fill">
+                                    <span>Explore Stay</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 4 -->
+                <div class="tilt-card-wrapper">
+                    <div class="tilt-card">
+                        <div class="tilt-sheen"></div>
+
+                        <div class="card-media">
+                            <div class="card-bg" style="background-image: url('./assets/edit1.webp');">
+                            </div>
+                            <div class="rating-chip"><i class="fa-solid fa-star"></i> 4.9</div>
+                        </div>
+
+                        <div class="card-info">
+                            <span class="card-loc"><i class="fa-solid fa-location-dot"></i> Malé, Maldives</span>
+                            <h3 class="card-title">Overwater Retreat</h3>
+
+                            <div class="reveal-drawer">
+                                <ul class="amenity-list">
+                                    <li><i class="fa-solid fa-check"></i> Direct Lagoon Access</li>
+                                    <li><i class="fa-solid fa-check"></i> Glass Floor Panels</li>
+                                    <li><i class="fa-solid fa-check"></i> Sunset Cruise Included</li>
+                                </ul>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="price-box">
+                                    <span class="unit">per night</span>
+                                    <span class="amount">$890</span>
+                                </div>
+                                <a href="404page.html"  class="btn-action-fill">
+                                    <span>Explore Stay</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 5 -->
+                <div class="tilt-card-wrapper">
+                    <div class="tilt-card">
+                        <div class="tilt-sheen"></div>
+
+                        <div class="card-media">
+                            <div class="card-bg" style="background-image: url('./assets/trend2.webp  ');">
+                            </div>
+                            <div class="rating-chip"><i class="fa-solid fa-star"></i> 4.7</div>
+                        </div>
+
+                        <div class="card-info">
+                            <span class="card-loc"><i class="fa-solid fa-location-dot"></i> Downtown Dubai</span>
+                            <h3 class="card-title">Burj Sky Residence</h3>
+
+                            <div class="reveal-drawer">
+                                <ul class="amenity-list">
+                                    <li><i class="fa-solid fa-check"></i> Full Skyline Views</li>
+                                    <li><i class="fa-solid fa-check"></i> Infinity Sky Pool</li>
+                                    <li><i class="fa-solid fa-check"></i> Private Chauffeur</li>
+                                </ul>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="price-box">
+                                    <span class="unit">per night</span>
+                                    <span class="amount">$540</span>
+                                </div>
+                                <a href="404page.html"  class="btn-action-fill">
+                                    <span>Explore Stay</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 6 -->
+                <div class="tilt-card-wrapper">
+                    <div class="tilt-card">
+                        <div class="tilt-sheen"></div>
+
+                        <div class="card-media">
+                            <div class="card-bg" style="background-image: url('./assets/stor3.webp');">
+                            </div>
+                            <div class="rating-chip"><i class="fa-solid fa-star"></i> 4.9</div>
+                        </div>
+
+                        <div class="card-info">
+                            <span class="card-loc"><i class="fa-solid fa-location-dot"></i> Higashiyama, Kyoto</span>
+                            <h3 class="card-title">Kyoto Ryokan Kaiyō</h3>
+
+                            <div class="reveal-drawer">
+                                <ul class="amenity-list">
+                                    <li><i class="fa-solid fa-check"></i> Private Natural Onsen</li>
+                                    <li><i class="fa-solid fa-check"></i> In-Room Kaiseki Dining</li>
+                                    <li><i class="fa-solid fa-check"></i> Zen Garden Terrace</li>
+                                </ul>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="price-box">
+                                    <span class="unit">per night</span>
+                                    <span class="amount">$410</span>
+                                </div>
+                                <a href="404page.html"  class="btn-action-fill">
+                                    <span>Explore Stay</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Browse Stays: Expanding Accordion Strips -->
+    <section class="expanding-stays-section">
+        <div class="expanding-container">
+
+            <div class="expanding-header">
+                <span class="badge-text">CATEGORIES</span>
+                <h2 class="section-title expanding-title">Browse by property type</h2>
+                <p class="section-subtitle">Hover to explore our hand-selected stay categories.</p>
+            </div>
+
+            <!-- Horizontal Accordion Track -->
+            <div class="accordion-strip-track">
+
+                <!-- Strip 1 (Default Active) -->
+                <a href="404page.html" class="strip-card active">
+                    <div class="strip-bg" style="background-image: url('./assets/prop1.webp');">
+                    </div>
+                    <div class="strip-overlay"></div>
+
+                    <!-- Vertical Label (Visible when card is collapsed) -->
+                    <div class="collapsed-label">
+                        <span class="strip-num">01</span>
+                        <span class="strip-name">Private Villas</span>
+                    </div>
+
+                    <!-- Expanded Content Panel (Reveals on Hover) -->
+                    <div class="expanded-panel glass-panel">
+                        <span class="strip-tag">FEATURED COLLECTION</span>
+                        <h3 class="expanded-title">Private Villas</h3>
+                        <p class="expanded-desc">Secluded sanctuaries featuring infinity pools, private chefs, and
+                            panoramic ocean views.</p>
+                        <div class="expanded-footer">
+                            <span class="property-count">420+ Properties</span>
+                            <span class="icon-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Strip 2 -->
+                <a href="404page.html" class="strip-card">
+                    <div class="strip-bg" style="background-image: url('./assets/prop2.webp');">
+                    </div>
+                    <div class="strip-overlay"></div>
+
+                    <div class="collapsed-label">
+                        <span class="strip-num">02</span>
+                        <span class="strip-name">Boutique Hotels</span>
+                    </div>
+
+                    <div class="expanded-panel glass-panel">
+                        <span class="strip-tag">CITY & CULTURE</span>
+                        <h3 class="expanded-title">Boutique Hotels</h3>
+                        <p class="expanded-desc">Intimate, design-forward stays located in the historic hearts of the
+                            world's finest cities.</p>
+                        <div class="expanded-footer">
+                            <span class="property-count">180+ Stays</span>
+                            <span class="icon-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Strip 3 -->
+                <a href="404page.html" class="strip-card">
+                    <div class="strip-bg" style="background-image: url('./assets/prop3.webp');">
+                    </div>
+                    <div class="strip-overlay"></div>
+
+                    <div class="collapsed-label">
+                        <span class="strip-num">03</span>
+                        <span class="strip-name">Beachfront Retreats</span>
+                    </div>
+
+                    <div class="expanded-panel glass-panel">
+                        <span class="strip-tag">COASTAL LIVING</span>
+                        <h3 class="expanded-title">Beachfront Retreats</h3>
+                        <p class="expanded-desc">Step directly onto white sands with direct water access and private
+                            cabanas.</p>
+                        <div class="expanded-footer">
+                            <span class="property-count">310+ Properties</span>
+                            <span class="icon-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Strip 4 -->
+                <a href="404page.html" class="strip-card">
+                    <div class="strip-bg" style="background-image: url('./assets/prop4.webp');">
+                    </div>
+                    <div class="strip-overlay"></div>
+
+                    <div class="collapsed-label">
+                        <span class="strip-num">04</span>
+                        <span class="strip-name">Alpine Chalets</span>
+                    </div>
+
+                    <div class="expanded-panel glass-panel">
+                        <span class="strip-tag">MOUNTAIN SANCTUARIES</span>
+                        <h3 class="expanded-title">Alpine Chalets</h3>
+                        <p class="expanded-desc">Cozy ski-in lodges complete with stone fireplaces, outdoor hot tubs,
+                            and mountain vistas.</p>
+                        <div class="expanded-footer">
+                            <span class="property-count">95+ Properties</span>
+                            <span class="icon-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Strip 5 -->
+                <a href="404page.html" class="strip-card">
+                    <div class="strip-bg" style="background-image: url('./assets/prop5.webp');">
+                    </div>
+                    <div class="strip-overlay"></div>
+
+                    <div class="collapsed-label">
+                        <span class="strip-num">05</span>
+                        <span class="strip-name">Island Resorts</span>
+                    </div>
+
+                    <div class="expanded-panel glass-panel">
+                        <span class="strip-tag">EXCLUSIVE ISOLATION</span>
+                        <h3 class="expanded-title">Island Resorts</h3>
+                        <p class="expanded-desc">Overwater bungalows and private island hideaways for ultimate
+                            relaxation.</p>
+                        <div class="expanded-footer">
+                            <span class="property-count">250+ Retreats</span>
+                            <span class="icon-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!-- Exclusive Deals Section -->
+    <section class="exclusive-deals-section">
+        <div class="deals-container">
+
+            <div class="deals-header">
+                <span class="badge-text">OFFERS</span>
+                <h2 class="section-title deals-title">Exclusive deals</h2>
+                <p class="section-subtitle">Curated seasonal promotions.</p>
+            </div>
+
+            <div class="deals-grid">
+
+                <!-- Deal 1 -->
+                <a href="404page.html" class="deal-card">
+                    <div class="deal-bg" style="background-image: url('./assets/destination3.webp');">
+                    </div>
+                    <div class="deal-overlay"></div>
+
+                    <!-- Cursor Spotlight Layer -->
+                    <div class="deal-spotlight"></div>
+
+                    <!-- Floating Glassmorphic Pill Badge -->
+                    <div class="deal-glass-pill">
+                        <div class="pill-text-content">
+                            <h3 class="deal-name">Weekend Escape</h3>
+                            <p class="deal-desc">Two-night getaways from $299</p>
+                        </div>
+                        <div class="deal-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- Deal 2 -->
+                <a href="404page.html" class="deal-card">
+                    <div class="deal-bg" style="background-image: url('./assets/stor1.webp');">
+                    </div>
+                    <div class="deal-overlay"></div>
+                    <div class="deal-spotlight"></div>
+
+                    <div class="deal-glass-pill">
+                        <div class="pill-text-content">
+                            <h3 class="deal-name">Luxury Retreat</h3>
+                            <p class="deal-desc">Suites & villas up to 30% off</p>
+                        </div>
+                        <div class="deal-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- Deal 3 -->
+                <a href="404page.html" class="deal-card">
+                    <div class="deal-bg" style="background-image: url('./assets/destination1.webp');">
+                    </div>
+                    <div class="deal-overlay"></div>
+                    <div class="deal-spotlight"></div>
+
+                    <div class="deal-glass-pill">
+                        <div class="pill-text-content">
+                            <h3 class="deal-name">Family Package</h3>
+                            <p class="deal-desc">Kids stay & eat free</p>
+                        </div>
+                        <div class="deal-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- Deal 4 -->
+                <a href="404page.html" class="deal-card">
+                    <div class="deal-bg" style="background-image: url('./assets/edit1.webp');">
+                    </div>
+                    <div class="deal-overlay"></div>
+                    <div class="deal-spotlight"></div>
+
+                    <div class="deal-glass-pill">
+                        <div class="pill-text-content">
+                            <h3 class="deal-name">Honeymoon</h3>
+                            <p class="deal-desc">Complimentary champagne & spa</p>
+                        </div>
+                        <div class="deal-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- Deal 5 -->
+                <a href="404page.html" class="deal-card">
+                    <div class="deal-bg" style="background-image: url('./assets/trend2.webp');">
+                    </div>
+                    <div class="deal-overlay"></div>
+                    <div class="deal-spotlight"></div>
+
+                    <div class="deal-glass-pill">
+                        <div class="pill-text-content">
+                            <h3 class="deal-name">Business Travel</h3>
+                            <p class="deal-desc">Late checkout & workspace</p>
+                        </div>
+                        <div class="deal-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <!-- Deal 6 -->
+                <a href="404page.html" class="deal-card">
+                    <div class="deal-bg" style="background-image: url('./assets/stor3.webp');">
+                    </div>
+                    <div class="deal-overlay"></div>
+                    <div class="deal-spotlight"></div>
+
+                    <div class="deal-glass-pill">
+                        <div class="pill-text-content">
+                            <h3 class="deal-name">Seasonal Offers</h3>
+                            <p class="deal-desc">Save on winter departures</p>
+                        </div>
+                        <div class="deal-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!-- Iconic Places: Sticky Stacking Cards Section -->
+    <section class="iconic-places-section">
+        <div class="iconic-container">
+
+            <div class="iconic-header">
+                <span class="badge-text glass-badge-dark">DESTINATIONS</span>
+                <h2 class="section-title iconic-title">Where will your next story begin?</h2>
+                <p class="section-subtitle">Explore the world's most breathtaking locales, curated for the
+                    extraordinary.</p>
+            </div>
+
+            <div class="iconic-stack-wrapper">
+
+                <!-- Card 1 -->
+                <div class="stack-card" id="stack-1">
+                    <div class="stack-bg" style="background-image: url('./assets/destination2.webp');">
+                    </div>
+                    <div class="stack-overlay"></div>
+
+                    <div class="stack-content">
+                        <h3 class="stack-title">Kyoto, Japan</h3>
+                        <div class="stack-glass-box">
+                            <p>Immerse yourself in ancient traditions, serene bamboo forests, and exclusive ryokans
+                                hidden away from the world.</p>
+                            <div class="stack-meta">
+                                <span><i class="fa-solid fa-hotel"></i> 45 Premium Stays</span>
+                                <a href="404page.html" class="btn-stack-explore">Explore <i
+                                        class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="stack-card" id="stack-2">
+                    <div class="stack-bg" style="background-image: url('./assets/stack1.webp');">
+                    </div>
+                    <div class="stack-overlay"></div>
+
+                    <div class="stack-content">
+                        <h3 class="stack-title">Amalfi Coast, Italy</h3>
+                        <div class="stack-glass-box">
+                            <p>Cliffside villas overlooking the Tyrrhenian Sea. Wake up to the scent of lemon groves and
+                                sun-drenched coastal beauty.</p>
+                            <div class="stack-meta">
+                                <span><i class="fa-solid fa-hotel"></i> 32 Premium Stays</span>
+                                <a href="404page.html" class="btn-stack-explore">Explore <i
+                                        class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="stack-card" id="stack-3">
+                    <div class="stack-bg" style="background-image: url('./assets/stack2.webp');">
+                    </div>
+                    <div class="stack-overlay"></div>
+
+                    <div class="stack-content">
+                        <h3 class="stack-title">The Nilgiris, India</h3>
+                        <div class="stack-glass-box">
+                            <p>Mist-kissed tea estates and colonial heritage nestled in the Western Ghats. A tranquil,
+                                high-altitude sanctuary.</p>
+                            <div class="stack-meta">
+                                <span><i class="fa-solid fa-hotel"></i> 18 Premium Stays</span>
+                                <a href="404page.html" class="btn-stack-explore">Explore <i
+                                        class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="stack-card" id="stack-4">
+                    <div class="stack-bg" style="background-image: url('./assets/stack3.webp');">
+                    </div>
+                    <div class="stack-overlay"></div>
+
+                    <div class="stack-content">
+                        <h3 class="stack-title">Malé, Maldives</h3>
+                        <div class="stack-glass-box">
+                            <p>The pinnacle of isolation. Overwater bungalows, vibrant coral reefs, and undisturbed
+                                Indian Ocean horizons.</p>
+                            <div class="stack-meta">
+                                <span><i class="fa-solid fa-hotel"></i> 28 Premium Stays</span>
+                                <a href="404page.html" class="btn-stack-explore">Explore <i
+                                        class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Amenities Section -->
+    <section class="amenities-section">
+        <div class="amenities-container">
+
+            <div class="amenities-header">
+                <span class="badge-text">AMENITIES</span>
+                <h2 class="section-title amenities-title">What to expect</h2>
+            </div>
+
+            <div class="amenities-grid">
+
+                <!-- Amenity 1 -->
+                <div class="amenity-card">
+                    <div class="amenity-icon-circle">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <span class="amenity-text">Spa</span>
+                </div>
+
+                <!-- Amenity 2 -->
+                <div class="amenity-card">
+                    <div class="amenity-icon-circle">
+                        <i class="fa-solid fa-water-ladder"></i>
+                    </div>
+                    <span class="amenity-text">Infinity Pool</span>
+                </div>
+
+                <!-- Amenity 3 -->
+                <div class="amenity-card">
+                    <div class="amenity-icon-circle">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <span class="amenity-text">Free Breakfast</span>
+                </div>
+
+                <!-- Amenity 4 -->
+                <div class="amenity-card">
+                    <div class="amenity-icon-circle">
+                        <i class="fa-solid fa-plane-arrival"></i>
+                    </div>
+                    <span class="amenity-text">Airport Pickup</span>
+                </div>
+
+                <!-- Amenity 5 -->
+                <div class="amenity-card">
+                    <div class="amenity-icon-circle">
+                        <i class="fa-regular fa-eye"></i>
+                    </div>
+                    <span class="amenity-text">Ocean View</span>
+                </div>
+
+                <!-- Amenity 6 -->
+                <div class="amenity-card">
+                    <div class="amenity-icon-circle">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <span class="amenity-text">Gym</span>
+                </div>
+
+                <!-- Amenity 7 -->
+                <div class="amenity-card">
+                    <div class="amenity-icon-circle">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <span class="amenity-text">Fast Wi-Fi</span>
+                </div>
+
+                <!-- Amenity 8 -->
+                <div class="amenity-card">
+                    <div class="amenity-icon-circle">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <span class="amenity-text">Restaurant</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="reviews-section">
+        <div class="reviews-header">
+            <span class="badge-text glass-badge-dark">GUEST REVIEWS</span>
+            <h2 class="section-title">Loved by explorers globally</h2>
+        </div>
+
+        <!-- Top Track: Scrolls Left -->
+        <div class="marquee-container">
+            <div class="marquee-track track-left">
+
+                <!-- Set 1 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Stackly completely transformed our anniversary trip to Kyoto. The private
+                        tea ceremony was breathtaking."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/team1.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Sarah Jenkins</h4>
+                            <span>Visited Japan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The app is incredibly intuitive. I booked a multi-city European tour in
+                        under twenty minutes."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/team4.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>David Chen</h4>
+                            <span>Visited Italy & France</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Our guide in the Swiss Alps was phenomenal. Stackly's vetting process is
+                        clearly top-tier."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/team2.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Elena Rostova</h4>
+                            <span>Visited Switzerland</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Set 1 Duplicated for Infinite Loop -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Stackly completely transformed our anniversary trip to Kyoto. The private
+                        tea ceremony was breathtaking."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/team1.webp');"> </div>
+                        <div class="author-details">
+                            <h4>Sarah Jenkins</h4>
+                            <span>Visited Japan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The app is incredibly intuitive. I booked a multi-city European tour in
+                        under twenty minutes."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/team4.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>David Chen</h4>
+                            <span>Visited Italy & France</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Our guide in the Swiss Alps was phenomenal. Stackly's vetting process is
+                        clearly top-tier."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/team2.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Elena Rostova</h4>
+                            <span>Visited Switzerland</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Track: Scrolls Right -->
+        <div class="marquee-container">
+            <div class="marquee-track track-right">
+
+                <!-- Set 2 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Flawless execution from arrival to departure. The 24/7 concierge saved us
+                        when our flight got delayed."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/review3.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Marcus Thorne</h4>
+                            <span>Visited Greece</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The best travel platform I've ever used. The exclusive access to the Louvre
+                        was worth every penny."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/review1.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Chloe Williams</h4>
+                            <span>Visited France</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Unmatched curation. Every hotel felt like a hidden gem that we would have
+                        never found on our own."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/review5.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>James & Lily</h4>
+                            <span>Visited Bali</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Set 2 Duplicated -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Flawless execution from arrival to departure. The 24/7 concierge saved us
+                        when our flight got delayed."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/review3.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Marcus Thorne</h4>
+                            <span>Visited Greece</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The best travel platform I've ever used. The exclusive access to the Louvre
+                        was worth every penny."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/review1.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Chloe Williams</h4>
+                            <span>Visited France</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Unmatched curation. Every hotel felt like a hidden gem that we would have
+                        never found on our own."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/review5.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>James & Lily</h4>
+                            <span>Visited Bali</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <div class="footer-card">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="./assets/Stackly-logo-Blue.webp" alt="logo" class="logo" loading="lazy">
+                    </a>
+                    <p class="footer-description">
+                        A premium travel platform connecting explorers with extraordinary stays and unforgettable
+                        experiences across the globe.
+                    </p>
+                    <div class="footer-newsletter">
+                        <span class="newsletter-label">NEWSLETTER</span>
+                        <form class="newsletter-form" id="newsletterForm" novalidate>
+                            <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+                            <button type="submit" id="newsletterBtn">Subscribe</button>
+                        </form>
+                        <div id="newsletterMsg" class="newsletter-msg"></div>
+                    </div>
+                </div>
+                <div class="footer-link-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="experience.html">Experiences</a></li>
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="404page.html">Help Center</a></li>
+                        <li><a href="404page.html">FAQs</a></li>
+                        <li><a href="404page.html">Cancellation Policy</a></li>
+                        <li><a href="#404page.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-col">
+                    <h4>Travel</h4>
+                    <ul>
+                        <li><a href="404page.html">Hotels</a></li>
+                        <li><a href="404page.html">Experiences</a></li>
+                        <li><a href="404page.html">Destinations</a></li>
+                        <li><a href="404page.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-app-col">
+                    <h4>Get the app</h4>
+                    <a href="404page.html" class="app-btn">
+                        <i class="fa-brands fa-apple"></i>
+                        App Store
+                    </a>
+                    <a href="404page.html" class="app-btn">
+                        <i class="fa-brands fa-google-play"></i>
+                        Google Play
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2026 Stackly. Crafted for explorers.
+                </div>
+                <div class="social-icons">
+                    <a href="404page.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404page.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="404page.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="404page.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Split Canvas Hero Entrance Animation
+            const splitTl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
+
+            // 1. Right narrative elements fade in from right to left
+            splitTl.from(".hero-right-content .tag-gold", { x: 30, opacity: 0, delay: 0.2 })
+                .from(".hero-editorial-title", { x: 30, opacity: 0 }, "-=0.7")
+                .from(".hero-editorial-p", { x: 30, opacity: 0 }, "-=0.7")
+                .from(".quick-filter-pills", { x: 30, opacity: 0 }, "-=0.7")
+                .from(".hero-stats-row", { y: 20, opacity: 0 }, "-=0.5");
+
+            // 2. Left search panel slides up gracefully
+            splitTl.from(".search-panel-embedded", {
+                y: 40,
+                opacity: 0,
+                scale: 0.96,
+                duration: 1.1,
+                ease: "power4.out"
+            }, "-=1.2");
+
+            // 3. Subtle slow zoom on the canvas background image
+            gsap.to("#hotelHeroBg", {
+                scale: 1.08,
+                duration: 10,
+                ease: "none",
+                repeat: -1,
+                yoyo: true
+            });
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Entrance animation for the container and header
+            gsap.from(".editors-container", {
+                scrollTrigger: {
+                    trigger: ".editors-collection-section",
+                    start: "top 85%",
+                },
+                y: 40,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+
+            gsap.from(".tilt-card-wrapper", {
+                scrollTrigger: {
+                    trigger: ".editors-3d-grid",
+                    start: "top 80%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.12,
+                ease: "power2.out"
+            });
+
+            // 2. Real-Time 3D Tilt Calculation on Mouse Move
+            const tiltWrappers = document.querySelectorAll(".tilt-card-wrapper");
+
+            tiltWrappers.forEach(wrapper => {
+                const card = wrapper.querySelector(".tilt-card");
+                const sheen = wrapper.querySelector(".tilt-sheen");
+
+                wrapper.addEventListener("mousemove", (e) => {
+                    const rect = wrapper.getBoundingClientRect();
+
+                    // Calculate cursor position relative to the center of the card
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    // Maximum rotation angle in degrees
+                    const rotateX = ((y - centerY) / centerY) * -10;
+                    const rotateY = ((x - centerX) / centerX) * 10;
+
+                    // Apply 3D tilt transformation via GSAP
+                    gsap.to(card, {
+                        rotateX: rotateX,
+                        rotateY: rotateY,
+                        duration: 0.3,
+                        ease: "power1.out",
+                        transformPerspective: 1000
+                    });
+
+                    // Dynamically tilt sheen gradient angle
+                    gsap.to(sheen, {
+                        opacity: 1,
+                        duration: 0.3
+                    });
+                });
+
+                // Reset transformation when mouse leaves the card
+                wrapper.addEventListener("mouseleave", () => {
+                    gsap.to(card, {
+                        rotateX: 0,
+                        rotateY: 0,
+                        duration: 0.6,
+                        ease: "power2.out"
+                    });
+
+                    gsap.to(sheen, {
+                        opacity: 0,
+                        duration: 0.4
+                    });
+                });
+            });
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. GSAP Scroll Entrance Animations
+            gsap.from(".expanding-header > *", {
+                scrollTrigger: {
+                    trigger: ".expanding-stays-section",
+                    start: "top 80%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out"
+            });
+
+            gsap.from(".strip-card", {
+                scrollTrigger: {
+                    trigger: ".accordion-strip-track",
+                    start: "top 75%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power2.out"
+            });
+
+            // 2. Dynamic Hover Handling (Switches active state cleanly)
+            const strips = document.querySelectorAll(".strip-card");
+
+            strips.forEach(strip => {
+                strip.addEventListener("mouseenter", () => {
+                    // Remove active class from all other strips
+                    strips.forEach(s => s.classList.remove("active"));
+                    // Add active class to hovered strip
+                    strip.classList.add("active");
+                });
+            });
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. GSAP Scroll Entrance Animations
+            gsap.from(".deals-container", {
+                scrollTrigger: {
+                    trigger: ".exclusive-deals-section",
+                    start: "top 85%",
+                },
+                y: 40,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+
+            gsap.from(".deals-header > *", {
+                scrollTrigger: {
+                    trigger: ".deals-container",
+                    start: "top 75%",
+                },
+                y: 20,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power2.out"
+            });
+
+            gsap.from(".deal-card", {
+                scrollTrigger: {
+                    trigger: ".deals-grid",
+                    start: "top 80%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "back.out(1.2)"
+            });
+
+            // 2. Mouse Tracking Spotlight Effect for Exclusive Deals
+            const dealCards = document.querySelectorAll(".deal-card");
+
+            dealCards.forEach(card => {
+                card.addEventListener("mousemove", (e) => {
+                    const rect = card.getBoundingClientRect();
+
+                    // Calculate cursor X and Y coordinates relative to the hovered card
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    // Dynamically set CSS variables for the radial gradient center
+                    card.style.setProperty("--mouse-x", `${x}px`);
+                    card.style.setProperty("--mouse-y", `${y}px`);
+                });
+            });
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Entrance animation for Header
+            gsap.from(".iconic-header > *", {
+                scrollTrigger: {
+                    trigger: ".iconic-places-section",
+                    start: "top 80%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out"
+            });
+
+            // 2. The Stacking Deck Animation
+            const stackCards = gsap.utils.toArray(".stack-card");
+
+            stackCards.forEach((card, index) => {
+                // We do not want to scale down the very last card in the deck
+                if (index !== stackCards.length - 1) {
+
+                    // Grab the next card in the DOM to use as the trigger
+                    const nextCard = stackCards[index + 1];
+
+                    gsap.to(card, {
+                        scale: 0.92,        // Shrinks the card slightly backward
+                        opacity: 0.4,       // Darkens it to simulate a shadow from the card above
+                        scrollTrigger: {
+                            trigger: nextCard,
+                            // Animation starts when the top of the next card hits the bottom of the viewport
+                            start: "top bottom",
+                            // Animation ends when the top of the next card hits the top of the viewport (fully covered)
+                            end: "top top",
+                            scrub: true,         // Ties the animation directly to the scrollbar
+                            invalidateOnRefresh: true
+                        }
+                    });
+                }
+            });
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('hotelSearchForm');
+            const destInput = document.getElementById('destinationInput');
+            // const datesInput = document.getElementById('datesInput');
+            const guestsInput = document.getElementById('guestsInput');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+
+                // 1. Validate Destination (at least 2 characters)
+                if (destInput.value.trim().length < 2) {
+                    showError('destination', 'Please enter a valid destination.');
+                    isValid = false;
+                }
+
+                // 2. Validate Dates (basic check to ensure it's not empty)
+                // if (datesInput.value.trim().length < 5) {
+                //     showError('dates', 'Please select your travel dates.');
+                //     isValid = false;
+                // }
+
+                // 3. Validate Guests
+                if (guestsInput.value.trim().length < 1) {
+                    showError('guests', 'Please specify the number of guests.');
+                    isValid = false;
+                }
+
+                // 4. Success State
+                if (isValid) {
+                    const btn = document.getElementById('hotelSearchBtn');
+                    const originalHTML = btn.innerHTML;
+
+                    // Show a loading state with a FontAwesome spinner
+                    btn.innerHTML = 'Searching... <i class="fa-solid fa-circle-notch fa-spin"></i>';
+
+                    // TODO: Connect to your backend API or routing logic
+                    console.log('Search queries:', {
+                        destination: destInput.value.trim(),
+                        dates: datesInput.value.trim(),
+                        guests: guestsInput.value.trim()
+                    });
+
+                    // Reset UI after simulation
+                    setTimeout(() => {
+                        window.location.href='404page.html'
+                        btn.innerHTML = originalHTML;
+                    }, 1000);
+                }
+            });
+
+            // Helper function to apply error styles to the WRAPPER, not just the input
+            function showError(fieldPrefix, message) {
+                document.getElementById(`${fieldPrefix}Wrap`).classList.add('is-invalid');
+                const errorElement = document.getElementById(`${fieldPrefix}Error`);
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            }
+
+            // Clear individual errors dynamically as the user types
+            ['destination', 'dates', 'guests'].forEach(field => {
+                const input = document.getElementById(`${field}Input`);
+                input.addEventListener('input', () => {
+                    document.getElementById(`${field}Wrap`).classList.remove('is-invalid');
+                    document.getElementById(`${field}Error`).style.display = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

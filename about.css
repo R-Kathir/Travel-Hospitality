@@ -1,0 +1,1226 @@
+/* --- About Us Hero Section (Dark Theme) --- */
+.about-hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #ffffff;
+    /* Changed to white text */
+}
+
+/* Base Background Image */
+.about-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+/* Overlay to protect Navbar and text readability */
+.about-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Darker at the very top for the nav, fading to a semi-transparent dark center */
+    background: linear-gradient(to bottom, rgba(11, 15, 23, 0.9) 0%, rgba(11, 15, 23, 0.6) 20%, rgba(11, 15, 23, 0.7) 100%);
+    z-index: 1;
+}
+
+/* Central Typography */
+.about-hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 2rem;
+    pointer-events: none;
+}
+
+.about-hero-content .badge-text {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 2rem;
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.about-title {
+    font-size: 5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.text-highlight {
+    font-weight: 500;
+    /* Adjusted gradient to pop beautifully against a dark background */
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Floating Parallax Gallery */
+.parallax-gallery {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    /* Sits between the overlay and the text */
+}
+
+.float-img {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.5rem;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    /* Deeper shadow for dark theme */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle rim light */
+    will-change: transform;
+}
+
+/* Exact positioning for the floating images */
+.img-1 {
+    width: 280px;
+    height: 380px;
+    top: 10%;
+    left: 8%;
+}
+
+.img-2 {
+    width: 320px;
+    height: 220px;
+    top: 20%;
+    right: 5%;
+}
+
+.img-3 {
+    width: 240px;
+    height: 320px;
+    bottom: 15%;
+    left: 15%;
+}
+
+.img-4 {
+    width: 290px;
+    height: 400px;
+    bottom: 5%;
+    right: 12%;
+}
+
+/* Scroll Down Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.scroll-indicator span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .about-title {
+        font-size: 4rem;
+    }
+
+    .img-1 {
+        width: 200px;
+        height: 280px;
+        top: 5%;
+        left: -2%;
+    }
+
+    .img-2 {
+        width: 220px;
+        height: 160px;
+        top: 15%;
+        right: -2%;
+    }
+
+    .img-3 {
+        width: 180px;
+        height: 240px;
+        bottom: 20%;
+        left: 5%;
+    }
+
+    .img-4 {
+        width: 200px;
+        height: 280px;
+        bottom: 10%;
+        right: 2%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 3rem;
+    }
+
+    .parallax-gallery {
+        display: none;
+        /* Hide floating images on mobile to keep focus on text and background */
+    }
+}
+
+/* --- Our Story Section --- */
+.our-story-section {
+    background-color: #ffffff;
+    padding: 8rem 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.story-container {
+    background-color: #f6f6fc;
+    /* Soft cool purple-gray tint matching the image */
+    border-radius: 2.5rem;
+    padding: 5rem;
+    width: 100%;
+    max-width: 1300px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* Left Image Styling */
+.story-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+    /* Set up for GSAP reveal mask */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.story-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1);
+    /* Starts slightly zoomed in for GSAP animation */
+    will-change: transform;
+}
+
+/* Right Content Styling */
+.story-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.story-content .badge-text {
+    color: #888;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+/* Gradient Title matching the UI */
+.story-title {
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+
+.story-description {
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+}
+
+/* Timeline Styling */
+.story-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: default;
+    padding-right: 1rem;
+}
+
+/* The thin-bordered circle */
+.timeline-year {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #555;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+}
+
+.timeline-text {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.5;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+/* --- Interactive Hover Effects for Timeline --- */
+.timeline-item:hover .timeline-year {
+    background-color: #222222;
+    border-color: #222222;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.timeline-item:hover .timeline-text {
+    transform: translateX(8px);
+    color: #111111;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .story-image-wrapper {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .our-story-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .story-container {
+        padding: 3rem 2rem;
+        border-radius: 1.5rem;
+    }
+
+    .story-title {
+        font-size: 2.5rem;
+    }
+
+    .story-image-wrapper {
+        height: 400px;
+        border-radius: 1.5rem;
+    }
+}
+
+/* --- Mission, Vision, and Values Section --- */
+.mvv-section {
+    background-color: #0b0f17;
+    /* Deep, premium dark background */
+    padding: 8rem 4rem;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.mvv-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    /* Large gap between the two halves */
+}
+
+/* --- Top Half: Mission & Vision --- */
+.mission-vision-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.mvv-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.mvv-divider {
+    width: 1px;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
+    margin-top: 2rem;
+}
+
+.mvv-icon-wrap {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    /* Brand highlight color */
+    margin-bottom: 2rem;
+}
+
+.mvv-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mvv-text {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+}
+
+/* --- Bottom Half: Core Values --- */
+.values-header {
+    text-align: center;
+    /* margin-bottom: 4rem; */
+}
+
+.values-header .badge-text {
+    margin-bottom: 1rem;
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+.values-main-title {
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Core Value Cards (Animated Gradient Border Setup) */
+.value-card {
+    position: relative;
+    border-radius: 1.5rem;
+    padding: 1px;
+    /* The 1px padding reveals the gradient background underneath */
+    background: rgba(255, 255, 255, 0.1);
+    /* Default subtle border */
+    transition: transform 0.4s ease;
+    overflow: hidden;
+}
+
+/* The Glowing Gradient Background */
+.value-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-yellow-black);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+/* The Inner Content Area */
+.value-content {
+    position: relative;
+    background: #11151e;
+    /* Slightly lighter than the main bg */
+    border-radius: 1.45rem;
+    /* Slightly smaller than outer to fit inside */
+    padding: 3rem 2.5rem;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.value-icon {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.value-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.value-desc {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.6;
+}
+
+/* Hover Effects */
+.value-card:hover {
+    transform: translateY(-10px);
+}
+
+.value-card:hover .value-glow {
+    opacity: 1;
+    /* Reveals the vibrant gradient border */
+}
+
+.value-card:hover .value-icon {
+    color: #e87a5d;
+    /* Matches gradient */
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .mission-vision-row {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .mvv-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+        margin: 0;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .mvv-section {
+        padding: 5rem 2rem;
+    }
+
+    .mvv-container {
+        gap: 5rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mvv-title {
+        font-size: 2.2rem;
+    }
+
+    .values-main-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- Stats Counter Section --- */
+.stats-section {
+    background-color: #ffffff;
+    /* Clean white background */
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* The Floating Pill Container */
+.stats-pill {
+    background: #ffffff;
+    border-radius: 999px;
+    padding: 3.5rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    /* Soft, diffuse shadow matching the UI image */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Gradient Numbers */
+.stat-number {
+    font-size: 3.8rem;
+    font-weight: 300;
+    /* Warm gradient matching the screenshot */
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    line-height: 1;
+}
+
+/* Special treatment for the Star icon to accept the gradient */
+.stat-star {
+    font-size: 2.2rem;
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateY(-3px);
+    /* Visually aligns the star with the numbers */
+}
+
+/* Sub-labels */
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888888;
+    font-weight: 500;
+}
+
+/* --- Responsive Layout Adjustments --- */
+@media (max-width: 1100px) {
+    .stats-pill {
+        flex-wrap: wrap;
+        border-radius: 2rem;
+        /* Falls back to rounded rectangle on smaller screens */
+        padding: 4rem 2rem;
+        gap: 3rem;
+        justify-content: center;
+    }
+
+    .stat-item {
+        flex: 1 1 30%;
+        /* 3 items per row on tablet */
+    }
+
+    .stat-number {
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .stats-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .stat-item {
+        flex: 1 1 100%;
+        /* Stacks vertically on mobile */
+    }
+}
+
+/* --- Trusted By / Partners Section --- */
+.trusted-section {
+    background-color: #ffffff;
+    padding: 2rem 4rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.trusted-container {
+    background-color: #f6f6fc;
+    /* Matching soft purple-gray tint */
+    border-radius: 2.5rem;
+    padding: 5rem 4rem;
+    width: 100%;
+    max-width: 1300px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.trusted-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.trusted-header .badge-text {
+    color: #888;
+    margin-bottom: 1rem;
+    display: block;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+}
+
+.trusted-title {
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.2rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.trusted-header .section-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Press Cards Grid */
+.press-quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.press-card {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+}
+
+.press-logo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222222;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.press-logo i {
+    color: #c58cb0;
+}
+
+.press-quote {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #555555;
+    font-style: italic;
+    margin: 0 0 2rem 0;
+}
+
+.press-date {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #888888;
+    font-weight: 600;
+}
+
+.press-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px -10px rgba(0, 0, 0, 0.12);
+}
+
+/* Infinite Logo Ticker */
+.logo-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    padding: 1rem 0;
+}
+
+.logo-track {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: max-content;
+    animation: marquee-scroll 35s linear infinite;
+}
+
+.logo-marquee-wrapper:hover .logo-track {
+    animation-play-state: paused;
+}
+
+.partner-logo {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #777777;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    white-space: nowrap;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.partner-logo:hover {
+    opacity: 1;
+    color: #111111;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 2rem));
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .press-quotes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .press-quotes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trusted-container {
+        padding: 4rem 2rem;
+    }
+
+    .trusted-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* --- Team Members Section --- */
+.team-section {
+    background-color: #ffffff;
+    padding: 2rem 4rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.team-container {
+    background-color: #f6f6fc;
+    /* Matching soft purple-gray tint */
+    border-radius: 2.5rem;
+    padding: 5rem 4rem;
+    width: 100%;
+    max-width: 1300px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.team-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.team-header .badge-text {
+    color: #888;
+    margin-bottom: 1rem;
+    display: block;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+}
+
+.team-title {
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.2rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.team-header .section-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 3-Column Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Team Card */
+.team-card {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+}
+
+.team-image-wrap {
+    position: relative;
+    height: 320px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.team-bg {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.team-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 60%);
+    z-index: 1;
+}
+
+/* Glassmorphic Role Badge */
+.team-role-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+/* Social Icon Bar (Hidden by default, slides up on hover) */
+.team-socials {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 2;
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.team-socials a {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.team-socials a:hover {
+    background: #111111;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Info Box */
+.team-info {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-name {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #222222;
+    margin-bottom: 0.25rem;
+}
+
+.team-location {
+    font-size: 0.8rem;
+    color: #888888;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.team-location i {
+    color: var(--color-secondary);
+}
+
+.team-bio {
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Hover Effects --- */
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px -10px rgba(0, 0, 0, 0.12);
+}
+
+.team-card:hover .team-bg {
+    transform: scale(1.08);
+}
+
+.team-card:hover .team-socials {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-container {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-title {
+        font-size: 2.2rem;
+    }
+
+    .team-section {
+        padding: 4rem 1.5rem;
+    }
+}
+
+/* --- Start Your Journey CTA Section --- */
+.cta-journey-section {
+    background-color: #ffffff;
+    padding: 6rem 4rem 8rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Tinted Rounded Container matching the UI design */
+.cta-journey-container {
+    background-color: #f6f6fc;
+    /* Cool purple-gray background tint */
+    border-radius: 2.5rem;
+    padding: 6rem 4rem;
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+/* Top Icon Wrap */
+.cta-icon-wrap {
+    font-size: 1.4rem;
+    color: #444444;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sunset Gradient Title matching the screenshot */
+.cta-journey-title {
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.8rem;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+/* Description Text */
+.cta-journey-desc {
+    font-size: 1.15rem;
+    color: #555555;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+/* Button Group Layout */
+.cta-buttons-group {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+/* Primary Button with Glowing Purple Drop Shadow */
+.btn-cta-solid {
+    background: #ffffff;
+    color: #111111;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 1rem 2.2rem;
+    border-radius: 999px;
+    /* Soft glowing shadow underneath */
+    box-shadow: 0 15px 35px -5px rgba(147, 113, 172, 0.4), 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-cta-solid:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -5px rgba(147, 113, 172, 0.55), 0 8px 20px rgba(0, 0, 0, 0.08);
+    background: #111111;
+    color: #ffffff;
+    border-color: #111111;
+}
+
+/* Secondary Ghost/Glass Button */
+.btn-cta-glass {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #333333;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 1rem 2.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.35s ease;
+}
+
+.btn-cta-glass:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #111111;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .cta-journey-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .cta-journey-container {
+        padding: 4rem 2rem;
+        border-radius: 1.5rem;
+    }
+
+    .cta-journey-title {
+        font-size: 2.8rem;
+    }
+
+    .cta-journey-desc {
+        font-size: 1rem;
+    }
+
+    .cta-buttons-group {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .btn-cta-solid,
+    .btn-cta-glass {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width:768px) {
+
+    .about-hero-section,
+    .our-story-section,
+    .mvv-section,
+    .stats-section,
+    .trusted-section,
+    .team-section,
+    .cta-journey-section,
+    .team-container,
+    .trusted-container,
+    .story-container  {
+        padding: 10px;
+    }
+
+    .mvv-section {
+        overflow-x: hidden;
+    }
+
+    .mvv-container {
+        padding-bottom: 40px;
+    }
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Destination Not Found</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-blur: blur(16px);
+            --text-white: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.7);
+            --text-primary: black;
+            --font-family-primary: 'Inter', sans-serif;
+            --font-family-secondary: 'Roboto', sans-serif;
+            --color-primary: #182C61;
+            --color-secondary: #e67e22;
+            --bg-color-1: #f8f9fa;
+            --bg-color-2: #010F1D;
+            --border-color-default: #e5e7eb;
+            --box-shadow-default: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --gradient-yellow-black: linear-gradient(135deg, #FFD700 0%, #000000 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-primary);
+            background-color: var(--bg-color-2);
+            color: var(--text-white);
+            /* Travel background image - replace with your own asset */
+            background-image: linear-gradient(rgba(1, 15, 29, 0.6), rgba(1, 15, 29, 0.7)), url('./assets/blog5.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .not-found-wrapper {
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* Glassmorphism Card Setup */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            text-align: center;
+            box-shadow: var(--box-shadow-default);
+        }
+
+        .compass-icon {
+            font-size: 4rem;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .error-code {
+            font-size: 6rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            background: var(--gradient-yellow-black);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.3));
+        }
+
+        .error-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .error-desc {
+            font-family: var(--font-family-secondary);
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Button Micro-interactions */
+        .action-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .action-group a,
+        .action-group button {
+            text-decoration: none;
+            padding: 0.875rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--color-secondary);
+            color: var(--text-white);
+            border: 2px solid var(--color-secondary);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(230, 126, 34, 0.3);
+        }
+
+        button {
+            background-color: transparent;
+            color: var(--text-white);
+            border: 2px solid var(--glass-border);
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: var(--glass-bg);
+            border-color: var(--text-white);
+            transform: translateY(-3px);
+        }
+
+        /* Simple floating animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .glass-card {
+                padding: 3rem 1.5rem;
+            }
+
+            .error-code {
+                font-size: 4.5rem;
+            }
+
+            .action-group {
+                flex-direction: column;
+            }
+
+            .action-group a {
+                justify-content: center;
+            }
+        }
+    </style>
+    <main class="not-found-wrapper">
+        <div class="glass-card">
+            <div class="compass-icon">
+                <i class="fa-regular fa-compass"></i>
+            </div>
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Off the beaten path!</h2>
+            <p class="error-desc">
+                It looks like your compass is slightly off. The destination you are searching for has been moved,
+                deleted, or never existed.
+            </p>
+
+            <div class="action-group">
+                <a href="index.html" class="btn-primary">
+                    <i class="fa-solid fa-plane-departure"></i> Return Home
+                </a>
+                <button onclick="history.back()" class="btn-outline">
+                    Go Back
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

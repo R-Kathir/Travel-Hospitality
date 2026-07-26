@@ -1,0 +1,1537 @@
+/* --- Hotels Editorial Hero --- */
+.hotel-editorial-hero {
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 100vh;
+    background-color: #0b0f17;
+    /* Deep luxury dark background */
+    color: #ffffff;
+    overflow: hidden;
+    padding-top: 80px;
+    position: relative;
+    align-items: center;
+    /* Accounts for fixed navbar */
+}
+
+/* Left Canvas (60% Width) */
+.hero-left-canvas {
+    flex: 0 0 55%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 4rem;
+    overflow: hidden;
+}
+
+.canvas-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    will-change: transform;
+}
+
+.canvas-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to top, rgba(11, 15, 23, 0.95) 0%, rgba(11, 15, 23, 0.2) 60%); */
+    z-index: 1;
+}
+
+/* Embedded Search Panel */
+.search-panel-embedded {
+    position: relative;
+    z-index: 2;
+    background: rgba(20, 20, 20, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.panel-subtitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--color-secondary);
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.embedded-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-row label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-row-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.9rem 1rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.input-wrap:focus-within {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.input-wrap i {
+    color: var(--color-secondary);
+    font-size: 0.95rem;
+}
+
+.input-wrap input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.btn-search-solid {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-search-solid:hover {
+    background: var(--color-secondary);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Right Narrative Content (45% Width) */
+.hero-right-content {
+    flex: 0 0 45%;
+    display: flex;
+    align-items: center;
+    padding: 4rem 5rem 4rem 3rem;
+}
+
+.content-wrapper {
+    max-width: 520px;
+}
+
+.tag-gold {
+    background: rgba(212, 175, 55, 0.15);
+    color: #d4af37;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-editorial-title {
+    font-size: 3.8rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.hero-editorial-p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+/* Quick Filter Pills */
+.quick-filter-pills {
+    margin-bottom: 3.5rem;
+}
+
+.pill-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    display: block;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.pill:hover,
+.pill.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+    color: #fff;
+}
+
+/* Stats Row */
+.hero-stats-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.2rem;
+}
+
+.gold-star {
+    color: #d4af37;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hotel-editorial-hero {
+        flex-direction: column-reverse;
+    }
+
+    .hero-left-canvas,
+    .hero-right-content {
+        flex: none;
+        width: 100%;
+    }
+
+    .hero-right-content {
+        padding: 4rem 2rem 2rem 2rem;
+    }
+
+    .hero-left-canvas {
+        padding: 10px;
+        min-height: 100%;
+    }
+
+    .hero-editorial-title {
+        font-size: 2.8rem;
+    }
+}
+
+.editors-collection-section {
+    background-color: #ffffff;
+    padding: 6rem 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Rounded, Tinted Wrapper */
+.editors-container {
+    background-color: #f6f6fc;
+    /* Cool purple-gray background tint */
+    border-radius: 2.5rem;
+    padding: 5rem 4rem;
+    width: 100%;
+    max-width: 1280px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.editors-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.editors-header .badge-text {
+    color: #888;
+    margin-bottom: 1rem;
+    display: block;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+}
+
+/* Gradient Title matching the screenshot */
+.editors-title {
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.2rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.editors-header .section-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* --- 3D Perspective Grid --- */
+.editors-3d-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Perspective Container for 3D calculations */
+.tilt-card-wrapper {
+    perspective: 1000px;
+}
+
+.tilt-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+}
+
+/* Glass Sheen Light Overlay */
+.tilt-sheen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 60%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+}
+
+.card-media {
+    position: relative;
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-bg {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.rating-chip {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #ffffff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.rating-chip i {
+    color: #f1c40f;
+    font-size: 0.75rem;
+}
+
+/* Card Body Content & Drawer Reveal */
+.card-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: #ffffff;
+    z-index: 2;
+}
+
+.card-loc {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 0.5rem;
+}
+
+/* Hidden Drawer: Collapsed by Default */
+.reveal-drawer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease, margin 0.3s ease;
+    margin-bottom: 0;
+}
+
+.amenity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.amenity-list li {
+    font-size: 0.8rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.amenity-list li i {
+    color: #27ae60;
+    font-size: 0.7rem;
+}
+
+/* Card Footer & Action Button */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.price-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-box .unit {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.price-box .amount {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #111;
+    line-height: 1;
+}
+
+.btn-action-fill {
+    background: #f0f0f5;
+    border: none;
+    color: #111;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+/* --- Hover Reveal Interactions --- */
+.tilt-card-wrapper:hover .tilt-card {
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.18);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+.tilt-card-wrapper:hover .tilt-sheen {
+    opacity: 1;
+}
+
+/* Drawer Expands Smoothly */
+.tilt-card-wrapper:hover .reveal-drawer {
+    max-height: 120px;
+    opacity: 1;
+    margin-bottom: 0.5rem;
+}
+
+/* Button Fills with Brand Color on Hover */
+.tilt-card-wrapper:hover .btn-action-fill {
+    background: #111111;
+    color: #ffffff;
+}
+
+.tilt-card-wrapper:hover .btn-action-fill i {
+    transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .editors-3d-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .editors-3d-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Browse Stays: Accordion Strip Section --- */
+.expanding-stays-section {
+    background-color: #0b0f17;
+    /* Dark background */
+    padding: 8rem 4rem;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.expanding-container {
+    width: 100%;
+    max-width: 1280px;
+}
+
+.expanding-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.expanding-header .badge-text {
+    color: #888;
+    margin-bottom: 1rem;
+    display: block;
+    letter-spacing: 2px;
+}
+
+.expanding-title {
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.2rem;
+    font-weight: 300;
+}
+
+/* Accordion Strip Track */
+.accordion-strip-track {
+    display: flex;
+    gap: 1.25rem;
+    height: 520px;
+    width: 100%;
+}
+
+/* Base Strip Card */
+.strip-card {
+    position: relative;
+    flex: 1;
+    /* All cards start at equal width */
+    border-radius: 1.5rem;
+    overflow: hidden;
+    text-decoration: none;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Transition flex value for smooth expansion */
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease;
+    cursor: pointer;
+}
+
+.strip-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 0;
+}
+
+.strip-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(11, 15, 23, 0.95) 0%, rgba(11, 15, 23, 0.25) 60%);
+    z-index: 1;
+}
+
+/* Collapsed Vertical Title */
+.collapsed-label {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 2;
+    white-space: nowrap;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.strip-num {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    letter-spacing: 1px;
+}
+
+.strip-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    /* Text flows bottom-to-top */
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Expanded Glassmorphic Panel (Hidden by default) */
+.expanded-panel {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease 0.1s, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0.1s;
+    pointer-events: none;
+}
+
+.glass-panel {
+    background: rgba(20, 20, 20, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1.25rem;
+    padding: 2rem;
+}
+
+.strip-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--color-secondary);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.expanded-title {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.expanded-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.expanded-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 1rem;
+}
+
+.property-count {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.icon-arrow {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+/* --- Expanded Hover State --- */
+.strip-card:hover,
+.strip-card.active {
+    flex: 3.5;
+    /* Takes up significantly more horizontal space */
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.strip-card:hover .strip-bg,
+.strip-card.active .strip-bg {
+    transform: scale(1.05);
+}
+
+.strip-card:hover .collapsed-label,
+.strip-card.active .collapsed-label {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+}
+
+.strip-card:hover .expanded-panel,
+.strip-card.active .expanded-panel {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.strip-card:hover .icon-arrow {
+    transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .accordion-strip-track {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .strip-card {
+        height: 450px;
+        flex: none !important;
+        /* Stack vertically on mobile/tablets */
+    }
+
+    .collapsed-label {
+        display: none;
+    }
+
+    .expanded-panel {
+        opacity: 1;
+        transform: translateY(0);
+        bottom: 1.5rem;
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+}
+
+/* --- Exclusive Deals Section --- */
+.exclusive-deals-section {
+    background-color: #ffffff;
+    padding: 6rem 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Tinted Container matching the UI design */
+.deals-container {
+    background-color: #f6f6fc;
+    /* Subtle purple-gray background tint */
+    border-radius: 2.5rem;
+    padding: 5rem 4rem;
+    width: 100%;
+    max-width: 1280px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.deals-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.deals-header .badge-text {
+    color: #888;
+    margin-bottom: 1rem;
+    display: block;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+}
+
+/* Soft gradient header title */
+.deals-title {
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.2rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.deals-header .section-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* 3-Column Grid */
+.deals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+/* Card Outer Styling */
+.deal-card {
+    position: relative;
+    height: 260px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.25rem;
+    box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+}
+
+.deal-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 0;
+}
+
+.deal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 60%);
+    z-index: 1;
+}
+
+/* Glassmorphism Pill Badge at Bottom */
+.deal-glass-pill {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.pill-text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.deal-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+}
+
+.deal-desc {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+.deal-arrow {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #ffffff;
+    opacity: 0.8;
+    transition: transform 0.3s ease, background 0.3s ease, opacity 0.3s ease;
+}
+
+/* --- Hover Effects --- */
+.deal-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+}
+
+.deal-card:hover .deal-bg {
+    transform: scale(1.08);
+}
+
+.deal-card:hover .deal-glass-pill {
+    background: rgba(255, 255, 255, 0.28);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.deal-card:hover .deal-arrow {
+    background: #ffffff;
+    color: #000000;
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+/* --- Radial Spotlight Glow Overlay --- */
+.deal-spotlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Creates a soft radial light circle at mouse X/Y coordinates */
+    background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.25), transparent 60%);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Reveal spotlight on hover */
+.deal-card:hover .deal-spotlight {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .deals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .deals-container {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .deals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .deals-title {
+        font-size: 2.2rem;
+    }
+
+    .exclusive-deals-section {
+        padding: 4rem 1.5rem;
+    }
+}
+
+/* --- Iconic Places Section --- */
+.iconic-places-section {
+    background-color: #0b0f17;
+    /* Deep dark background */
+    padding: 8rem 0;
+    /* Full bleed cards look better without side padding on the wrapper */
+    color: #ffffff;
+}
+
+.iconic-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.iconic-header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.iconic-header .badge-text {
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+.iconic-title {
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+/* --- The Stacking Wrapper --- */
+.iconic-stack-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    /* Space between cards before they stack */
+    padding-bottom: 4rem;
+}
+
+/* Base Card Styling */
+.stack-card {
+    position: sticky;
+    top: 12vh;
+    /* Where the card pins on the screen */
+    height: 75vh;
+    min-height: 600px;
+    border-radius: 2rem;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.4);
+    /* Shadow cast onto the card below it */
+    transform-origin: top center;
+    /* Ensures the scale-down animation shrinks towards the top */
+    will-change: transform, opacity;
+}
+
+.stack-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.stack-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dark gradient at the bottom to ensure text readability */
+    background: linear-gradient(to top, rgba(11, 15, 23, 0.95) 0%, rgba(11, 15, 23, 0.1) 70%);
+    z-index: 1;
+}
+
+/* Card Content */
+.stack-content {
+    position: relative;
+    z-index: 2;
+    padding: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.stack-title {
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1;
+    color: #ffffff;
+    max-width: 50%;
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Glassmorphism Info Box */
+.stack-glass-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    max-width: 420px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stack-glass-box p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.stack-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
+}
+
+.stack-meta span {
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.btn-stack-explore {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.btn-stack-explore:hover {
+    color: var(--color-secondary);
+    transform: translateX(4px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .stack-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 3rem;
+    }
+
+    .stack-title {
+        font-size: 3.5rem;
+        max-width: 100%;
+    }
+
+    .stack-glass-box {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .stack-card {
+        height: 85vh;
+        top: 10vh;
+    }
+
+    .stack-content {
+        padding: 2rem;
+    }
+
+    .stack-title {
+        font-size: 2.8rem;
+    }
+
+    .iconic-title {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* --- Reviews Section --- */
+.reviews-section {
+    background-color: #0b0f17;
+    /* Deep, rich dark blue/black */
+    padding: 8rem 0;
+    overflow: hidden;
+    color: var(--text-white);
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    padding: 0 2rem;
+}
+
+
+
+/* --- Infinite Marquee Logic --- */
+.marquee-container {
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 2rem;
+    /* Adds a slight fade effect on the left and right edges */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 2rem;
+    padding: 0 1rem;
+    width: max-content;
+}
+
+/* Scroll Animations */
+.track-left {
+    animation: scroll-left 40s linear infinite;
+}
+
+.track-right {
+    animation: scroll-right 45s linear infinite;
+    /* Slightly slower to offset the rhythm */
+}
+
+/* Pause on hover for readability */
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 1rem));
+    }
+
+    /* Scrolls exactly half the width to loop */
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(calc(-50% - 1rem));
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* --- Review Cards --- */
+.review-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background 0.3s ease;
+}
+
+.review-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.review-stars {
+    color: #e67e22;
+    /* Warm gold/orange */
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 0.2rem;
+}
+
+.review-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    flex-grow: 1;
+}
+
+/* Author Section */
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.author-details h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    color: #fff;
+}
+
+.author-details span {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .review-card {
+        width: 320px;
+        padding: 2rem;
+    }
+
+    .reviews-header .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* --- Amenities / What to Expect Section --- */
+.amenities-section {
+    background-color: #ffffff;
+    padding: 6rem 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Rounded, Tinted Wrapper */
+.amenities-container {
+    background-color: #f6f6fc;
+    /* Soft cool purple-gray tint */
+    border-radius: 2.5rem;
+    padding: 5rem 4rem;
+    width: 100%;
+    max-width: 1280px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.amenities-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.amenities-header .badge-text {
+    color: #888;
+    margin-bottom: 1rem;
+    display: block;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+}
+
+/* Gradient Title matching the screenshot */
+.amenities-title {
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.2rem;
+    font-weight: 300;
+}
+
+/* 4-Column Grid */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+/* Pill-Shaped Amenity Card */
+.amenity-card {
+    background: #ffffff;
+    border-radius: 999px;
+    /* Creates the perfect pill shape */
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem 0.8rem 0.8rem;
+    gap: 1.25rem;
+    /* Soft, deep shadow matching the UI image */
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+}
+
+/* Icon Circular Border */
+.amenity-icon-circle {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.amenity-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* --- Hover Effects --- */
+.amenity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+}
+
+.amenity-card:hover .amenity-icon-circle {
+    background-color: #222222;
+    border-color: #222222;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 1024px) {
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .amenities-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .amenities-container {
+        padding: 4rem 2rem;
+        border-radius: 1.5rem;
+    }
+
+    .amenities-grid {
+        grid-template-columns: 1fr;
+        /* 1 column on mobile */
+    }
+
+    .amenities-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width:768px) {
+
+    .hotel-editorial-hero,
+    .editors-collection-section,
+    .expanding-stays-section,
+    .exclusive-deals-section,
+    .iconic-places-section,
+    .amenities-section,
+    .reviews-section,
+    .editors-container,
+    .hero-right-content {
+        padding: 10px;
+    }
+
+    .hero-right-content {
+        padding-top: 70px;
+    }
+
+    .hero-editorial-p {
+        max-width: 300px;
+    }
+
+    .hero-stats-row {
+        flex-wrap: wrap;
+    }
+
+    .hero-editorial-title {
+        font-size: 30px;
+    }
+
+    .iconic-container {
+        padding: 0;
+    }
+}
+
+.form-row {
+    position: relative;
+    /* Ensure there is enough bottom margin so the error text doesn't overlap the next field */
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.error-message {
+    display: none;
+    color: #ff3333;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    position: absolute;
+    bottom: -1.25rem;
+    /* Aligns the text just below the input wrap */
+    left: 0;
+}
+
+/* Apply invalid styling to the wrapper containing the icon */
+.input-wrap.is-invalid {
+    border: 1px solid #ff3333 !important;
+    box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.1);
+}
+
+/* Ensure the input itself doesn't show its own outline when the wrapper is red */
+.input-wrap.is-invalid input:focus {
+    outline: none;
+}

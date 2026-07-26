@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Travel & Hospitality</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="experience.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-items">
+            <a href="index.html" class="nav-logo">
+                <img src="./assets/Stackly-logo-Blue.webp" alt="Logo" class="logo">
+            </a>
+
+            <ul class="nav-links" id="navMenu" data-lenis-prevent>
+                <button class="menu-close-btn" aria-label="Close Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="experience.html" class="active">Experiences</a></li>
+                <li><a href="hotel.html">Hotels</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="mob-view">
+                    <a href="signup.html" class="sign-in-link">Sign up</a>
+                    <a href="login.html" class="btn-solid-white">Login</a>
+                </div>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="signup.html" class="sign-in-link">Sign up</a>
+                <a href="login.html" class="btn-solid-white">Login</a>
+            </div>
+            <button class="menu-open-btn" aria-label="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="experience-hero">
+        <!-- Parallax Background -->
+        <div class="exp-bg" id="expParallax"
+            style="background-image: url('./assets/exp-hero.webp');background-attachment: fixed;">
+        </div>
+
+        <!-- Dark Gradient Overlay -->
+        <div class="exp-overlay"></div>
+
+        <div class="exp-content split-layout">
+
+            <!-- Left Side: Text Content -->
+            <div class="exp-text-content">
+                <span class="badge-text glass-badge">CURATED ACTIVITIES</span>
+                <h1 class="exp-title">Uncover the extraordinary</h1>
+                <p class="exp-subtitle">Immerse yourself in local culture, thrilling adventures, and exclusive tours.
+                </p>
+            </div>
+
+            <!-- Right Side: Vertical Search Column -->
+            <div class="exp-search-wrapper">
+                <form class="exp-search-column" id="expSearchForm" novalidate>
+                    <h3 class="search-widget-title">Find your adventure</h3>
+
+                    <div class="search-input-group">
+                        <label for="locationInput">Location</label>
+                        <input type="text" id="locationInput" placeholder="Where to?" required>
+                        <span class="error-message" id="locationError"></span>
+                    </div>
+
+                    <div class="search-input-group">
+                        <label for="activityInput">Activity</label>
+                        <input type="text" id="activityInput" placeholder="Wine tasting, Hiking..." required>
+                        <span class="error-message" id="activityError"></span>
+                    </div>
+
+                    <div class="search-input-group">
+                        <label for="guestsInput">Guests</label>
+                        <input type="number" id="guestsInput" placeholder="How many people?" min="1" required>
+                        <span class="error-message" id="guestsError"></span>
+                    </div>
+
+                    <button type="submit" class="search-submit-btn-full" id="searchBtn">
+                        Search Experiences
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Signature Experiences Section -->
+    <section class="signature-experiences">
+        <div class="sig-header">
+            <span class="badge-text">FEATURED</span>
+            <h2 class="section-title sig-title">Signature experiences</h2>
+            <p class="section-subtitle">Six unforgettable journeys, hand-picked by our curators.</p>
+        </div>
+
+        <div class="sig-grid">
+            <!-- Card 1 -->
+            <div class="sig-card">
+                <div class="sig-image-wrapper">
+                    <div class="sig-image" style="background-image: url('./assets/sig1.webp');">
+                    </div>
+                    <div class="sig-rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="sig-content">
+                    <div class="sig-location">
+                        <i class="fa-solid fa-location-dot"></i> Cappadocia, Turkey
+                    </div>
+                    <h3 class="sig-card-title">Sunrise Balloon Ride</h3>
+                    <div class="sig-details">
+                        <span class="sig-time"><i class="fa-regular fa-clock"></i> 3 hrs</span>
+                        <span class="sig-guide">Guide &middot; Emre</span>
+                    </div>
+                    <div class="sig-footer">
+                        <div class="sig-price-block">
+                            <span class="price-label">from</span>
+                            <span class="price-amount">$240</span>
+                        </div>
+                        <a href="404page.html"  class="btn-book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="sig-card">
+                <div class="sig-image-wrapper">
+                    <div class="sig-image" style="background-image: url('./assets/sig2.webp');">
+                    </div>
+                    <div class="sig-rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                </div>
+                <div class="sig-content">
+                    <div class="sig-location">
+                        <i class="fa-solid fa-location-dot"></i> Ubud, Bali
+                    </div>
+                    <h3 class="sig-card-title">Bali Rice Terrace Trek</h3>
+                    <div class="sig-details">
+                        <span class="sig-time"><i class="fa-regular fa-clock"></i> 5 hrs</span>
+                        <span class="sig-guide">Guide &middot; Kadek</span>
+                    </div>
+                    <div class="sig-footer">
+                        <div class="sig-price-block">
+                            <span class="price-label">from</span>
+                            <span class="price-amount">$90</span>
+                        </div>
+                        <a href="404page.html"  class="btn-book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="sig-card">
+                <div class="sig-image-wrapper">
+                    <div class="sig-image" style="background-image: url('./assets/sig3.webp');">
+                    </div>
+                    <div class="sig-rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                </div>
+                <div class="sig-content">
+                    <div class="sig-location">
+                        <i class="fa-solid fa-location-dot"></i> Kyoto, Japan
+                    </div>
+                    <h3 class="sig-card-title">Sakura Tea Ceremony</h3>
+                    <div class="sig-details">
+                        <span class="sig-time"><i class="fa-regular fa-clock"></i> 2 hrs</span>
+                        <span class="sig-guide">Guide &middot; Aiko</span>
+                    </div>
+                    <div class="sig-footer">
+                        <div class="sig-price-block">
+                            <span class="price-label">from</span>
+                            <span class="price-amount">$120</span>
+                        </div>
+                        <a href="404page.html"  class="btn-book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="sig-card">
+                <div class="sig-image-wrapper">
+                    <div class="sig-image" style="background-image: url('./assets/sig4.webp');">
+                    </div>
+                    <div class="sig-rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="sig-content">
+                    <div class="sig-location">
+                        <i class="fa-solid fa-location-dot"></i> Zermatt, Switzerland
+                    </div>
+                    <h3 class="sig-card-title">Alpine Glacier Hike</h3>
+                    <div class="sig-details">
+                        <span class="sig-time"><i class="fa-regular fa-clock"></i> 8 hrs</span>
+                        <span class="sig-guide">Guide &middot; Nikolas</span>
+                    </div>
+                    <div class="sig-footer">
+                        <div class="sig-price-block">
+                            <span class="price-label">from</span>
+                            <span class="price-amount">$350</span>
+                        </div>
+                        <a href="404page.html"  class="btn-book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="sig-card">
+                <div class="sig-image-wrapper">
+                    <div class="sig-image" style="background-image: url('./assets/sig5.webp');">
+                    </div>
+                    <div class="sig-rating"><i class="fa-solid fa-star"></i> 4.7</div>
+                </div>
+                <div class="sig-content">
+                    <div class="sig-location">
+                        <i class="fa-solid fa-location-dot"></i> Reykjavik, Iceland
+                    </div>
+                    <h3 class="sig-card-title">Northern Lights Chase</h3>
+                    <div class="sig-details">
+                        <span class="sig-time"><i class="fa-regular fa-clock"></i> 6 hrs</span>
+                        <span class="sig-guide">Guide &middot; Signy</span>
+                    </div>
+                    <div class="sig-footer">
+                        <div class="sig-price-block">
+                            <span class="price-label">from</span>
+                            <span class="price-amount">$180</span>
+                        </div>
+                        <a href="404page.html"  class="btn-book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="sig-card">
+                <div class="sig-image-wrapper">
+                    <div class="sig-image" style="background-image: url('./assets/destination6.webp');">
+                    </div>
+                    <div class="sig-rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+                <div class="sig-content">
+                    <div class="sig-location">
+                        <i class="fa-solid fa-location-dot"></i> Santorini, Greece
+                    </div>
+                    <h3 class="sig-card-title">Sunset Yacht Dinner</h3>
+                    <div class="sig-details">
+                        <span class="sig-time"><i class="fa-regular fa-clock"></i> 4 hrs</span>
+                        <span class="sig-guide">Guide &middot; Theo</span>
+                    </div>
+                    <div class="sig-footer">
+                        <div class="sig-price-block">
+                            <span class="price-label">from</span>
+                            <span class="price-amount">$420</span>
+                        </div>
+                        <a href="404page.html"  class="btn-book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Browse Categories Section -->
+    <section class="browse-section">
+        <div class="browse-container">
+
+            <div class="browse-header">
+                <span class="badge-text">BROWSE</span>
+                <h2 class="section-title browse-title">Find your kind of adventure</h2>
+            </div>
+
+            <div class="browse-grid">
+
+                <!-- Category 1 -->
+                <a href="404page.html" class="browse-card">
+                    <!-- Hidden Hover Image -->
+                    <div class="browse-hover-bg" style="background-image: url('./assets/browse1.webp');">
+                    </div>
+                    <div class="browse-overlay"></div>
+
+                    <!-- Visible Content -->
+                    <div class="browse-content">
+                        <i class="fa-solid fa-mountain browse-icon"></i>
+                        <span class="browse-text">Adventure</span>
+                    </div>
+                </a>
+
+                <!-- Category 2 -->
+                <a href="404page.html" class="browse-card">
+                    <div class="browse-hover-bg" style="background-image: url('./assets/browse2.webp');">
+                    </div>
+                    <div class="browse-overlay"></div>
+
+                    <div class="browse-content">
+                        <i class="fa-solid fa-compass browse-icon"></i>
+                        <span class="browse-text">Wildlife Safari</span>
+                    </div>
+                </a>
+
+                <!-- Category 3 -->
+                <a href="404page.html" class="browse-card">
+                    <div class="browse-hover-bg" style="background-image: url('./assets/browse3.webp');">
+                    </div>
+                    <div class="browse-overlay"></div>
+
+                    <div class="browse-content">
+                        <i class="fa-solid fa-utensils browse-icon"></i>
+                        <span class="browse-text">Food Tours</span>
+                    </div>
+                </a>
+
+                <!-- Category 4 -->
+                <a href="404page.html" class="browse-card">
+                    <div class="browse-hover-bg" style="background-image: url('./assets/browse4.webp');">
+                    </div>
+                    <div class="browse-overlay"></div>
+
+                    <div class="browse-content">
+                        <i class="fa-solid fa-water browse-icon"></i>
+                        <span class="browse-text">Water Sports</span>
+                    </div>
+                </a>
+
+                <!-- Category 5 -->
+                <a href="404page.html" class="browse-card">
+                    <div class="browse-hover-bg" style="background-image: url('./assets/browse5.webp');">
+                    </div>
+                    <div class="browse-overlay"></div>
+
+                    <div class="browse-content">
+                        <i class="fa-solid fa-campground browse-icon"></i>
+                        <span class="browse-text">Camping</span>
+                    </div>
+                </a>
+
+                <!-- Category 6 -->
+                <a href="404page.html" class="browse-card">
+                    <div class="browse-hover-bg" style="background-image: url('./assets/browse6.webp');">
+                    </div>
+                    <div class="browse-overlay"></div>
+
+                    <div class="browse-content">
+                        <i class="fa-solid fa-wand-magic-sparkles browse-icon"></i>
+                        <span class="browse-text">Luxury</span>
+                    </div>
+                </a>
+
+                <!-- Category 7 -->
+                <a href="404page.html" class="browse-card">
+                    <div class="browse-hover-bg" style="background-image: url('./assets/browse7.webp');">
+                    </div>
+                    <div class="browse-overlay"></div>
+
+                    <div class="browse-content">
+                        <i class="fa-solid fa-car browse-icon"></i>
+                        <span class="browse-text">Road Trips</span>
+                    </div>
+                </a>
+
+                <!-- Category 8 -->
+                <a href="404page.html" class="browse-card">
+                    <div class="browse-hover-bg" style="background-image: url('./assets/browse8.webp');">
+                    </div>
+                    <div class="browse-overlay"></div>
+
+                    <div class="browse-content">
+                        <i class="fa-solid fa-building-columns browse-icon"></i>
+                        <span class="browse-text">Cultural</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!-- Trending Experiences: Pinned Horizontal Scroll Section -->
+    <section class="trending-pin-wrapper">
+        <div class="trending-section">
+
+            <div class="trending-header">
+                <span class="badge-text tag-fire">
+                    <i class="fa-solid fa-fire-flame-curved"></i> TRENDING NOW
+                </span>
+                <h2 class="section-title trending-title">The world's current obsessions</h2>
+                <p class="section-subtitle">Most booked experiences by our global community this week.</p>
+            </div>
+
+            <!-- The hidden overflow container -->
+            <div class="trending-track-container">
+                <!-- The flex track that GSAP will slide -->
+                <div class="trending-track">
+
+                    <!-- Trending Card 1 -->
+                    <a href="404page.html" class="trend-card">
+                        <div class="trend-bg" style="background-image: url('./assets/trend1.webp');">
+                        </div>
+                        <div class="trend-overlay"></div>
+                        <div class="trend-rank">01</div>
+                        <div class="trend-content">
+                            <div class="trend-meta">
+                                <span class="trend-location"><i class="fa-solid fa-location-dot"></i> Venice,
+                                    Italy</span>
+                                <span class="trend-category">Cultural</span>
+                            </div>
+                            <h3 class="trend-card-title">Private Grand Canal Gondola at Dusk</h3>
+                            <div class="trend-footer">
+                                <span class="trend-price">from $150</span>
+                                <span class="explore-btn"><i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Trending Card 2 -->
+                    <a href="404page.html" class="trend-card">
+                        <div class="trend-bg" style="background-image: url('./assets/trend2.webp');">
+                        </div>
+                        <div class="trend-overlay"></div>
+                        <div class="trend-rank">02</div>
+                        <div class="trend-content">
+                            <div class="trend-meta">
+                                <span class="trend-location"><i class="fa-solid fa-location-dot"></i> Dubai, UAE</span>
+                                <span class="trend-category">Luxury</span>
+                            </div>
+                            <h3 class="trend-card-title">Helicopter Tour over Palm Jumeirah</h3>
+                            <div class="trend-footer">
+                                <span class="trend-price">from $290</span>
+                                <span class="explore-btn"><i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Trending Card 3 -->
+                    <a href="404page.html" class="trend-card">
+                        <div class="trend-bg" style="background-image: url('./assets/bip1.webp');">
+                        </div>
+                        <div class="trend-overlay"></div>
+                        <div class="trend-rank">03</div>
+                        <div class="trend-content">
+                            <div class="trend-meta">
+                                <span class="trend-location"><i class="fa-solid fa-location-dot"></i> Swiss Alps</span>
+                                <span class="trend-category">Adventure</span>
+                            </div>
+                            <h3 class="trend-card-title">Glacier Express Panoramic Journey</h3>
+                            <div class="trend-footer">
+                                <span class="trend-price">from $180</span>
+                                <span class="explore-btn"><i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Trending Card 4 -->
+                    <a href="404page.html" class="trend-card">
+                        <div class="trend-bg" style="background-image: url('./assets/trend3.webp');">
+                        </div>
+                        <div class="trend-overlay"></div>
+                        <div class="trend-rank">04</div>
+                        <div class="trend-content">
+                            <div class="trend-meta">
+                                <span class="trend-location"><i class="fa-solid fa-location-dot"></i> Tulum,
+                                    Mexico</span>
+                                <span class="trend-category">Wellness</span>
+                            </div>
+                            <h3 class="trend-card-title">Cenote Swim & Mayan Cacao Ceremony</h3>
+                            <div class="trend-footer">
+                                <span class="trend-price">from $85</span>
+                                <span class="explore-btn"><i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Trending Card 3 -->
+                    <a href="404page.html" class="trend-card">
+                        <div class="trend-bg" style="background-image: url('./assets/bip1.webp');">
+                        </div>
+                        <div class="trend-overlay"></div>
+                        <div class="trend-rank">03</div>
+                        <div class="trend-content">
+                            <div class="trend-meta">
+                                <span class="trend-location"><i class="fa-solid fa-location-dot"></i> Swiss Alps</span>
+                                <span class="trend-category">Adventure</span>
+                            </div>
+                            <h3 class="trend-card-title">Glacier Express Panoramic Journey</h3>
+                            <div class="trend-footer">
+                                <span class="trend-price">from $180</span>
+                                <span class="explore-btn"><i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Trending Card 4 -->
+                    <a href="404page.html" class="trend-card">
+                        <div class="trend-bg" style="background-image: url('./assets/trend4.webp');">
+                        </div>
+                        <div class="trend-overlay"></div>
+                        <div class="trend-rank">04</div>
+                        <div class="trend-content">
+                            <div class="trend-meta">
+                                <span class="trend-location"><i class="fa-solid fa-location-dot"></i> Tulum,
+                                    Mexico</span>
+                                <span class="trend-category">Wellness</span>
+                            </div>
+                            <h3 class="trend-card-title">Cenote Swim & Mayan Cacao Ceremony</h3>
+                            <div class="trend-footer">
+                                <span class="trend-price">from $85</span>
+                                <span class="explore-btn"><i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Spacer to give a clean exit margin at the end of the scroll -->
+                    <div style="flex: 0 0 2rem;"></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose Us (Experiences) Section -->
+    <section class="why-exp-section">
+        <div class="why-exp-container">
+
+            <div class="why-exp-header">
+                <span class="badge-text">WHY STACKLY</span>
+                <h2 class="section-title why-exp-title">A better way to book experiences</h2>
+            </div>
+
+            <div class="why-exp-grid">
+
+                <!-- Card 1 -->
+                <div class="why-exp-card">
+                    <div class="why-icon-circle">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <h3>Verified Guides</h3>
+                    <p>Every host is background-checked and rated.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="why-exp-card">
+                    <div class="why-icon-circle">
+                        <i class="fa-regular fa-credit-card"></i>
+                    </div>
+                    <h3>Secure Payments</h3>
+                    <p>Encrypted, PCI-compliant checkout.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="why-exp-card">
+                    <div class="why-icon-circle">
+                        <i class="fa-solid fa-rotate-left"></i>
+                    </div>
+                    <h3>Flexible Cancellation</h3>
+                    <p>Free cancellation up to 48 hrs.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="why-exp-card">
+                    <div class="why-icon-circle">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>Personalized Picks</h3>
+                    <p>Tuned to your taste and travel style.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="why-exp-card">
+                    <div class="why-icon-circle">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Real humans, any time zone.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="why-exp-card">
+                    <div class="why-icon-circle">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+                    <h3>Best-Price Guarantee</h3>
+                    <p>Find it cheaper — we match it.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Reviews: Infinite Marquee Section -->
+    <section class="reviews-section">
+        <div class="reviews-header">
+            <span class="badge-text glass-badge-dark">GUEST REVIEWS</span>
+            <h2 class="section-title">Loved by explorers globally</h2>
+        </div>
+
+        <!-- Top Track: Scrolls Left -->
+        <div class="marquee-container">
+            <div class="marquee-track track-left">
+
+                <!-- Set 1 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Stackly completely transformed our anniversary trip to Kyoto. The private
+                        tea ceremony was breathtaking."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/team1.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Sarah Jenkins</h4>
+                            <span>Visited Japan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The app is incredibly intuitive. I booked a multi-city European tour in
+                        under twenty minutes."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/team4.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>David Chen</h4>
+                            <span>Visited Italy & France</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Our guide in the Swiss Alps was phenomenal. Stackly's vetting process is
+                        clearly top-tier."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/team2.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Elena Rostova</h4>
+                            <span>Visited Switzerland</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Set 1 Duplicated for Infinite Loop -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Stackly completely transformed our anniversary trip to Kyoto. The private
+                        tea ceremony was breathtaking."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/team1.webp');"> </div>
+                        <div class="author-details">
+                            <h4>Sarah Jenkins</h4>
+                            <span>Visited Japan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The app is incredibly intuitive. I booked a multi-city European tour in
+                        under twenty minutes."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/team4.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>David Chen</h4>
+                            <span>Visited Italy & France</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Our guide in the Swiss Alps was phenomenal. Stackly's vetting process is
+                        clearly top-tier."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/team2.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Elena Rostova</h4>
+                            <span>Visited Switzerland</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Track: Scrolls Right -->
+        <div class="marquee-container">
+            <div class="marquee-track track-right">
+
+                <!-- Set 2 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Flawless execution from arrival to departure. The 24/7 concierge saved us
+                        when our flight got delayed."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/review3.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Marcus Thorne</h4>
+                            <span>Visited Greece</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The best travel platform I've ever used. The exclusive access to the Louvre
+                        was worth every penny."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/review1.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Chloe Williams</h4>
+                            <span>Visited France</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Unmatched curation. Every hotel felt like a hidden gem that we would have
+                        never found on our own."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/review5.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>James & Lily</h4>
+                            <span>Visited Bali</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Set 2 Duplicated -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Flawless execution from arrival to departure. The 24/7 concierge saved us
+                        when our flight got delayed."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/review3.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Marcus Thorne</h4>
+                            <span>Visited Greece</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The best travel platform I've ever used. The exclusive access to the Louvre
+                        was worth every penny."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/review1.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>Chloe Williams</h4>
+                            <span>Visited France</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Unmatched curation. Every hotel felt like a hidden gem that we would have
+                        never found on our own."</p>
+                    <div class="review-author">
+                        <div class="author-img" style="background-image: url('./assets/review5.webp');">
+                        </div>
+                        <div class="author-details">
+                            <h4>James & Lily</h4>
+                            <span>Visited Bali</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Mobile App CTA Section -->
+    <section class="app-cta-section">
+        <div class="app-cta-container">
+
+            <!-- Left: Text & Buttons -->
+            <div class="cta-text-content">
+                <span class="badge-text tag-app">STACKLY MOBILE</span>
+                <h2 class="cta-title">Your pocket concierge</h2>
+                <p class="cta-subtitle">Manage your bespoke itineraries, chat instantly with your dedicated guide, and
+                    unlock secret local experiences on the go. The world of Stackly, right in your hands.</p>
+
+                <div class="app-buttons-group">
+                    <a href="404page.html" class="store-btn">
+                        <i class="fa-brands fa-apple"></i>
+                        <div class="btn-text-block">
+                            <span class="btn-small-text">Download on the</span>
+                            <span class="btn-large-text">App Store</span>
+                        </div>
+                    </a>
+                    <a href="404page.html" class="store-btn">
+                        <i class="fa-brands fa-google-play"></i>
+                        <div class="btn-text-block">
+                            <span class="btn-small-text">GET IT ON</span>
+                            <span class="btn-large-text">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- VIP Travel Club Section -->
+    <section class="vip-club-section">
+        <!-- Parallax Background -->
+        <div class="vip-bg" id="vipParallax" style="background-image: url('./assets/bip1.webp');">
+        </div>
+
+        <!-- Glassmorphism Card -->
+        <div class="vip-content glass-card-premium">
+            <span class="badge-text glass-badge">JOIN THE INVITATION LIST</span>
+            <h2 class="vip-title">Unlock Secret Stays</h2>
+            <p class="vip-subtitle">Enter your email to receive weekly insider access to off-market private villas,
+                yacht charters, and exclusive itineraries.</p>
+
+
+            <form class="vip-form" id="vipForm" novalidate>
+                <div class="input-wrapper">
+                    <input type="email" id="emailInput" placeholder="Email address" class="vip-input" required>
+                    <!-- Error message container, hidden by default -->
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <button type="submit" class="btn-magnetic" id="magneticBtn">
+                    <span class="btn-text">Request Access</span>
+                </button>
+            </form>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <div class="footer-card">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="./assets/Stackly-logo-Blue.webp" alt="logo" class="logo" loading="lazy">
+                    </a>
+                    <p class="footer-description">
+                        A premium travel platform connecting explorers with extraordinary stays and unforgettable
+                        experiences across the globe.
+                    </p>
+                    <div class="footer-newsletter">
+                        <span class="newsletter-label">NEWSLETTER</span>
+                        <form class="newsletter-form" id="newsletterForm" novalidate>
+                            <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+                            <button type="submit" id="newsletterBtn">Subscribe</button>
+                        </form>
+                        <div id="newsletterMsg" class="newsletter-msg"></div>
+                    </div>
+                </div>
+                <div class="footer-link-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="experience.html">Experiences</a></li>
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="404page.html">Help Center</a></li>
+                        <li><a href="404page.html">FAQs</a></li>
+                        <li><a href="404page.html">Cancellation Policy</a></li>
+                        <li><a href="404page.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-col">
+                    <h4>Travel</h4>
+                    <ul>
+                        <li><a href="404page.html">Hotels</a></li>
+                        <li><a href="404page.html">Experiences</a></li>
+                        <li><a href="404page.html">Destinations</a></li>
+                        <li><a href="404page.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-app-col">
+                    <h4>Get the app</h4>
+                    <a href="404page.html" class="app-btn">
+                        <i class="fa-brands fa-apple"></i>
+                        App Store
+                    </a>
+                    <a href="404page.html" class="app-btn">
+                        <i class="fa-brands fa-google-play"></i>
+                        Google Play
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2026 Stackly. Crafted for explorers.
+                </div>
+                <div class="social-icons">
+                    <a href="404page.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404page.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="404page.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="404page.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Entrance Animation for the Split Layout Hero
+            const expTl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
+
+            expTl.from(".exp-text-content .glass-badge", { y: 30, opacity: 0, delay: 0.2 })
+                .from(".exp-title", { y: 30, opacity: 0 }, "-=0.7")
+                .from(".exp-subtitle", { y: 30, opacity: 0 }, "-=0.7")
+                // Slide the entire column widget in from the right
+                .from(".exp-search-column", { x: 40, opacity: 0, scale: 0.95, duration: 1.2, ease: "power4.out" }, "-=0.6");
+
+            // 2. Parallax Background Scroll Effect remains the same
+            gsap.to("#expParallax", {
+                scrollTrigger: {
+                    trigger: ".experience-hero",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                },
+                y: "20%",
+                ease: "none"
+            });
+
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Animate the Signature Experiences Header
+            gsap.from(".sig-header > *", {
+                scrollTrigger: {
+                    trigger: ".signature-experiences",
+                    start: "top 80%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out"
+            });
+
+            // Stagger the Cards into view
+            gsap.from(".sig-card", {
+                scrollTrigger: {
+                    trigger: ".sig-grid",
+                    start: "top 80%",
+                },
+                y: 60,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power2.out"
+            });
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Initial fade-in for the header
+            gsap.from(".trending-header > *", {
+                scrollTrigger: {
+                    trigger: ".trending-pin-wrapper",
+                    start: "top 80%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out"
+            });
+
+            // 2. Setup the Pinned Horizontal Scroll
+            const track = document.querySelector(".trending-track");
+
+            // Function to calculate scroll distance
+            function getScrollAmount() {
+                let trackWidth = track.scrollWidth;
+                return -(trackWidth - window.innerWidth);
+            }
+
+            // Create the horizontal sliding tween
+            const tween = gsap.to(track, {
+                x: getScrollAmount,
+                ease: "none"
+            });
+
+            // Hook the tween to the ScrollTrigger pin
+            ScrollTrigger.create({
+                trigger: ".trending-pin-wrapper",
+                start: "top top",
+                // The scroll distance dictates how long the section stays pinned
+                end: () => `+=${getScrollAmount() * -1}`,
+                pin: true,
+                animation: tween,
+                scrub: 1, // Smoothly ties the movement to the scrollbar (1 sec lag for smoothness)
+                invalidateOnRefresh: true, // Recalculates sizes on window resize
+            });
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Animate the Background Container and Header
+            gsap.from(".why-exp-container", {
+                scrollTrigger: {
+                    trigger: ".why-exp-section",
+                    start: "top 85%",
+                },
+                y: 40,
+                opacity: 0,
+                scale: 0.98,
+                duration: 1,
+                ease: "power3.out"
+            });
+
+            gsap.from(".why-exp-header > *", {
+                scrollTrigger: {
+                    trigger: ".why-exp-container",
+                    start: "top 75%",
+                },
+                y: 20,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power2.out"
+            });
+
+            // 2. Animate the Grid Cards with a rich stagger
+            gsap.from(".why-exp-card", {
+                scrollTrigger: {
+                    trigger: ".why-exp-grid",
+                    start: "top 80%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.9,
+                stagger: 0.1,
+                ease: "back.out(1.2)" // Provides a smooth, premium bounce effect
+            });
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Entrance Animations
+            const ctaTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".app-cta-section",
+                    start: "top 75%",
+                }
+            });
+
+            ctaTl.from(".cta-text-content > *", {
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out"
+            })
+                .from(".phone-frame", {
+                    y: 60,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "back.out(1.2)"
+                }, "-=0.6")
+                .from(".floating-badge", {
+                    scale: 0,
+                    opacity: 0,
+                    duration: 0.6,
+                    stagger: 0.2,
+                    ease: "back.out(1.5)"
+                }, "-=0.4");
+
+            // 2. Infinite Hovering Effect for the Badges
+            gsap.to(".badge-1", {
+                y: -15,
+                duration: 2.5,
+                ease: "sine.inOut",
+                yoyo: true,
+                repeat: -1
+            });
+
+            gsap.to(".badge-2", {
+                y: 15,
+                duration: 3,
+                ease: "sine.inOut",
+                yoyo: true,
+                repeat: -1,
+                delay: 0.5 // Offset the timing so they don't move exactly together
+            });
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('expSearchForm');
+            const locationInput = document.getElementById('locationInput');
+            const activityInput = document.getElementById('activityInput');
+            const guestsInput = document.getElementById('guestsInput');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                let isValid = true;
+
+                // 1. Validate Location (must be at least 2 characters)
+                if (locationInput.value.trim().length < 2) {
+                    showError(locationInput, 'locationError', 'Please enter a valid location.');
+                    isValid = false;
+                }
+
+                // 2. Validate Activity (must be at least 2 characters)
+                if (activityInput.value.trim().length < 2) {
+                    showError(activityInput, 'activityError', 'Please enter an activity.');
+                    isValid = false;
+                }
+
+                // 3. Validate Guests (must be a number greater than 0)
+                const guests = parseInt(guestsInput.value, 10);
+                if (isNaN(guests) || guests < 1) {
+                    showError(guestsInput, 'guestsError', 'Please enter at least 1 guest.');
+                    isValid = false;
+                }
+
+                // 4. Success State
+                if (isValid) {
+                    const btn = document.getElementById('searchBtn');
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Searching...';
+
+                    // TODO: Pass these values to your API or filter logic
+                    console.log('Search queries:', {
+                        location: locationInput.value.trim(),
+                        activity: activityInput.value.trim(),
+                        guests: guests
+                    });
+
+                    // Simulate loading state
+                    setTimeout(() => {
+                        window.location.href = '404page.html'
+                        btn.textContent = originalText;
+                    }, 1000);
+                }
+            });
+
+            // Helper function to display errors
+            function showError(inputElement, errorId, message) {
+                inputElement.classList.add('is-invalid');
+                const errorElement = document.getElementById(errorId);
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            }
+
+            // Clear individual errors as the user types to correct them
+            [locationInput, activityInput, guestsInput].forEach(input => {
+                input.addEventListener('input', function () {
+                    this.classList.remove('is-invalid');
+                    const errorElement = this.nextElementSibling;
+                    if (errorElement && errorElement.classList.contains('error-message')) {
+                        errorElement.style.display = 'none';
+                    }
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('vipForm');
+            const emailInput = document.getElementById('emailInput');
+            const emailError = document.getElementById('emailError');
+
+            // Standard email validation regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent page reload
+
+                const emailValue = emailInput.value.trim();
+
+                // 1. Check if empty
+                if (!emailValue) {
+                    showError('Email address is required.');
+                    return;
+                }
+
+                // 2. Check if valid format
+                if (!emailRegex.test(emailValue)) {
+                    showError('Please enter a valid email address.');
+                    return;
+                }
+
+                // 3. Success State!
+                clearError();
+
+                // Change button text to show loading state (optional)
+                const btnText = document.querySelector('.btn-text');
+                const originalText = btnText.textContent;
+                btnText.textContent = 'Requesting...';
+
+                // TODO: Add your fetch/axios API call here
+                console.log('Success! Submitting email:', emailValue);
+
+                // Reset form for demonstration
+                setTimeout(() => {
+                    form.reset();
+                    btnText.textContent = originalText;
+                    window.location.href = '404page.html'
+                }, 1500);
+            });
+
+            // Helper functions for UI
+            function showError(message) {
+                emailInput.classList.add('is-invalid');
+                emailError.textContent = message;
+                emailError.style.display = 'block';
+            }
+
+            function clearError() {
+                emailInput.classList.remove('is-invalid');
+                emailError.textContent = '';
+                emailError.style.display = 'none';
+            }
+
+            // Optional: Clear error when user starts typing again
+            emailInput.addEventListener('input', clearError);
+        });
+    </script>
+</body>
+
+</html>

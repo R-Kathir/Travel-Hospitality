@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Host Dashboard | Stackly</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard-body">
+    <style>
+        /* --- Host Specific Overrides --- */
+
+        /* Trend indicators for Host Stats */
+        .stat-trend {
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 0.4rem;
+        }
+
+        .stat-trend.positive {
+            color: #2ecc71;
+        }
+
+        .stat-trend.negative {
+            color: #e74c3c;
+        }
+
+        /* Subtext for stats */
+        .stat-sub {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.4rem;
+        }
+
+        /* Pending/In-Progress status badge */
+        .activity-status.pending {
+            background: rgba(241, 196, 15, 0.15);
+            color: #f1c40f;
+        }
+
+        /* Universal Placeholder Panel for other tabs */
+        .placeholder-panel {
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 50vh;
+        }
+
+        .placeholder-icon {
+            font-size: 3.5rem;
+            color: #5bc0be;
+            margin-bottom: 1.5rem;
+        }
+
+        .placeholder-panel h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .placeholder-panel p {
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 400px;
+            line-height: 1.5;
+        }
+
+        .mt-2 {
+            margin-top: 1.5rem;
+        }
+
+        /* --- "My Properties" Tab Layout --- */
+        .properties-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .section-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .property-card {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .property-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .property-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .property-card:hover .property-img {
+            transform: scale(1.05);
+        }
+
+        /* Status Badges within Images */
+        .property-img-wrapper .status-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .paused-badge {
+            background: rgba(243, 156, 18, 0.2);
+            color: #f39c12;
+            border: 1px solid rgba(243, 156, 18, 0.4);
+        }
+
+        /* Property Details */
+        .property-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            flex-grow: 1;
+        }
+
+        .property-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .property-title-row h4 {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .property-rating {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #f1c40f;
+            background: rgba(241, 196, 15, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+        }
+
+        .property-location {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Property Metrics Grid */
+        .property-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .metric {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .metric span {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.5px;
+        }
+
+        .metric strong {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        /* Property Actions */
+        .property-actions {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: auto;
+        }
+
+        /* --- Responsive Layout Adjustments --- */
+        @media (max-width: 1400px) {
+            .properties-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .properties-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .property-img-wrapper {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .property-actions {
+                flex-direction: column;
+            }
+
+            .section-header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+
+        /* --- "Bookings" Tab Layout --- */
+        .bookings-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Filters */
+        .booking-filters {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.4rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 0.5rem 1.25rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            color: #ffffff;
+        }
+
+        .filter-btn.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Layout Split */
+        .bookings-split-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        /* --- Left Column: Booking Cards --- */
+        .main-bookings-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .booking-card {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .booking-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .pending-request {
+            border: 1px solid rgba(241, 196, 15, 0.3);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(241, 196, 15, 0.05) 100%);
+        }
+
+        .booking-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 1rem;
+        }
+
+        .warning-badge {
+            background: rgba(241, 196, 15, 0.15);
+            color: #f1c40f;
+            border: 1px solid rgba(241, 196, 15, 0.3);
+        }
+
+        .success-badge {
+            background: rgba(46, 204, 113, 0.15);
+            color: #2ecc71;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+        }
+
+        .booking-id {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
+        .booking-card-body {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .guest-info-large {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-width: 200px;
+        }
+
+        .guest-avatar-large {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .guest-info-large h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        .guest-info-large p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .booking-details-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            flex-grow: 1;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1rem;
+            border-radius: 0.75rem;
+        }
+
+        .detail-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .detail-col span {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+        }
+
+        .detail-col strong {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .payout-text {
+            color: #5bc0be;
+            font-size: 1.1rem !important;
+        }
+
+        .booking-card-actions {
+            display: flex;
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .ml-auto {
+            margin-left: auto;
+        }
+
+        /* Helper to push elements to the right */
+
+        /* --- Right Column: Widgets --- */
+        .booking-widgets-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .widget-card {
+            padding: 1.5rem;
+        }
+
+        .widget-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .widget-header h4 {
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        .widget-header i {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .widget-desc {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+        }
+
+        /* Messages Inbox Widget */
+        .message-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .message-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 0.75rem;
+            transition: background 0.2s ease;
+        }
+
+        .message-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+        }
+
+        .message-item.unread {
+            background: rgba(91, 192, 190, 0.1);
+            border-left: 3px solid #5bc0be;
+        }
+
+        .msg-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .msg-content {
+            flex: 1;
+        }
+
+        .msg-content h5 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        .msg-content p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .msg-time {
+            display: block;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 0.4rem;
+        }
+
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 1300px) {
+            .booking-card-body {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+
+            .booking-details-grid {
+                width: 100%;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .bookings-split-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .booking-details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-card-actions {
+                flex-wrap: wrap;
+            }
+
+            .booking-card-actions .ml-auto {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .booking-filters {
+                width: 100%;
+                overflow-x: auto;
+                justify-content: space-between;
+            }
+        }
+
+        /* --- "Earnings" Tab Layout --- */
+        .earnings-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .earnings-split-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .earnings-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        /* --- Section 2: Payout Ledger --- */
+        .payouts-list {
+            padding: 0 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .payout-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr;
+            align-items: center;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .payout-row:last-child {
+            border-bottom: none;
+        }
+
+        .header-row {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 1px;
+            font-weight: 600;
+            padding: 1.5rem 0 1rem 0;
+        }
+
+        .payout-date {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .payout-desc strong {
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .payout-desc p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .payout-amount {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .payout-amount.positive {
+            color: #2ecc71;
+        }
+
+        /* Status badge reuse from Bookings tab */
+        .payout-row .status-badge {
+            justify-self: start;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.75rem;
+        }
+
+        /* --- Right Column Widgets --- */
+        .earnings-widgets-col {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Section 3: Property Breakdown Progress Bars */
+        .property-breakdown-widget {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .breakdown-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .breakdown-header span {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .breakdown-header strong {
+            font-weight: 500;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: #5bc0be;
+            border-radius: 999px;
+            /* Transition added for smooth load-in effect if desired */
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Section 4: Tax Documents */
+        .tax-docs-widget {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .doc-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 0.75rem;
+            transition: background 0.3s ease;
+        }
+
+        .doc-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .doc-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: rgba(52, 152, 219, 0.1);
+            color: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .doc-info {
+            flex: 1;
+        }
+
+        .doc-info h4 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        .doc-info p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* --- Responsive Layout Adjustments --- */
+        @media (max-width: 1200px) {
+            .payout-row {
+                grid-template-columns: 1fr 1.5fr 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .earnings-split-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .payout-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                padding: 1rem 0;
+            }
+
+            .header-row {
+                display: none;
+                /* Hide headers on mobile for a cleaner stacked look */
+            }
+
+            .payout-date {
+                grid-column: 1 / -1;
+                font-weight: 500;
+                color: #5bc0be;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                padding-bottom: 0.5rem;
+            }
+
+            .payout-row .status-badge {
+                justify-self: end;
+            }
+        }
+
+        /* --- Host Settings Specific Overrides --- */
+
+        /* Textarea focus state */
+        .settings-form textarea:focus {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border-color: #5bc0be !important;
+        }
+
+        /* Payout Method Cards */
+        .payout-method-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            position: relative;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .payout-method-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .payout-method-card.active-method {
+            border-color: rgba(91, 192, 190, 0.3);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(91, 192, 190, 0.05) 100%);
+        }
+
+        .method-icon {
+            width: 3rem;
+            height: 3rem;
+            background: rgba(52, 152, 219, 0.1);
+            color: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .method-details {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .method-details h4 {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .method-details p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .verification-status {
+            font-size: 0.8rem !important;
+            font-weight: 500;
+            margin-top: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .method-options {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 1.2rem;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            padding: 0.5rem;
+            margin: -0.5rem;
+        }
+
+        .method-options:hover {
+            color: #ffffff;
+        }
+    </style>
+    <div class="dashboard-layout">
+
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-logo">
+                    <img src="./assets/Stackly-logo-Blue.webp" alt="LOGO" loading="lazy">
+                </a>
+                <div class="dashboard-name">
+                    <h3>Host Dashboard</h3>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="404page.html" class="nav-item active" data-tab="overview"><i class="fa-solid fa-chart-pie"></i>
+                    Overview</a>
+                <a href="404page.html" class="nav-item" data-tab="properties"><i
+                        class="fa-solid fa-house-chimney-window"></i> My
+                    Properties</a>
+                <a href="404page.html" class="nav-item" data-tab="bookings"><i class="fa-solid fa-calendar-check"></i>
+                    Bookings</a>
+                <a href="404page.html" class="nav-item" data-tab="earnings"><i class="fa-solid fa-chart-line"></i>
+                    Earnings</a>
+                <a href="404page.html" class="nav-item" data-tab="settings"><i class="fa-solid fa-gear"></i>
+                    Settings</a>
+            </nav>
+            <div class="sidebar-profile">
+                <div class="profile-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <span class="profile-role" id="username">Traveler</span>
+                    <span class="profile-email" id="useremail">elena.voss@stackly.com</span>
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <a href="login.html" class="nav-item logout-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-main">
+
+            <!-- Dashboard Header -->
+            <header class="dashboard-header">
+                <div class="header-greeting">
+                    <h1 id="dynamic-greeting">Welcome back, Marcus</h1>
+                    <p id="dynamic-subtitle">Here is what is happening with your properties today.</p>
+                </div>
+                <div class="header-profile">
+                    <div class="profile-info">
+                        <span class="profile-role" id="username1">Host</span>
+                        <span class="profile-email" id="useremail1">marcus.h@stackly.com</span>
+                    </div>
+                    <div class="profile-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+
+                <button class="mobile-sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+            </header>
+
+            <!-- Tab Container -->
+            <div class="tab-content-container">
+
+                <!-- TAB 1: OVERVIEW -->
+                <div class="tab-pane active" id="overview">
+                    <div class="dashboard-content">
+
+                        <!-- Stats Row -->
+                        <div class="stats-grid">
+                            <div class="stat-card glass-panel">
+                                <div class="stat-icon"><i class="fa-solid fa-wallet"></i></div>
+                                <div class="stat-details">
+                                    <h3>Monthly Earnings</h3>
+                                    <h2>$12,450</h2>
+                                    <p class="stat-trend positive"><i class="fa-solid fa-arrow-trend-up"></i> 14% vs
+                                        last month</p>
+                                </div>
+                            </div>
+
+                            <div class="stat-card glass-panel">
+                                <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
+                                <div class="stat-details">
+                                    <h3>Avg. Rating</h3>
+                                    <h2>4.95</h2>
+                                    <p class="stat-sub">Based on 142 reviews</p>
+                                </div>
+                            </div>
+                            <div class="stat-card glass-panel highlight-card">
+                                <div class="stat-icon"><i class="fa-solid fa-medal"></i></div>
+                                <div class="stat-details">
+                                    <h3>Host Status</h3>
+                                    <h2>Superhost</h2>
+                                    <p>Top 5% in your region</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Charts & Recent Activity Split -->
+                        <div class="bento-split">
+
+                            <!-- Revenue Chart Panel -->
+                            <div class="chart-panel glass-panel">
+                                <div class="panel-header">
+                                    <h3>Revenue Overview</h3>
+                                    <select class="chart-filter">
+                                        <option>Last 6 Months</option>
+                                        <option>This Year</option>
+                                    </select>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="revenueChart"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Recent Reservations Panel -->
+                            <div class="activity-panel glass-panel">
+                                <div class="panel-header">
+                                    <h3>Recent Reservations</h3>
+                                    <a href="404page.html" class="view-all">View all</a>
+                                </div>
+                                <div class="activity-list">
+
+                                    <div class="activity-item">
+                                        <img src="./assets/review1.webp" alt="Guest" class="activity-img">
+                                        <div class="activity-info">
+                                            <h4>Sarah Jenkins</h4>
+                                            <p>Villa Treville • Oct 12 - Oct 18</p>
+                                        </div>
+                                        <span class="activity-status upcoming">Confirmed</span>
+                                    </div>
+
+                                    <div class="activity-item">
+                                        <img src="./assets/review3.webp" alt="Guest" class="activity-img">
+                                        <div class="activity-info">
+                                            <h4>Michael Chang</h4>
+                                            <p>Kyoto Retreat • Aug 05 - Aug 12</p>
+                                        </div>
+                                        <span class="activity-status upcoming">Confirmed</span>
+                                    </div>
+
+                                    <div class="activity-item">
+                                        <img src="./assets/review2.webp" alt="Guest" class="activity-img">
+                                        <div class="activity-info">
+                                            <h4>Emma Roberts</h4>
+                                            <p>Paris Penthouse • Checking out</p>
+                                        </div>
+                                        <span class="activity-status pending">In Progress</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- TAB 2: MY PROPERTIES -->
+                <div class="tab-pane" id="properties">
+                    <div class="properties-container">
+
+                        <!-- Header Section -->
+                        <div class="section-header-flex">
+                            <div>
+                                <h3 class="pane-section-title">Your Portfolio</h3>
+                                <p class="section-subtitle">Manage your active listings and track performance.</p>
+                            </div>
+                            <a href="404page.html"  class="btn-solid-accent"><i class="fa-solid fa-plus"></i> Add New Property</a>
+                        </div>
+
+                        <!-- Properties Grid -->
+                        <div class="properties-grid">
+
+                            <!-- Property Card 1 -->
+                            <div class="glass-panel property-card">
+                                <div class="property-img-wrapper">
+                                    <img src="./assets/dd1.webp" alt="Villa Treville" class="property-img">
+                                    <span class="status-badge live-badge"><i class="fa-solid fa-circle-check"></i>
+                                        Active</span>
+                                </div>
+
+                                <div class="property-details">
+                                    <div class="property-title-row">
+                                        <h4>Villa Treville</h4>
+                                        <span class="property-rating"><i class="fa-solid fa-star"></i> 4.95</span>
+                                    </div>
+                                    <p class="property-location"><i class="fa-solid fa-location-dot"></i> Amalfi Coast,
+                                        Italy</p>
+
+                                    <div class="property-metrics">
+                                        <div class="metric">
+                                            <span>Occupancy</span>
+                                            <strong>92%</strong>
+                                        </div>
+                                        <div class="metric">
+                                            <span>Nightly Rate</span>
+                                            <strong>$850</strong>
+                                        </div>
+                                        <div class="metric">
+                                            <span>Next Booking</span>
+                                            <strong>Tomorrow</strong>
+                                        </div>
+                                    </div>
+
+                                    <div class="property-actions">
+                                        <a href="404page.html"  class="btn-outline-small w-100"><i class="fa-solid fa-pen"></i> Edit
+                                            Listing</a>
+                                        <a href="404page.html"  class="btn-outline-small w-100"><i
+                                                class="fa-solid fa-calendar-days"></i> Calendar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Property Card 2 -->
+                            <div class="glass-panel property-card">
+                                <div class="property-img-wrapper">
+                                    <img src="./assets/stor3.webp" alt="Kyoto Retreat" class="property-img">
+                                    <span class="status-badge live-badge"><i class="fa-solid fa-circle-check"></i>
+                                        Active</span>
+                                </div>
+
+                                <div class="property-details">
+                                    <div class="property-title-row">
+                                        <h4>Kyoto Zen Retreat</h4>
+                                        <span class="property-rating"><i class="fa-solid fa-star"></i> 5.0</span>
+                                    </div>
+                                    <p class="property-location"><i class="fa-solid fa-location-dot"></i> Kyoto, Japan
+                                    </p>
+
+                                    <div class="property-metrics">
+                                        <div class="metric">
+                                            <span>Occupancy</span>
+                                            <strong>85%</strong>
+                                        </div>
+                                        <div class="metric">
+                                            <span>Nightly Rate</span>
+                                            <strong>$420</strong>
+                                        </div>
+                                        <div class="metric">
+                                            <span>Next Booking</span>
+                                            <strong>In 3 Days</strong>
+                                        </div>
+                                    </div>
+
+                                    <div class="property-actions">
+                                        <a href="404page.html"  class="btn-outline-small w-100"><i class="fa-solid fa-pen"></i> Edit
+                                            Listing</a>
+                                        <a href="404page.html"  class="btn-outline-small w-100"><i
+                                                class="fa-solid fa-calendar-days"></i> Calendar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Property Card 3 (Maintenance/Paused) -->
+                            <div class="glass-panel property-card">
+                                <div class="property-img-wrapper">
+                                    <img src="./assets/dash3.webp" alt="Paris Penthouse" class="property-img"
+                                        style="filter: grayscale(40%);">
+                                    <span class="status-badge paused-badge"><i class="fa-solid fa-pause"></i>
+                                        Maintenance</span>
+                                </div>
+
+                                <div class="property-details">
+                                    <div class="property-title-row">
+                                        <h4>Le Marais Penthouse</h4>
+                                        <span class="property-rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                                    </div>
+                                    <p class="property-location"><i class="fa-solid fa-location-dot"></i> Paris, France
+                                    </p>
+
+                                    <div class="property-metrics">
+                                        <div class="metric">
+                                            <span>Occupancy</span>
+                                            <strong>--</strong>
+                                        </div>
+                                        <div class="metric">
+                                            <span>Nightly Rate</span>
+                                            <strong>$650</strong>
+                                        </div>
+                                        <div class="metric">
+                                            <span>Next Booking</span>
+                                            <strong>Paused</strong>
+                                        </div>
+                                    </div>
+
+                                    <div class="property-actions">
+                                        <a href="404page.html"  class="btn-outline-small w-100"><i class="fa-solid fa-pen"></i> Edit
+                                            Listing</a>
+                                        <a href="404page.html"  class="btn-solid-accent-small w-100"><i class="fa-solid fa-play"></i>
+                                            Reactivate</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: BOOKINGS -->
+                <div class="tab-pane" id="bookings">
+                    <div class="bookings-container">
+
+                        <!-- Header & Filters -->
+                        <div class="section-header-flex">
+                            <div>
+                                <h3 class="pane-section-title">Reservation Management</h3>
+                                <p class="section-subtitle">Approve requests, manage schedules, and message guests.</p>
+                            </div>
+
+                            <!-- Booking Filters -->
+                            <div class="booking-filters">
+                                <a href="404page.html"  class="filter-btn active">All</a>
+                                <a href="404page.html"  class="filter-btn">Pending</a>
+                                <a href="404page.html"  class="filter-btn">Upcoming</a>
+                                <a href="404page.html"  class="filter-btn">Completed</a>
+                            </div>
+                        </div>
+
+                        <div class="bookings-split-grid">
+
+                            <!-- LEFT COLUMN: Main Booking List -->
+                            <div class="main-bookings-list">
+
+                                <!-- Pending Booking Request -->
+                                <div class="glass-panel booking-card pending-request">
+                                    <div class="booking-card-header">
+                                        <span class="status-badge warning-badge"><i class="fa-regular fa-clock"></i>
+                                            Action Required</span>
+                                        <span class="booking-id">#RES-8892A</span>
+                                    </div>
+
+                                    <div class="booking-card-body">
+                                        <div class="guest-info-large">
+                                            <img src="./assets/review1.webp" alt="Emma" class="guest-avatar-large">
+                                            <div>
+                                                <h4>Emma Roberts</h4>
+                                                <p><i class="fa-solid fa-star" style="color: #f1c40f;"></i> 4.9 (12
+                                                    Trips)</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-details-grid">
+                                            <div class="detail-col">
+                                                <span>Property</span>
+                                                <strong>Le Marais Penthouse</strong>
+                                            </div>
+                                            <div class="detail-col">
+                                                <span>Dates</span>
+                                                <strong>Nov 12 - Nov 16, 2026</strong>
+                                            </div>
+                                            <div class="detail-col">
+                                                <span>Guests</span>
+                                                <strong>2 Adults</strong>
+                                            </div>
+                                            <div class="detail-col">
+                                                <span>Payout</span>
+                                                <strong class="payout-text">$2,600</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="booking-card-actions">
+                                        <a href="404page.html"  class="btn-solid-accent"><i class="fa-solid fa-check"></i>
+                                            Approve</a>
+                                        <a href="404page.html"  class="btn-outline"><i class="fa-solid fa-xmark"></i> Decline</a>
+                                        <a href="404page.html"  class="btn-outline-small ml-auto"><i class="fa-regular fa-message"></i>
+                                            Message</a>
+                                    </div>
+                                </div>
+
+                                <!-- Confirmed Upcoming Booking -->
+                                <div class="glass-panel booking-card">
+                                    <div class="booking-card-header">
+                                        <span class="status-badge success-badge"><i
+                                                class="fa-solid fa-circle-check"></i> Confirmed</span>
+                                        <span class="booking-id">#RES-7741B</span>
+                                    </div>
+
+                                    <div class="booking-card-body">
+                                        <div class="guest-info-large">
+                                            <img src="./assets/review2.webp" alt="Sarah" class="guest-avatar-large">
+                                            <div>
+                                                <h4>Sarah Jenkins</h4>
+                                                <p>Checking in tomorrow</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-details-grid">
+                                            <div class="detail-col">
+                                                <span>Property</span>
+                                                <strong>Villa Treville</strong>
+                                            </div>
+                                            <div class="detail-col">
+                                                <span>Dates</span>
+                                                <strong>Oct 12 - Oct 18, 2026</strong>
+                                            </div>
+                                            <div class="detail-col">
+                                                <span>Guests</span>
+                                                <strong>4 Adults, 1 Child</strong>
+                                            </div>
+                                            <div class="detail-col">
+                                                <span>Payout</span>
+                                                <strong>$5,100</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="booking-card-actions">
+                                        <a href="404page.html"  class="btn-outline"><i class="fa-regular fa-file-lines"></i> View
+                                            Details</a>
+                                        <a href="404page.html"  class="btn-outline-small ml-auto"><i class="fa-regular fa-message"></i>
+                                            Message</a>
+                                    </div>
+                                </div>
+
+                                <!-- Confirmed Upcoming Booking 2 -->
+                                <div class="glass-panel booking-card">
+                                    <div class="booking-card-header">
+                                        <span class="status-badge success-badge"><i
+                                                class="fa-solid fa-circle-check"></i> Confirmed</span>
+                                        <span class="booking-id">#RES-6522C</span>
+                                    </div>
+
+                                    <div class="booking-card-body">
+                                        <div class="guest-info-large">
+                                            <img src="./assets/review3.webp" alt="Michael" class="guest-avatar-large">
+                                            <div>
+                                                <h4>Michael Chang</h4>
+                                                <p>Upcoming next week</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="booking-details-grid">
+                                            <div class="detail-col">
+                                                <span>Property</span>
+                                                <strong>Kyoto Zen Retreat</strong>
+                                            </div>
+                                            <div class="detail-col">
+                                                <span>Dates</span>
+                                                <strong>Oct 22 - Oct 29, 2026</strong>
+                                            </div>
+                                            <div class="detail-col">
+                                                <span>Guests</span>
+                                                <strong>2 Adults</strong>
+                                            </div>
+                                            <div class="detail-col">
+                                                <span>Payout</span>
+                                                <strong>$2,940</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="booking-card-actions">
+                                        <a href="404page.html"  class="btn-outline"><i class="fa-regular fa-file-lines"></i> View
+                                            Details</a>
+                                        <a href="404page.html"  class="btn-outline-small ml-auto"><i class="fa-regular fa-message"></i>
+                                            Message</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- RIGHT COLUMN: Widgets -->
+                            <div class="booking-widgets-col">
+
+                                <!-- Mini Calendar Widget -->
+                                <div class="glass-panel widget-card">
+                                    <div class="widget-header">
+                                        <h4>Availability Sync</h4>
+                                        <i class="fa-solid fa-rotate"></i>
+                                    </div>
+                                    <p class="widget-desc">Your calendars across Stackly, Airbnb, and Vrbo were
+                                        successfully synced 12 minutes ago.</p>
+                                    <a href="404page.html"  class="btn-outline-small w-100 mt-2">Manage Calendars</a>
+                                </div>
+
+                                <!-- Guest Messages Inbox -->
+                                <div class="glass-panel widget-card messages-widget">
+                                    <div class="widget-header">
+                                        <h4>Recent Messages</h4>
+                                        <a href="404page.html" class="view-all-link">Inbox</a>
+                                    </div>
+
+                                    <div class="message-list">
+
+                                        <div class="message-item unread">
+                                            <img src="./assets/team1.webp" alt="Sarah" class="msg-avatar">
+                                            <div class="msg-content">
+                                                <h5>Sarah Jenkins</h5>
+                                                <p>Hi Marcus! We are landing around 2 PM. Is early check-in possible?
+                                                </p>
+                                                <span class="msg-time">10 min ago</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="message-item">
+                                            <img src="./assets/team2.webp" alt="Emma" class="msg-avatar">
+                                            <div class="msg-content">
+                                                <h5>Emma Roberts</h5>
+                                                <p>Thank you for approving the request! Looking forward to it.</p>
+                                                <span class="msg-time">Yesterday</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <a href="404page.html"  class="btn-solid-accent-small w-100 mt-2">View All Messages</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- TAB 4: EARNINGS -->
+                <div class="tab-pane" id="earnings">
+                    <div class="earnings-container">
+
+                        <!-- Header & Export -->
+                        <div class="section-header-flex">
+                            <div>
+                                <h3 class="pane-section-title">Financial Reports</h3>
+                                <p class="section-subtitle">Track your revenue, payouts, and download statements.</p>
+                            </div>
+                            <a href="404page.html"  class="btn-outline"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
+                        </div>
+
+                        <!-- SECTION 1: Financial Overview (Stats) -->
+                        <div class="stats-grid">
+                            <div class="stat-card glass-panel">
+                                <div class="stat-icon" style="color: #2ecc71; background: rgba(46, 204, 113, 0.1);"><i
+                                        class="fa-solid fa-money-bill-trend-up"></i></div>
+                                <div class="stat-details">
+                                    <h3>Net Earnings (YTD)</h3>
+                                    <h2>$84,250</h2>
+                                    <p class="stat-trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +12% YoY
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="stat-card glass-panel">
+                                <div class="stat-icon" style="color: #f1c40f; background: rgba(241, 196, 15, 0.1);"><i
+                                        class="fa-solid fa-building-columns"></i></div>
+                                <div class="stat-details">
+                                    <h3>Next Payout</h3>
+                                    <h2>$4,100</h2>
+                                    <p class="stat-sub">Processing: Oct 15, 2026</p>
+                                </div>
+                            </div>
+                            <div class="stat-card glass-panel">
+                                <div class="stat-icon" style="color: #e74c3c; background: rgba(231, 76, 60, 0.1);"><i
+                                        class="fa-solid fa-receipt"></i></div>
+                                <div class="stat-details">
+                                    <h3>Platform Fees (YTD)</h3>
+                                    <h2>$2,527</h2>
+                                    <p class="stat-sub">3% standard hosting fee</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Layout Split for Details -->
+                        <div class="earnings-split-grid">
+
+                            <!-- SECTION 2: Payout History -->
+                            <div class="earnings-section main-payouts">
+                                <h3 class="pane-section-title">Payout History</h3>
+                                <div class="glass-panel payouts-list">
+
+                                    <div class="payout-row header-row">
+                                        <span>Date</span>
+                                        <span>Description</span>
+                                        <span>Amount</span>
+                                        <span>Status</span>
+                                    </div>
+
+                                    <div class="payout-row">
+                                        <span class="payout-date">Oct 01, 2026</span>
+                                        <div class="payout-desc">
+                                            <strong>Bank Transfer</strong>
+                                            <p>Ending in •••• 4598</p>
+                                        </div>
+                                        <span class="payout-amount positive">+$2,940.00</span>
+                                        <span class="status-badge success-badge">Paid</span>
+                                    </div>
+
+                                    <div class="payout-row">
+                                        <span class="payout-date">Sep 15, 2026</span>
+                                        <div class="payout-desc">
+                                            <strong>Bank Transfer</strong>
+                                            <p>Ending in •••• 4598</p>
+                                        </div>
+                                        <span class="payout-amount positive">+$5,100.00</span>
+                                        <span class="status-badge success-badge">Paid</span>
+                                    </div>
+
+                                    <div class="payout-row">
+                                        <span class="payout-date">Sep 01, 2026</span>
+                                        <div class="payout-desc">
+                                            <strong>Bank Transfer</strong>
+                                            <p>Ending in •••• 4598</p>
+                                        </div>
+                                        <span class="payout-amount positive">+$3,250.00</span>
+                                        <span class="status-badge success-badge">Paid</span>
+                                    </div>
+
+                                    <div class="payout-row">
+                                        <span class="payout-date">Aug 15, 2026</span>
+                                        <div class="payout-desc">
+                                            <strong>Bank Transfer</strong>
+                                            <p>Ending in •••• 4598</p>
+                                        </div>
+                                        <span class="payout-amount positive">+$4,800.00</span>
+                                        <span class="status-badge success-badge">Paid</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- RIGHT COLUMN: Widgets -->
+                            <div class="earnings-widgets-col">
+
+                                <!-- SECTION 3: Earnings by Property -->
+                                <div class="earnings-section">
+                                    <h3 class="pane-section-title">Earnings by Property</h3>
+                                    <div class="glass-panel property-breakdown-widget">
+
+                                        <div class="breakdown-item">
+                                            <div class="breakdown-header">
+                                                <span>Villa Treville</span>
+                                                <strong>$45,100</strong>
+                                            </div>
+                                            <div class="progress-bar-bg">
+                                                <div class="progress-bar-fill" style="width: 53%;"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="breakdown-item">
+                                            <div class="breakdown-header">
+                                                <span>Le Marais Penthouse</span>
+                                                <strong>$22,400</strong>
+                                            </div>
+                                            <div class="progress-bar-bg">
+                                                <div class="progress-bar-fill" style="width: 26%;"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="breakdown-item">
+                                            <div class="breakdown-header">
+                                                <span>Kyoto Zen Retreat</span>
+                                                <strong>$16,750</strong>
+                                            </div>
+                                            <div class="progress-bar-bg">
+                                                <div class="progress-bar-fill" style="width: 21%;"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- SECTION 4: Tax Documents -->
+                                <div class="earnings-section">
+                                    <h3 class="pane-section-title">Tax Documents</h3>
+                                    <div class="glass-panel tax-docs-widget">
+
+                                        <div class="doc-item">
+                                            <div class="doc-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                                            <div class="doc-info">
+                                                <h4>2025 Annual Summary</h4>
+                                                <p>Form 1099-K Available</p>
+                                            </div>
+                                            <a href="404page.html"  class="btn-icon"><i class="fa-solid fa-download"></i></a>
+                                        </div>
+
+                                        <div class="doc-item">
+                                            <div class="doc-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                                            <div class="doc-info">
+                                                <h4>2024 Annual Summary</h4>
+                                                <p>Form 1099-K Available</p>
+                                            </div>
+                                            <a href="404page.html"  class="btn-icon"><i class="fa-solid fa-download"></i></a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- TAB 5: SETTINGS -->
+                <div class="tab-pane" id="settings">
+                    <div class="settings-container">
+
+                        <!-- SECTION 1: Host Profile -->
+                        <div class="settings-section">
+                            <h3 class="pane-section-title">Host Profile</h3>
+                            <div class="glass-panel settings-panel">
+
+                                <div class="profile-edit-header">
+                                    <div class="avatar-upload-wrapper">
+                                        <img src="./assets/team3.webp" alt="Marcus" class="settings-avatar">
+                                        <a href="404page.html"  class="avatar-upload-btn"><i class="fa-solid fa-camera"></i></a>
+                                    </div>
+                                    <div class="avatar-text">
+                                        <div
+                                            style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.2rem;">
+                                            <h4>Marcus H.</h4>
+                                            <span class="status-badge live-badge"
+                                                style="font-size: 0.65rem; padding: 0.2rem 0.6rem;"><i
+                                                    class="fa-solid fa-medal"></i> Superhost</span>
+                                        </div>
+                                        <p>Member since 2022 • Identity Verified</p>
+                                    </div>
+                                </div>
+
+                                <form class="settings-form">
+                                    <div class="form-row">
+                                        <div class="input-group">
+                                            <label><i class="fa-regular fa-user"></i> FIRST NAME</label>
+                                            <input type="text" value="Marcus">
+                                        </div>
+                                        <div class="input-group">
+                                            <label><i class="fa-regular fa-user"></i> LAST NAME</label>
+                                            <input type="text" value="Halberstram">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="input-group">
+                                            <label><i class="fa-regular fa-envelope"></i> CONTACT EMAIL</label>
+                                            <input type="email" value="marcus.h@stackly.com">
+                                        </div>
+                                        <div class="input-group">
+                                            <label><i class="fa-solid fa-phone"></i> EMERGENCY PHONE</label>
+                                            <input type="tel" value="+1 (555) 987-6543">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group" style="margin-top: 1rem;">
+                                        <label><i class="fa-regular fa-address-card"></i> PUBLIC HOST BIO</label>
+                                        <textarea rows="3"
+                                            style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1rem; padding: 1rem; color: #fff; font-family: inherit; resize: none; outline: none; width: 100%;">Passionate hospitality professional dedicated to curating unforgettable experiences in luxury properties across the globe.</textarea>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <a href="404page.html"  type="button" class="btn-solid-accent">Save Profile</a>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                        <!-- SECTION 2 & 3 SPLIT -->
+                        <div class="bottom-split-grid">
+
+                            <!-- SECTION 2: Payout Methods -->
+                            <div class="settings-section">
+                                <div class="section-header-flex">
+                                    <h3 class="pane-section-title">Payout Methods</h3>
+                                    <a href="404page.html"  class="btn-outline-small"><i class="fa-solid fa-plus"></i> Add
+                                        Account</a>
+                                </div>
+
+                                <div class="glass-panel settings-panel flex-panel">
+
+                                    <!-- Default Bank Account -->
+                                    <div class="payout-method-card active-method">
+                                        <div class="method-icon"><i class="fa-solid fa-building-columns"></i></div>
+                                        <div class="method-details">
+                                            <div
+                                                style="display: flex; justify-content: space-between; align-items: center;">
+                                                <h4>Chase Checking</h4>
+                                                <span class="default-badge"
+                                                    style="background: rgba(91,192,190,0.2); color: #5bc0be;">Default</span>
+                                            </div>
+                                            <p>Routing ending in •••• 1234</p>
+                                            <p>Account ending in •••• 4598</p>
+                                        </div>
+                                        <a href="404page.html"  class="btn-icon method-options"><i
+                                                class="fa-solid fa-ellipsis-vertical"></i></a>
+                                    </div>
+
+                                    <!-- Secondary Payout -->
+                                    <div class="payout-method-card">
+                                        <div class="method-icon"
+                                            style="background: rgba(255,255,255,0.05); color: #fff;"><i
+                                                class="fa-brands fa-paypal"></i></div>
+                                        <div class="method-details">
+                                            <h4>PayPal Account</h4>
+                                            <p>marcus.payouts@email.com</p>
+                                            <p class="verification-status"><i class="fa-solid fa-circle-check"
+                                                    style="color: #2ecc71;"></i> Verified</p>
+                                        </div>
+                                        <a href="404page.html"  class="btn-icon method-options"><i
+                                                class="fa-solid fa-ellipsis-vertical"></i></a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- SECTION 3: Hosting Preferences & Security -->
+                            <div class="settings-section">
+                                <h3 class="pane-section-title">Hosting Preferences</h3>
+                                <div class="glass-panel settings-panel flex-panel">
+
+                                    <div class="settings-subsection">
+                                        <div class="toggle-row">
+                                            <div class="toggle-info">
+                                                <h5>Instant Book</h5>
+                                                <p>Guests who meet requirements can book without approval.</p>
+                                            </div>
+                                            <label class="toggle-switch">
+                                                <input type="checkbox">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+
+                                        <div class="toggle-row">
+                                            <div class="toggle-info">
+                                                <h5>Smart Pricing Sync</h5>
+                                                <p>Automatically adjust rates based on local demand.</p>
+                                            </div>
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group" style="margin-top: -1rem; margin-bottom: 2rem;">
+                                        <label><i class="fa-solid fa-file-contract"></i> DEFAULT CANCELLATION
+                                            POLICY</label>
+                                        <div class="select-wrapper">
+                                            <select>
+                                                <option value="flexible">Flexible (Full refund 1 day prior)</option>
+                                                <option value="moderate">Moderate (Full refund 5 days prior)</option>
+                                                <option value="strict" selected>Strict (Full refund 14 days prior)
+                                                </option>
+                                            </select>
+                                            <i class="fa-solid fa-chevron-down select-icon"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="settings-subsection security-section">
+                                        <h4>Security</h4>
+                                        <a href="404page.html"  class="btn-outline w-100" style="margin-bottom: 1rem;"><i
+                                                class="fa-solid fa-lock"></i> Change Password</a>
+                                        <a href="404page.html"  class="btn-outline w-100"><i class="fa-solid fa-shield-halved"></i>
+                                            Two-Factor Authentication</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userMail = localStorage.getItem("userMail");
+            const userName = localStorage.getItem("UserName");
+
+            if (userMail) {
+                document.getElementById('useremail').textContent = userMail;
+                document.getElementById('username').textContent = userName;
+                document.getElementById('useremail1').textContent = userMail;
+                document.getElementById('username1').textContent = userName;
+            }
+            // --- 1. GSAP Entrance Animations ---
+            const dashTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+            dashTl.from(".sidebar", { x: -50, opacity: 0, duration: 0.8 })
+
+            // --- 2. Mobile Sidebar Toggle ---
+            const sidebar = document.querySelector('.sidebar');
+            const toggleBtn = document.querySelector('.mobile-sidebar-toggle');
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    sidebar.classList.toggle('is-open');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+                        sidebar.classList.remove('is-open');
+                    }
+                });
+            }
+
+            // --- 3. Sidebar Tab Switching Logic (Host Specific) ---
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav .nav-item');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            const dynamicGreeting = document.getElementById('dynamic-greeting');
+            const dynamicSubtitle = document.getElementById('dynamic-subtitle');
+
+            const tabHeaders = {
+                'overview': { title: 'Welcome back, Marcus', subtitle: 'Here is what is happening with your properties today.' },
+                'properties': { title: 'My Properties', subtitle: 'Manage listings, pricing, and availability.' },
+                'bookings': { title: 'Reservations', subtitle: 'Review guest requests and upcoming stays.' },
+                'earnings': { title: 'Financial Overview', subtitle: 'Track your revenue, payouts, and taxes.' },
+                'settings': { title: 'Host Settings', subtitle: 'Manage your host profile and account preferences.' }
+            };
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    sidebarLinks.forEach(item => item.classList.remove('active'));
+                    link.classList.add('active');
+
+                    const targetId = link.getAttribute('data-tab');
+
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                    const targetPane = document.getElementById(targetId);
+                    if (targetPane) {
+                        targetPane.classList.add('active');
+                    }
+
+                    gsap.to([dynamicGreeting, dynamicSubtitle], {
+                        opacity: 0,
+                        y: -10,
+                        duration: 0.2,
+                        onComplete: () => {
+                            dynamicGreeting.textContent = tabHeaders[targetId].title;
+                            dynamicSubtitle.textContent = tabHeaders[targetId].subtitle;
+                            gsap.to([dynamicGreeting, dynamicSubtitle], { opacity: 1, y: 0, duration: 0.3 });
+                        }
+                    });
+
+                    if (window.innerWidth <= 900 && sidebar.classList.contains('is-open')) {
+                        sidebar.classList.remove('is-open');
+                    }
+                });
+            });
+
+            // --- 4. Chart.js Initialization (Host Revenue Chart) ---
+            const ctx = document.getElementById('revenueChart');
+
+            if (ctx) {
+                // Create a custom gradient for the revenue chart
+                const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 300);
+                gradient.addColorStop(0, 'rgba(91, 192, 190, 0.5)');
+                gradient.addColorStop(1, 'rgba(91, 192, 190, 0.0)');
+
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                        datasets: [{
+                            label: 'Gross Revenue ($)',
+                            data: [8400, 9200, 11500, 14200, 11800, 12450],
+                            borderColor: '#5bc0be',
+                            backgroundColor: gradient,
+                            borderWidth: 3,
+                            pointBackgroundColor: '#0b0f17',
+                            pointBorderColor: '#5bc0be',
+                            pointBorderWidth: 2,
+                            pointRadius: 5,
+                            pointHoverRadius: 7,
+                            fill: true,
+                            tension: 0.3 // Smooth curves
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                backgroundColor: 'rgba(11, 15, 23, 0.95)',
+                                titleColor: '#fff',
+                                bodyColor: 'rgba(255,255,255,0.8)',
+                                borderColor: 'rgba(255,255,255,0.1)',
+                                borderWidth: 1,
+                                padding: 12,
+                                displayColors: false,
+                                callbacks: {
+                                    label: function (context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) { label += ': '; }
+                                        if (context.parsed.y !== null) {
+                                            label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                grid: { display: false, drawBorder: false },
+                                ticks: { color: 'rgba(255, 255, 255, 0.5)' }
+                            },
+                            y: {
+                                grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
+                                ticks: {
+                                    color: 'rgba(255, 255, 255, 0.5)',
+                                    callback: function (value) {
+                                        return '$' + value / 1000 + 'k'; // Formats as $10k
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

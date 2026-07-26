@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveler Dashboard | Stackly</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-logo">
+                    <img src="./assets/Stackly-logo-Blue.webp" alt="LOGO" loading="lazy">
+                </a>
+                <div class="dashboard-name">
+                    <h3>Traveller Dashboard</h3>
+                </div>
+            </div>
+
+            <!-- Updated Sidebar Nav -->
+            <nav class="sidebar-nav">
+                <a href="404page.html" class="nav-item active" data-tab="overview"><i
+                        class="fa-solid fa-border-all"></i>
+                    Overview</a>
+                <a href="404page.html" class="nav-item" data-tab="trips"><i class="fa-solid fa-plane-departure"></i> My
+                    Trips</a>
+                <a href="404page.html" class="nav-item" data-tab="saved"><i class="fa-regular fa-heart"></i> Saved
+                    Stays</a>
+                <a href="404page.html" class="nav-item" data-tab="payments"><i class="fa-solid fa-wallet"></i>
+                    Payments</a>
+                <a href="404page.html" class="nav-item" data-tab="settings"><i class="fa-solid fa-gear"></i>
+                    Settings</a>
+            </nav>
+
+            <div class="sidebar-profile">
+                <div class="profile-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <span class="profile-role" id="username">Traveler</span>
+                    <span class="profile-email" id="useremail">elena.voss@stackly.com</span>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="login.html" class="nav-item logout-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    Logout</a>
+            </div>
+        </aside>
+
+        <!-- Updated Main Content Area -->
+        <main class="dashboard-main">
+
+            <!-- Dashboard Header (Remains visible across all tabs) -->
+            <header class="dashboard-header">
+                <div class="header-greeting">
+                    <h1 id="dynamic-greeting">Welcome back, Elena</h1>
+                    <p id="dynamic-subtitle">Ready for your next extraordinary journey?</p>
+                </div>
+                <div class="header-profile">
+                    <div class="profile-info">
+                        <span class="profile-role" id="username1">Traveler</span>
+                        <span class="profile-email" id="useremail1">elena.voss@stackly.com</span>
+                    </div>
+                    <div class="profile-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+
+                <button class="mobile-sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
+            </header>
+
+            <!-- Tab Container -->
+            <div class="tab-content-container">
+
+                <!-- TAB 1: OVERVIEW (Your existing dashboard content goes here) -->
+                <div class="tab-pane active" id="overview">
+                    <div class="dashboard-content">
+
+                        <!-- Stats Row -->
+                        <div class="stats-grid">
+                            <div class="stat-card glass-panel">
+                                <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                                <div class="stat-details">
+                                    <h3>Total Trips</h3>
+                                    <h2>24</h2>
+                                </div>
+                            </div>
+                            <div class="stat-card glass-panel">
+                                <div class="stat-icon"><i class="fa-solid fa-passport"></i></div>
+                                <div class="stat-details">
+                                    <h3>Countries</h3>
+                                    <h2>12</h2>
+                                </div>
+                            </div>
+                            <div class="stat-card glass-panel">
+                                <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
+                                <div class="stat-details">
+                                    <h3>Reward Points</h3>
+                                    <h2>8,450</h2>
+                                </div>
+                            </div>
+                            <div class="stat-card glass-panel highlight-card">
+                                <div class="stat-icon"><i class="fa-solid fa-plane"></i></div>
+                                <div class="stat-details">
+                                    <h3>Next Flight</h3>
+                                    <h2>Paris (CDG)</h2>
+                                    <p>In 14 days</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Charts & Recent Activity Split -->
+                        <div class="bento-split">
+
+                            <!-- Chart Panel -->
+                            <div class="chart-panel glass-panel">
+                                <div class="panel-header">
+                                    <h3>Travel Activity</h3>
+                                    <select class="chart-filter">
+                                        <option>This Year</option>
+                                        <option>Last Year</option>
+                                    </select>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="travelChart"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Recent Activity Panel -->
+                            <div class="activity-panel glass-panel">
+                                <div class="panel-header">
+                                    <h3>Recent Bookings</h3>
+                                    <a href="404page.html" class="view-all">View all</a>
+                                </div>
+                                <div class="activity-list">
+
+                                    <div class="activity-item">
+                                        <img src="./assets/dash3.webp" alt="Paris" class="activity-img">
+                                        <div class="activity-info">
+                                            <h4>Le Bristol Paris</h4>
+                                            <p>Oct 12 - Oct 18</p>
+                                        </div>
+                                        <span class="activity-status upcoming">Upcoming</span>
+                                    </div>
+
+                                    <div class="activity-item">
+                                        <img src="./assets/destination1.webp" alt="Bali" class="activity-img">
+                                        <div class="activity-info">
+                                            <h4>Amandari Bali</h4>
+                                            <p>Aug 05 - Aug 12</p>
+                                        </div>
+                                        <span class="activity-status completed">Completed</span>
+                                    </div>
+
+                                    <div class="activity-item">
+                                        <img src="./assets/dd1.webp" alt="Italy" class="activity-img">
+                                        <div class="activity-info">
+                                            <h4>Villa Treville</h4>
+                                            <p>May 20 - May 25</p>
+                                        </div>
+                                        <span class="activity-status completed">Completed</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NEW CONTENT: Curated Recommendations Row -->
+                        <div class="recommendations-section">
+                            <div class="panel-header">
+                                <h3>Curated for Elena</h3>
+                                <a href="404page.html" class="view-all">Explore all</a>
+                            </div>
+
+                            <div class="recommendations-grid">
+
+                                <!-- Rec Card 1 -->
+                                <a href="404page.html" class="rec-card">
+                                    <div class="rec-bg" style="background-image: url('./assets/DESH1.webp');">
+                                    </div>
+                                    <div class="rec-overlay"></div>
+                                    <div class="rec-content">
+                                        <span class="rec-badge"><i class="fa-solid fa-fire"></i> Trending</span>
+                                        <div class="rec-bottom">
+                                            <h4>The Maldives</h4>
+                                            <p>Private Overwater Villas</p>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <!-- Rec Card 2 -->
+                                <a href="404page.html" class="rec-card">
+                                    <div class="rec-bg" style="background-image: url('./assets/dash2.webp');">
+                                    </div>
+                                    <div class="rec-overlay"></div>
+                                    <div class="rec-content">
+                                        <span class="rec-badge"><i class="fa-solid fa-leaf"></i> Wellness</span>
+                                        <div class="rec-bottom">
+                                            <h4>Dubai, UAE</h4>
+                                            <p>Desert Spa Retreat</p>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <!-- Rec Card 3 -->
+                                <a href="404page.html" class="rec-card">
+                                    <div class="rec-bg" style="background-image: url('./assets/dash3.webp');">
+                                    </div>
+                                    <div class="rec-overlay"></div>
+                                    <div class="rec-content">
+                                        <span class="rec-badge"><i class="fa-solid fa-city"></i> Culture</span>
+                                        <div class="rec-bottom">
+                                            <h4>Venice, Italy</h4>
+                                            <p>Historic Canal Suites</p>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- TAB 2: MY TRIPS -->
+                <div class="tab-pane" id="trips">
+                    <div class="trips-container">
+
+                        <!-- SECTION 1: Upcoming Journey (Hero Card) -->
+                        <div class="trips-section">
+                            <div class="section-header-flex">
+                                <h3 class="pane-section-title">Upcoming Journey</h3>
+                                <span class="status-badge live-badge">Departure in 14 days</span>
+                            </div>
+
+                            <div class="glass-panel upcoming-hero-card">
+                                <div class="hero-card-left" style="background-image: url('./assets/dash4.webp');">
+                                    <div class="overlay-gradient"></div>
+                                    <div class="hero-destination">
+                                        <h2>Paris, France</h2>
+                                        <p>Oct 12, 2026 - Oct 18, 2026</p>
+                                    </div>
+                                </div>
+
+                                <div class="hero-card-right">
+                                    <div class="itinerary-quick-glance">
+                                        <div class="glance-item">
+                                            <div class="glance-icon"><i class="fa-solid fa-plane-up"></i></div>
+                                            <div class="glance-info">
+                                                <h4>Flight AF023</h4>
+                                                <p>JFK 08:30 PM &rarr; CDG 09:45 AM</p>
+                                            </div>
+                                        </div>
+                                        <div class="glance-item">
+                                            <div class="glance-icon"><i class="fa-solid fa-bed"></i></div>
+                                            <div class="glance-info">
+                                                <h4>Le Bristol Paris</h4>
+                                                <p>Check-in: Oct 13, 03:00 PM</p>
+                                            </div>
+                                        </div>
+                                        <div class="glance-item">
+                                            <div class="glance-icon"><i class="fa-solid fa-car-side"></i></div>
+                                            <div class="glance-info">
+                                                <h4>Private Transfer</h4>
+                                                <p>Awaiting at CDG Terminal 2E</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-actions">
+                                        <a href="404page.html"  class="btn-solid-accent">View Full Itinerary</a>
+                                        <a href="404page.html"  class="btn-outline">Modify</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 2: Past Itineraries (Grid) -->
+                        <div class="trips-section">
+                            <div class="section-header-flex">
+                                <h3 class="pane-section-title">Past Itineraries</h3>
+                                <a href="404page.html" class="view-all-link">View all history</a>
+                            </div>
+
+                            <div class="past-trips-grid">
+                                <!-- Past Trip 1 -->
+                                <div class="glass-panel past-trip-card">
+                                    <img src="./assets/destination1.webp" alt="Bali" class="past-trip-img">
+                                    <div class="past-trip-info">
+                                        <h4>Amandari Bali</h4>
+                                        <p>Aug 05 - Aug 12, 2026</p>
+                                        <span class="trip-rating"><i class="fa-solid fa-star"></i> 5.0</span>
+                                    </div>
+                                </div>
+
+                                <!-- Past Trip 2 -->
+                                <div class="glass-panel past-trip-card">
+                                    <img src="./assets/dd1.webp" alt="Italy" class="past-trip-img">
+                                    <div class="past-trip-info">
+                                        <h4>Villa Treville, Amalfi</h4>
+                                        <p>May 20 - May 25, 2026</p>
+                                        <span class="trip-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                                    </div>
+                                </div>
+
+                                <!-- Past Trip 3 -->
+                                <div class="glass-panel past-trip-card">
+                                    <img src="./assets/stor3.webp" alt="Japan" class="past-trip-img">
+                                    <div class="past-trip-info">
+                                        <h4>Aman Kyoto</h4>
+                                        <p>Apr 02 - Apr 09, 2026</p>
+                                        <span class="trip-rating"><i class="fa-solid fa-star"></i> 5.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 3 & 4 SPLIT: Drafts & Travel Wallet -->
+                        <div class="bottom-split-grid">
+
+                            <!-- SECTION 3: Planning & Drafts -->
+                            <div class="trips-section">
+                                <h3 class="pane-section-title">In-Progress Plans</h3>
+                                <div class="glass-panel drafts-container">
+
+                                    <div class="draft-item">
+                                        <div class="draft-icon"><i class="fa-solid fa-compass"></i></div>
+                                        <div class="draft-info">
+                                            <h4>Swiss Alps Ski Trip</h4>
+                                            <p>Awaiting flight confirmation</p>
+                                        </div>
+                                        <a href="404page.html"  class="btn-icon"><i class="fa-solid fa-chevron-right"></i></a>
+                                    </div>
+
+                                    <div class="draft-item">
+                                        <div class="draft-icon"><i class="fa-solid fa-map"></i></div>
+                                        <div class="draft-info">
+                                            <h4>Tokyo Cherry Blossoms</h4>
+                                            <p>Draft created • Missing hotels</p>
+                                        </div>
+                                        <a href="404page.html"  class="btn-icon"><i class="fa-solid fa-chevron-right"></i></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="trips-section">
+                                <h3 class="pane-section-title">Travel Wallet</h3>
+                                <div class="wallet-grid">
+
+                                    <div class="glass-panel wallet-card">
+                                        <i class="fa-solid fa-passport wallet-icon"></i>
+                                        <div class="wallet-info">
+                                            <h4>US Passport</h4>
+                                            <p>Exp. 2030</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="glass-panel wallet-card">
+                                        <i class="fa-solid fa-file-shield wallet-icon"></i>
+                                        <div class="wallet-info">
+                                            <h4>Schengen Visa</h4>
+                                            <p>Multi-entry</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- TAB 3: SAVED STAYS -->
+                <div class="tab-pane" id="saved">
+                    <div class="saved-container">
+
+                        <!-- SECTION 1: Curated Collections -->
+                        <div class="saved-section">
+                            <div class="section-header-flex">
+                                <h3 class="pane-section-title">Your Collections</h3>
+                                <a href="404page.html"  class="btn-outline-small"><i class="fa-solid fa-plus"></i> New List</a>
+                            </div>
+
+                            <div class="collections-grid">
+                                <!-- Collection 1 -->
+                                <a href="404page.html" class="collection-card">
+                                    <div class="collection-bg" style="background-image: url('./assets/dash5.webp');">
+                                    </div>
+                                    <div class="collection-overlay"></div>
+                                    <div class="collection-info">
+                                        <h4>Winter Escapes</h4>
+                                        <p>8 properties</p>
+                                    </div>
+                                </a>
+
+                                <!-- Collection 2 -->
+                                <a href="404page.html" class="collection-card">
+                                    <div class="collection-bg" style="background-image: url('./assets/dash3.webp');">
+                                    </div>
+                                    <div class="collection-overlay"></div>
+                                    <div class="collection-info">
+                                        <h4>European City Breaks</h4>
+                                        <p>12 properties</p>
+                                    </div>
+                                </a>
+
+                                <!-- Collection 3 -->
+                                <a href="404page.html" class="collection-card">
+                                    <div class="collection-bg" style="background-image: url('./assets/dash6.webp');">
+                                    </div>
+                                    <div class="collection-overlay"></div>
+                                    <div class="collection-info">
+                                        <h4>Coastal Retreats</h4>
+                                        <p>5 properties</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 2: Recently Added Stays -->
+                        <div class="saved-section">
+                            <h3 class="pane-section-title">Recently Added</h3>
+
+                            <div class="recent-stays-grid">
+
+                                <!-- Stay Card 1 -->
+                                <div class="glass-panel stay-card">
+                                    <div class="stay-img-wrapper">
+                                        <img src="./assets/dd2.webp" alt="Resort" class="stay-img">
+                                        <a href="404page.html"  class="heart-btn active"><i class="fa-solid fa-heart"></i></a>
+                                    </div>
+                                    <div class="stay-details">
+                                        <div class="stay-title-row">
+                                            <h4>The St. Regis Bora Bora</h4>
+                                            <span class="stay-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                                        </div>
+                                        <p class="stay-location"><i class="fa-solid fa-location-dot"></i> French
+                                            Polynesia</p>
+                                        <div class="stay-price">
+                                            <strong>$1,250</strong> / night
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Stay Card 2 -->
+                                <div class="glass-panel stay-card">
+                                    <div class="stay-img-wrapper">
+                                        <img src="./assets/dd3.webp" alt="Resort" class="stay-img">
+                                        <a href="404page.html"  class="heart-btn active"><i class="fa-solid fa-heart"></i></a>
+                                    </div>
+                                    <div class="stay-details">
+                                        <div class="stay-title-row">
+                                            <h4>Six Senses Kyoto</h4>
+                                            <span class="stay-rating"><i class="fa-solid fa-star"></i> 5.0</span>
+                                        </div>
+                                        <p class="stay-location"><i class="fa-solid fa-location-dot"></i> Kyoto, Japan
+                                        </p>
+                                        <div class="stay-price">
+                                            <strong>$980</strong> / night
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Stay Card 3 -->
+                                <div class="glass-panel stay-card">
+                                    <div class="stay-img-wrapper">
+                                        <img src="./assets/dd4.webp" alt="Resort" class="stay-img">
+                                        <a href="404page.html"  class="heart-btn active"><i class="fa-solid fa-heart"></i></a>
+                                    </div>
+                                    <div class="stay-details">
+                                        <div class="stay-title-row">
+                                            <h4>Rosewood London</h4>
+                                            <span class="stay-rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                                        </div>
+                                        <p class="stay-location"><i class="fa-solid fa-location-dot"></i> London, UK</p>
+                                        <div class="stay-price">
+                                            <strong>$850</strong> / night
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- SECTION 3 & 4 SPLIT: Offers & Map View -->
+                        <div class="bottom-split-grid">
+
+                            <!-- SECTION 3: Exclusive Member Offers -->
+                            <div class="saved-section">
+                                <h3 class="pane-section-title">Price Drops on Saved</h3>
+                                <div class="glass-panel offers-container">
+
+                                    <div class="offer-item">
+                                        <img src="./assets/dd5.webp" alt="Offer 1" class="offer-img">
+                                        <div class="offer-info">
+                                            <h4>Waldorf Astoria Maldives</h4>
+                                            <div class="price-drop">
+                                                <span class="old-price">$2,100</span>
+                                                <span class="new-price">$1,850</span>
+                                            </div>
+                                        </div>
+                                        <a href="404page.html"  class="btn-solid-accent-small">Book</a>
+                                    </div>
+
+                                    <div class="offer-item">
+                                        <img src="./assets/dash7.webp" alt="Offer 2" class="offer-img">
+                                        <div class="offer-info">
+                                            <h4>1 Hotel Brooklyn Bridge</h4>
+                                            <p class="perk-text"><i class="fa-solid fa-champagne-glasses"></i> Free Room
+                                                Upgrade</p>
+                                        </div>
+                                        <a href="404page.html"  class="btn-solid-accent-small">Book</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- SECTION 4: Interactive Map Widget -->
+                            <div class="saved-section">
+                                <h3 class="pane-section-title">Map View</h3>
+                                <a href="404page.html" class="glass-panel map-widget-card">
+                                    <!-- Note: In production, this bg image would be an actual map integration -->
+                                    <div class="map-bg"
+                                        style="background-image: url('./assets/dash7.webp'); filter: grayscale(100%) invert(100%) brightness(50%) sepia(100%) hue-rotate(140deg) saturate(300%);">
+                                    </div>
+                                    <div class="map-overlay-content">
+                                        <div class="map-pin-pulse">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                        </div>
+                                        <h4>View Saved on Map</h4>
+                                        <p>Explore your favorites geographically.</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- TAB 4: PAYMENTS & BILLING -->
+                <div class="tab-pane" id="payments">
+                    <div class="payments-container">
+
+                        <!-- SECTION 1: Stackly Wallet & Credits -->
+                        <div class="payments-section">
+                            <h3 class="pane-section-title">Your Stackly Wallet</h3>
+                            <div class="glass-panel wallet-hero">
+                                <div class="wallet-balance">
+                                    <p>Available Travel Credit</p>
+                                    <h2>$2,450.00</h2>
+                                    <span class="credit-expiry">Expires Dec 31, 2026</span>
+                                </div>
+                                <div class="wallet-rewards">
+                                    <div class="reward-icon"><i class="fa-solid fa-star"></i></div>
+                                    <div class="reward-info">
+                                        <h4>8,450 Points</h4>
+                                        <p>Stackly Elite Tier</p>
+                                    </div>
+                                </div>
+                                <div class="wallet-actions">
+                                    <a href="404page.html"  class="btn-solid-accent">Redeem Credits</a>
+                                    <a href="404page.html"  class="btn-outline">Add Funds</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 2: Saved Payment Methods -->
+                        <div class="payments-section">
+                            <div class="section-header-flex">
+                                <h3 class="pane-section-title">Payment Methods</h3>
+                                <a href="404page.html"  class="btn-outline-small"><i class="fa-solid fa-plus"></i> Add Card</a>
+                            </div>
+
+                            <div class="cards-grid">
+                                <!-- Card 1: Black Card -->
+                                <div class="credit-card dark-card">
+                                    <div class="card-top">
+                                        <i class="fa-solid fa-microchip chip-icon"></i>
+                                        <i class="fa-brands fa-cc-apple-pay contactless-icon"></i>
+                                    </div>
+                                    <div class="card-number">•••• •••• •••• 4289</div>
+                                    <div class="card-bottom">
+                                        <div class="card-holder">
+                                            <span>Card Holder</span>
+                                            <p>Elena Voss</p>
+                                        </div>
+                                        <div class="card-expires">
+                                            <span>Expires</span>
+                                            <p>08/28</p>
+                                        </div>
+                                        <i class="fa-brands fa-cc-mastercard brand-icon"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Card 2: Platinum Card -->
+                                <div class="credit-card light-card">
+                                    <div class="card-top">
+                                        <i class="fa-solid fa-microchip chip-icon"></i>
+                                        <span class="default-badge">Default</span>
+                                    </div>
+                                    <div class="card-number">•••• •••• •••• 1055</div>
+                                    <div class="card-bottom">
+                                        <div class="card-holder">
+                                            <span>Card Holder</span>
+                                            <p>Elena Voss</p>
+                                        </div>
+                                        <div class="card-expires">
+                                            <span>Expires</span>
+                                            <p>11/27</p>
+                                        </div>
+                                        <i class="fa-brands fa-cc-visa brand-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 3: Recent Transactions -->
+                        <div class="payments-section">
+                            <div class="section-header-flex">
+                                <h3 class="pane-section-title">Billing History</h3>
+                                <a href="404page.html" class="view-all-link">Download Statement</a>
+                            </div>
+
+                            <div class="glass-panel transactions-container">
+
+                                <div class="transaction-item">
+                                    <div class="tx-icon tx-flight"><i class="fa-solid fa-plane"></i></div>
+                                    <div class="tx-details">
+                                        <h4>Air France - Flight AF023</h4>
+                                        <p>Oct 12, 2026 • Card ending in 1055</p>
+                                    </div>
+                                    <div class="tx-amount">
+                                        <h4>$1,240.00</h4>
+                                        <span class="tx-status completed">Completed</span>
+                                    </div>
+                                </div>
+
+                                <div class="transaction-item">
+                                    <div class="tx-icon tx-hotel"><i class="fa-solid fa-bed"></i></div>
+                                    <div class="tx-details">
+                                        <h4>Le Bristol Paris - Deposit</h4>
+                                        <p>Sep 15, 2026 • Card ending in 1055</p>
+                                    </div>
+                                    <div class="tx-amount">
+                                        <h4>$850.00</h4>
+                                        <span class="tx-status completed">Completed</span>
+                                    </div>
+                                </div>
+
+                                <div class="transaction-item">
+                                    <div class="tx-icon tx-credit"><i class="fa-solid fa-arrow-turn-down"></i></div>
+                                    <div class="tx-details">
+                                        <h4>Amandari Bali - Refund</h4>
+                                        <p>Aug 14, 2026 • Credited to Wallet</p>
+                                    </div>
+                                    <div class="tx-amount positive">
+                                        <h4>+$320.00</h4>
+                                        <span class="tx-status refunded">Refunded</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- SECTION 4: Split - Upcoming & Invoices -->
+                        <div class="bottom-split-grid">
+
+                            <!-- Upcoming Payment -->
+                            <div class="payments-section">
+                                <h3 class="pane-section-title">Upcoming Payment</h3>
+                                <div class="glass-panel upcoming-payment-card">
+                                    <div class="upcoming-header">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <span>Due in 7 Days</span>
+                                    </div>
+                                    <h3>Le Bristol Paris</h3>
+                                    <p class="upcoming-desc">Final balance for your stay (Oct 13 - Oct 18).</p>
+
+                                    <div class="upcoming-amount">
+                                        <h2>$1,450.00</h2>
+                                    </div>
+                                    <a href="404page.html"  class="btn-solid-accent w-100">Pay Now</a>
+                                </div>
+                            </div>
+
+                            <!-- Tax / Invoices -->
+                            <div class="payments-section">
+                                <h3 class="pane-section-title">Recent Invoices</h3>
+                                <div class="glass-panel invoices-container">
+
+                                    <div class="invoice-item">
+                                        <i class="fa-solid fa-file-pdf invoice-icon"></i>
+                                        <div class="invoice-info">
+                                            <h4>Invoice #INV-2026-089</h4>
+                                            <p>Aug 12, 2026 • Amandari Bali</p>
+                                        </div>
+                                        <a href="404page.html"  class="btn-icon"><i class="fa-solid fa-download"></i></a>
+                                    </div>
+
+                                    <div class="invoice-item">
+                                        <i class="fa-solid fa-file-pdf invoice-icon"></i>
+                                        <div class="invoice-info">
+                                            <h4>Invoice #INV-2026-042</h4>
+                                            <p>May 25, 2026 • Villa Treville</p>
+                                        </div>
+                                        <a href="404page.html"  class="btn-icon"><i class="fa-solid fa-download"></i></a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- TAB 5: SETTINGS -->
+                <div class="tab-pane" id="settings">
+                    <div class="settings-container">
+
+                        <!-- SECTION 1: Personal Profile -->
+                        <div class="settings-section">
+                            <h3 class="pane-section-title">Personal Profile</h3>
+                            <div class="glass-panel settings-panel">
+
+                                <div class="profile-edit-header">
+                                    <div class="avatar-upload-wrapper">
+                                        <img src="./assets/team2.webp" alt="Elena" class="settings-avatar">
+                                        <a href="404page.html"  class="avatar-upload-btn"><i class="fa-solid fa-camera"></i></a>
+                                    </div>
+                                    <div class="avatar-text">
+                                        <h4>Elena Voss</h4>
+                                        <p>Traveler Account</p>
+                                    </div>
+                                </div>
+
+                                <form class="settings-form" novalidate>
+                                    <div class="form-row">
+                                        <div class="input-group">
+                                            <label><i class="fa-regular fa-user"></i> FIRST NAME</label>
+                                            <input type="text" value="Elena" required>
+                                        </div>
+                                        <div class="input-group">
+                                            <label><i class="fa-regular fa-user"></i> LAST NAME</label>
+                                            <input type="text" value="Voss" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="input-group">
+                                            <label><i class="fa-regular fa-envelope"></i> EMAIL ADDRESS</label>
+                                            <input type="email" value="elena.voss@stackly.com" required>
+                                        </div>
+                                        <div class="input-group">
+                                            <label><i class="fa-solid fa-phone"></i> PHONE NUMBER</label>
+                                            <input type="tel" value="+1 (555) 123-4567" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <a href="404page.html"  type="button" class="btn-solid-accent">Save Changes</a>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                        <!-- SECTION 2 & 3 SPLIT: Preferences & Security -->
+                        <div class="bottom-split-grid">
+
+                            <!-- SECTION 2: Travel Preferences -->
+                            <div class="settings-section">
+                                <h3 class="pane-section-title">Travel Preferences</h3>
+                                <div class="glass-panel settings-panel">
+                                    <form class="settings-form">
+
+                                        <div class="input-group">
+                                            <label><i class="fa-solid fa-plane-departure"></i> HOME AIRPORT</label>
+                                            <input type="text" value="JFK - John F. Kennedy International" required>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <label><i class="fa-solid fa-utensils"></i> DIETARY REQUIREMENTS</label>
+                                            <div class="select-wrapper">
+                                                <select required>
+                                                    <option value="none">No Restrictions</option>
+                                                    <option value="vegetarian" selected>Vegetarian</option>
+                                                    <option value="vegan">Vegan</option>
+                                                    <option value="gluten-free">Gluten-Free</option>
+                                                    <option value="halal">Halal</option>
+                                                </select>
+                                                <i class="fa-solid fa-chevron-down select-icon"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <label><i class="fa-solid fa-chair"></i> SEATING PREFERENCE</label>
+                                            <div class="select-wrapper">
+                                                <select required>
+                                                    <option value="window" selected>Window</option>
+                                                    <option value="aisle">Aisle</option>
+                                                    <option value="extra-legroom">Extra Legroom</option>
+                                                </select>
+                                                <i class="fa-solid fa-chevron-down select-icon"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-actions" style="margin-top: 2rem;">
+                                            <a href="404page.html"  type="button" class="btn-outline">Update Preferences</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- SECTION 3: Security & Notifications -->
+                            <div class="settings-section">
+                                <h3 class="pane-section-title">Security & Alerts</h3>
+                                <div class="glass-panel settings-panel flex-panel">
+
+                                    <!-- Notifications -->
+                                    <div class="settings-subsection">
+                                        <h4>Notification Preferences</h4>
+
+                                        <div class="toggle-row">
+                                            <div class="toggle-info">
+                                                <h5>Booking Updates</h5>
+                                                <p>Receive alerts for check-ins and flight changes.</p>
+                                            </div>
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+
+                                        <div class="toggle-row">
+                                            <div class="toggle-info">
+                                                <h5>Exclusive Offers</h5>
+                                                <p>Get notified about member-only price drops.</p>
+                                            </div>
+                                            <label class="toggle-switch">
+                                                <input type="checkbox">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Security -->
+                                    <div class="settings-subsection security-section">
+                                        <h4>Account Security</h4>
+                                        <p class="security-desc">Ensure your account uses a strong password and
+                                            multi-factor authentication.</p>
+
+                                        <a href="404page.html"  class="btn-outline w-100" style="margin-bottom: 1rem;">Change
+                                            Password</a>
+                                        <a href="404page.html"  class="btn-danger w-100">Deactivate Account</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const userMail = localStorage.getItem("userMail");
+            const userName = localStorage.getItem("UserName");
+
+            if (userMail) {
+                document.getElementById('useremail').textContent = userMail;
+                document.getElementById('username').textContent = userName;
+                document.getElementById('useremail1').textContent = userMail;
+                document.getElementById('username1').textContent = userName;
+            }
+
+            // --- 1. GSAP Entrance Animations ---
+            const dashTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+            dashTl.from(".sidebar", { x: -50, opacity: 0, duration: 0.8 })
+                .from(".dashboard-header > *", { y: -20, opacity: 0, duration: 0.6, stagger: 0.1 }, "-=0.4")
+
+            // --- 2. Mobile Sidebar Toggle ---
+            const sidebar = document.querySelector('.sidebar');
+            const toggleBtn = document.querySelector('.mobile-sidebar-toggle');
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    sidebar.classList.toggle('is-open');
+                });
+
+                // Close sidebar if clicking outside on mobile
+                document.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+                        sidebar.classList.remove('is-open');
+                    }
+                });
+            }
+
+            // --- 3. Chart.js Initialization ---
+            const ctx = document.getElementById('travelChart');
+
+            if (ctx) {
+                // Create a custom gradient for the line chart
+                const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 300);
+                gradient.addColorStop(0, 'rgba(91, 192, 190, 0.4)'); // Theme accent color
+                gradient.addColorStop(1, 'rgba(91, 192, 190, 0.0)');
+
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                        datasets: [{
+                            label: 'Trips Booked',
+                            data: [1, 0, 2, 1, 3, 2, 4, 3, 1, 2, 1, 0],
+                            borderColor: '#5bc0be',
+                            backgroundColor: gradient,
+                            borderWidth: 2,
+                            pointBackgroundColor: '#0b0f17',
+                            pointBorderColor: '#5bc0be',
+                            pointBorderWidth: 2,
+                            pointRadius: 4,
+                            pointHoverRadius: 6,
+                            fill: true,
+                            tension: 0.4 // Smooth curves
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                backgroundColor: 'rgba(11, 15, 23, 0.9)',
+                                titleColor: '#fff',
+                                bodyColor: '#rgba(255,255,255,0.8)',
+                                borderColor: 'rgba(255,255,255,0.1)',
+                                borderWidth: 1,
+                                padding: 10,
+                                displayColors: false,
+                            }
+                        },
+                        scales: {
+                            x: {
+                                grid: { display: false, drawBorder: false },
+                                ticks: { color: 'rgba(255, 255, 255, 0.5)' }
+                            },
+                            y: {
+                                grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
+                                ticks: {
+                                    color: 'rgba(255, 255, 255, 0.5)',
+                                    stepSize: 1,
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }); const sidebarLinks = document.querySelectorAll('.sidebar-nav .nav-item');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        // Dynamic Header Elements
+        const dynamicGreeting = document.getElementById('dynamic-greeting');
+        const dynamicSubtitle = document.getElementById('dynamic-subtitle');
+
+        // Content configurations for the header based on the active tab
+        const tabHeaders = {
+            'overview': { title: 'Welcome back, Elena', subtitle: 'Ready for your next extraordinary journey?' },
+            'trips': { title: 'My Trips', subtitle: 'Review and manage your itineraries.' },
+            'saved': { title: 'Saved Stays', subtitle: 'Your personal collection of dream destinations.' },
+            'payments': { title: 'Billing & Payments', subtitle: 'Securely manage your payment methods and history.' },
+            'settings': { title: 'Account Settings', subtitle: 'Manage your personal details and preferences.' }
+        };
+
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent page reload
+
+                // 1. Remove active class from all links
+                sidebarLinks.forEach(item => item.classList.remove('active'));
+
+                // 2. Add active class to clicked link
+                link.classList.add('active');
+
+                // 3. Get the target tab id
+                const targetId = link.getAttribute('data-tab');
+
+                // 4. Hide all tab panes
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                // 5. Show the target tab pane
+                const targetPane = document.getElementById(targetId);
+                if (targetPane) {
+                    targetPane.classList.add('active');
+                }
+
+                // 6. Update the header text with GSAP fade effect
+                gsap.to([dynamicGreeting, dynamicSubtitle], {
+                    opacity: 0,
+                    y: -10,
+                    duration: 0.2,
+                    onComplete: () => {
+                        dynamicGreeting.textContent = tabHeaders[targetId].title;
+                        dynamicSubtitle.textContent = tabHeaders[targetId].subtitle;
+                        gsap.to([dynamicGreeting, dynamicSubtitle], { opacity: 1, y: 0, duration: 0.3 });
+                    }
+                });
+
+                // 7. If on mobile, automatically close the sidebar after clicking a link
+                const sidebar = document.querySelector('.sidebar');
+                if (window.innerWidth <= 900 && sidebar.classList.contains('is-open')) {
+                    sidebar.classList.remove('is-open');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1020 @@
+/* --- Contact Message Hero Section --- */
+.contact-message-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.contact-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    transform: scale(1.05);
+    /* Pre-scaled for GSAP animation */
+    will-change: transform;
+}
+
+/* Radial dark overlay to focus the eye on the center text */
+.contact-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(11, 15, 23, 0.6) 0%, rgba(11, 15, 23, 0.8) 100%);
+    z-index: 1;
+}
+
+.contact-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-hero-badge {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.contact-hero-title {
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-hero-excerpt {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    max-width: 650px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .contact-hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+
+    .contact-hero-title {
+        font-size: 2.8rem;
+    }
+
+    .contact-hero-excerpt {
+        font-size: 1.05rem;
+    }
+}
+
+.contact-section {
+    background-color: #ffffff;
+    padding: 8rem 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container {
+    background-color: #f6f6fc;
+    border-radius: 2.5rem;
+    padding: 5rem;
+    width: 100%;
+    max-width: 1300px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+/* Header */
+.contact-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.contact-header .badge-text {
+    color: #888;
+    margin-bottom: 1rem;
+    display: block;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+}
+
+.contact-title {
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.8rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+    font-size: 1.15rem;
+    color: #555555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Split Grid Layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+}
+
+/* --- Left: Bento Box Info --- */
+.contact-info-bento {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: #f0f0f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #040403;
+    flex-shrink: 0;
+}
+
+.info-card h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #111111;
+    margin-bottom: 0.25rem;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.5;
+}
+
+/* Image Studio Bento Card */
+.studio-card {
+    position: relative;
+    padding: 0;
+    height: 250px;
+    overflow: hidden;
+    align-items: flex-end;
+}
+
+.studio-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+.studio-card:hover .studio-bg {
+    transform: scale(1.05);
+}
+
+.studio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+}
+
+.studio-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.studio-content h3,
+.studio-content p {
+    color: #ffffff;
+}
+
+.glass-icon {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+/* --- Right: Premium Contact Form --- */
+.contact-form-wrapper {
+    background: #ffffff;
+    border-radius: 2rem;
+    padding: 3.5rem;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+/* Floating Label Inputs */
+.premium-form input,
+.premium-form select,
+.premium-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: #111111;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.premium-form textarea {
+    resize: none;
+}
+
+.premium-form label {
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+    font-size: 1rem;
+    color: #888888;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Float the label when focused or when it contains text */
+.premium-form input:focus~label,
+.premium-form input:valid~label,
+.premium-form textarea:focus~label,
+.premium-form textarea:valid~label,
+.premium-form select:focus~label,
+.premium-form select:valid~label {
+    top: -1.2rem;
+    font-size: 0.75rem;
+    color: #bdcb1d;
+    font-weight: 600;
+}
+
+.premium-form input:focus,
+.premium-form textarea:focus,
+.premium-form select:focus {
+    border-bottom-color: #bdcb1d;
+}
+
+/* Submit Button */
+.btn-submit-contact {
+    background: #111111;
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    padding: 1.2rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-submit-contact:hover {
+    background: #bdcb1d;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(197, 140, 176, 0.3);
+}
+
+.btn-submit-contact:hover i {
+    transform: translateX(4px);
+}
+
+/* Validation Messages */
+.form-message {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0;
+    /* Hidden by default */
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.form-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-message.error {
+    color: #ff6b6b;
+    /* Soft red */
+}
+
+.form-message.success {
+    color: #51cf66;
+    /* Soft green */
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info-bento {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .studio-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .contact-container {
+        padding: 3rem 1.5rem;
+        border-radius: 1.5rem;
+    }
+
+    .contact-title {
+        font-size: 2.8rem;
+    }
+
+    .contact-info-bento {
+        grid-template-columns: 1fr;
+    }
+
+    .studio-card {
+        grid-column: span 1;
+    }
+
+    .contact-form-wrapper {
+        padding: 2rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- FAQ Section --- */
+.faq-section {
+    background-color: #ffffff;
+    padding: 2rem 4rem 8rem;
+    display: flex;
+    justify-content: center;
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 900px;
+    /* Kept narrower for optimal reading length */
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.faq-header .badge-text {
+    color: #888;
+    margin-bottom: 1rem;
+    display: block;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+}
+
+.faq-title {
+    background: var(--gradient-yellow-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.2rem;
+    font-weight: 300;
+}
+
+/* --- FAQ Accordion List --- */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    border-bottom: 1px solid #f0f0f5;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #111111;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: #bdcb1d;
+}
+
+/* Animated Plus/Minus Icon using CSS */
+.faq-icon {
+    position: relative;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+    content: '';
+    position: absolute;
+    background-color: #111111;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease;
+}
+
+/* Horizontal line */
+.faq-icon::before {
+    width: 100%;
+    height: 2px;
+}
+
+/* Vertical line */
+.faq-icon::after {
+    height: 100%;
+    width: 2px;
+}
+
+.faq-question:hover .faq-icon::before,
+.faq-question:hover .faq-icon::after {
+    background-color: #bdcb1d;
+}
+
+/* --- FAQ Active State --- */
+.faq-item.active .faq-question {
+    color: #bdcb1d;
+}
+
+.faq-item.active .faq-icon::after {
+    transform: rotate(90deg);
+    /* Rotates vertical line to flat, forming a minus sign */
+}
+
+/* FAQ Answer Panel */
+.faq-answer {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s ease, padding 0.4s ease;
+}
+
+.faq-answer p {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 1.5rem;
+}
+
+/* Dynamic classes added via JS */
+.faq-item.active .faq-answer {
+    opacity: 1;
+    /* max-height is set inline via JS for accurate animation */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .faq-title {
+        font-size: 2.5rem;
+    }
+
+    .faq-question {
+        font-size: 1.1rem;
+    }
+}
+
+/* --- Dark Mode Map Section --- */
+.map-section-dark {
+    background-color: #0b0f17;
+    /* Deep cinematic dark background */
+    padding: 6rem 4rem 8rem;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.map-container-dark {
+    background-color: #11151e;
+    /* Darker panel container */
+    border-radius: 2.5rem;
+    padding: 5rem 4rem;
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.map-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.map-header .glass-badge-dark {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border-radius: 999px;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+}
+
+.map-subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 1rem auto 0;
+    line-height: 1.6;
+}
+
+/* Map Wrapper & Iframe Styling */
+.map-wrapper {
+    width: 100%;
+    height: 450px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #1a1e27;
+    /* Placeholder color before map loads */
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    /* THE DARK MODE MAGIC HACK */
+    /* Inverts colors, rotates hues back to normal, lowers contrast slightly for a muted premium feel */
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) brightness(95%);
+    transition: filter 0.3s ease;
+}
+
+/* Optional: Slight hover effect to brighten the map when interacting */
+.map-wrapper:hover iframe {
+    filter: invert(100%) hue-rotate(180deg) contrast(95%) brightness(105%);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .map-section-dark {
+        padding: 4rem 1.5rem;
+    }
+
+    .map-container-dark {
+        padding: 4rem 2rem;
+        border-radius: 1.5rem;
+    }
+
+    .map-wrapper {
+        height: 350px;
+    }
+}
+
+/* --- Premium App & Membership Section --- */
+.premium-app-section {
+    position: relative;
+    background-color: #0b0f17;
+    /* Matches your dark theme */
+    padding: 6rem 4rem 8rem;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    overflow: hidden;
+    /* Contains the glowing orbs */
+}
+
+/* Background Glowing Orbs */
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+    z-index: 0;
+    animation: pulse-glow 8s infinite alternate ease-in-out;
+}
+
+.orb-1 {
+    top: -10%;
+    left: -5%;
+    width: 500px;
+    height: 500px;
+    background: rgba(197, 140, 176, 0.3);
+    /* Purple tint */
+}
+
+.orb-2 {
+    bottom: -10%;
+    right: -5%;
+    width: 400px;
+    height: 400px;
+    background: rgba(232, 122, 93, 0.2);
+    /* Sunset tint */
+    animation-delay: -4s;
+}
+
+@keyframes pulse-glow {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(1.2) translate(20px, -20px);
+        opacity: 0.6;
+    }
+}
+
+/* Container */
+.app-container-dark {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.app-header .glass-badge-dark {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border-radius: 999px;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+}
+
+/* Bento Box Grid */
+.app-bento-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.bento-card {
+    background: rgba(17, 21, 30, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2rem;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.bento-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.bento-large {
+    grid-row: span 2;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 0;
+    /* Let the phone bleed off the edge */
+}
+
+/* Large Card Content */
+.bento-content {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
+.bento-title {
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.bento-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+/* App Store Buttons */
+.app-store-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-store {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: #ffffff;
+    color: #111111;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-store:hover {
+    background: #e4e4eb;
+    transform: translateY(-2px);
+}
+
+.btn-store i {
+    font-size: 1.8rem;
+}
+
+.btn-store-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-store-text span {
+    font-size: 0.65rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.btn-store-text strong {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+/* Floating Phone Mockup */
+.floating-phone-art {
+    width: 300px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transform: translateX(20px);
+}
+
+.phone-screen {
+    width: 260px;
+    height: 520px;
+    background-color: #000;
+    border-radius: 2.5rem;
+    border: 8px solid #222222;
+    box-shadow: -20px 30px 40px rgba(0, 0, 0, 0.5), inset 0 0 0 2px #444;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    animation: float-phone 6s ease-in-out infinite;
+}
+
+@keyframes float-phone {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Abstract UI inside phone */
+.phone-ui-overlay {
+    position: absolute;
+    bottom: 2rem;
+    left: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.ui-bar,
+.ui-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    height: 40px;
+}
+
+.ui-card {
+    height: 80px;
+}
+
+.ui-card.half {
+    width: 60%;
+    height: 60px;
+}
+
+/* Small Bento Cards */
+.bento-small {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem;
+}
+
+.card-glass-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #bdcb1d;
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.bento-small:hover .card-glass-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.bento-title-small {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.bento-desc-small {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .app-bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .bento-large {
+        grid-row: span 1;
+        padding-right: 3rem;
+    }
+
+    .floating-phone-art {
+        display: none;
+        /* Hide phone art on smaller tablets to save space */
+    }
+}
+
+@media (max-width: 768px) {
+    .premium-app-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .bento-large {
+        padding: 2rem;
+    }
+
+    .bento-content {
+        max-width: 100%;
+    }
+
+    .bento-title {
+        font-size: 1.8rem;
+    }
+
+    .bento-small {
+        padding: 2rem;
+    }
+}
+
+@media (max-width:768px) {
+
+    .contact-section,
+    .contact-container,
+    .map-section-dark,
+    .faq-section,
+    .premium-app-section,
+    .map-container-dark {
+        padding: 10px;
+    }
+
+    .contact-form-wrapper {
+        width: 90%;
+    }
+
+    .premium-app-section {
+        padding-bottom: 50px;
+    }
+
+    section {
+        overflow-x: hidden;
+    }
+}

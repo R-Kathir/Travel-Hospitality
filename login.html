@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Stackly</title>
+    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="shared.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="auth-body">
+
+    <div class="auth-background"
+        style="background-image: url('./assets/login.webp');">
+    </div>
+    <div class="auth-overlay"></div>
+
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-items">
+            <a href="index.html" class="nav-logo">
+                <img src="./assets/Stackly-logo-Blue.webp" alt="Logo" class="logo">
+            </a>
+
+            <ul class="nav-links" id="navMenu" data-lenis-prevent>
+                <button class="menu-close-btn" aria-label="Close Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="experience.html">Experiences</a></li>
+                <li><a href="hotel.html">Hotels</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="mob-view">
+                    <a href="signup.html" class="sign-in-link">Sign up</a>
+                    <a href="login.html" class="btn-solid-white">Login</a>
+                </div>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="signup.html" class="sign-in-link">Sign up</a>
+                <a href="login.html" class="btn-solid-white active">Login</a>
+            </div>
+            <button class="menu-open-btn" aria-label="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+
+    <div class="auth-layout">
+        <div class="auth-container login-container">
+
+            <!-- Left: Glass Login Form -->
+            <div class="auth-form-glass">
+                <form id="loginForm" novalidate>
+
+                    <div class="input-group">
+                        <label><i class="fa-regular fa-envelope"></i> EMAIL</label>
+                        <input type="email" id="email" placeholder="you@stackly.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label><i class="fa-regular fa-user"></i> USERNAME(OPTIONAL)</label>
+                        <input type="text" id="username" placeholder="NAME" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-lock"></i> PASSWORD</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" placeholder="At least 8 characters" required>
+                            <button type="button" class="btn-toggle-pass"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Role Selector (New Feature) -->
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-user-tag"></i> ROLE</label>
+                        <div class="select-wrapper">
+                            <select id="role" required>
+                                <option value="" disabled selected>Select your role</option>
+                                <option value="traveler">Traveler</option>
+                                <option value="host">Host</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down select-icon"></i>
+                        </div>
+                    </div>
+
+                    <a href="404page.html" class="forgot-pass-link">Forgot password?</a>
+
+                    <!-- Error Message Container -->
+                    <div id="formError" class="form-error-msg"></div>
+
+                    <button type="submit" class="btn-submit-auth">
+                        Login <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <p class="auth-switch">Don't have an account? <a href="signup.html">Sign up</a></p>
+                </form>
+            </div>
+
+            <!-- Right: Promotional Text (Same Design Language) -->
+            <div class="auth-text-content">
+                <span class="auth-subtitle">WELCOME BACK</span>
+                <h1 class="auth-title">Begin an<br>extraordinary<br>journey</h1>
+                <p class="auth-desc">Login to your account to continue managing curated stays, accessing member pricing,
+                    and reliving moments crafted for you.</p>
+
+                <div class="auth-stats">
+                    <span class="stat-pill">25k+ curated stays</span>
+                    <span class="stat-pill">20 destinations</span>
+                    <span class="stat-pill">4.9 avg rating</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-card">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="./assets/Stackly-logo-Blue.webp" alt="logo" class="logo" loading="lazy">
+                    </a>
+                    <p class="footer-description">
+                        A premium travel platform connecting explorers with extraordinary stays and unforgettable
+                        experiences across the globe.
+                    </p>
+                    <div class="footer-newsletter">
+                        <span class="newsletter-label">NEWSLETTER</span>
+                        <form class="newsletter-form" id="newsletterForm" novalidate>
+                            <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+                            <button type="submit" id="newsletterBtn">Subscribe</button>
+                        </form>
+                        <div id="newsletterMsg" class="newsletter-msg"></div>
+                    </div>
+                </div>
+                <div class="footer-link-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="experience.html">Experiences</a></li>
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="404page.html">Help Center</a></li>
+                        <li><a href="404page.html">FAQs</a></li>
+                        <li><a href="404page.html">Cancellation Policy</a></li>
+                        <li><a href="#404page.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-col">
+                    <h4>Travel</h4>
+                    <ul>
+                        <li><a href="404page.html">Hotels</a></li>
+                        <li><a href="404page.html">Experiences</a></li>
+                        <li><a href="404page.html">Destinations</a></li>
+                        <li><a href="404page.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-app-col">
+                    <h4>Get the app</h4>
+                    <a href="404page.html" class="app-btn">
+                        <i class="fa-brands fa-apple"></i>
+                        App Store
+                    </a>
+                    <a href="404page.html" class="app-btn">
+                        <i class="fa-brands fa-google-play"></i>
+                        Google Play
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2026 Stackly. Crafted for explorers.
+                </div>
+                <div class="social-icons">
+                    <a href="404page.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404page.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="404page.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="404page.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- 1. GSAP Entrance Animations (Paused or Reset structure) ---
+            const authTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+            // Animate Navbar
+            authTl.from(".auth-navbar > *", {
+                y: -20, opacity: 0, duration: 0.8, stagger: 0.1
+            })
+                // Animate Text Content (Same structure)
+                .from(".auth-text-content > *", {
+                    y: 30, opacity: 0, duration: 0.8, stagger: 0.1
+                }, "-=0.4")
+                // Animate Glass Form
+                .from(".auth-form-glass", {
+                    x: -40, opacity: 0, backdropFilter: "blur(0px)", duration: 1
+                }, "-=0.6")
+                // Stagger inputs sequentially
+                .from(".input-group, .forgot-pass-link, .btn-submit-auth, .auth-switch", {
+                    y: 15, opacity: 0, duration: 0.5, stagger: 0.05
+                }, "-=0.4");
+
+
+            // --- 2. Form Validation & Interactions ---
+            const loginForm = document.getElementById('loginForm');
+            const togglePassBtn = document.querySelector('.btn-toggle-pass');
+            const passwordInput = document.getElementById('password');
+            const formError = document.getElementById('formError');
+
+            // Toggle Password Visibility
+            togglePassBtn.addEventListener('click', () => {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+
+                // Toggle icon class
+                const icon = togglePassBtn.querySelector('i');
+                icon.classList.toggle('fa-eye');
+                icon.classList.toggle('fa-eye-slash');
+            });
+
+            // Handle Form Submission with validations
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Reset Error Message
+                formError.style.display = 'none';
+                formError.textContent = '';
+
+                // Fetch values
+                const email = document.getElementById('email').value.trim();
+                const username = document.getElementById('username').value;
+                const pass = passwordInput.value;
+                const role = document.getElementById('role').value; // Fetch selected role
+
+                // Basic Regex for Email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                // Validation Checks
+                if (!email || !pass) {
+                    showError("Please fill out Email and Password.");
+                    return;
+                }
+
+                if (!emailRegex.test(email)) {
+                    showError("Please enter a valid email address.");
+                    return;
+                }
+
+                if (pass.length < 8) {
+                    showError("Password must be at least 8 characters long.");
+                    return;
+                }
+
+                if (!role) {
+                    showError("Please select your Role.");
+                    return;
+                }
+
+                localStorage.setItem("userMail", email);
+                localStorage.setItem("userName", username);
+
+
+                const btn = document.querySelector('.btn-submit-auth');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Logging in...';
+                btn.style.pointerEvents = 'none';
+
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Welcome back!';
+                    btn.style.background = '#5bc0be';
+                    btn.style.color = '#ffffff';
+                    if (role == "traveler") {
+                        window.location.href = 'traveller-dashboard.html'
+                    }
+                    else if (role == "host") {
+                        window.location.href = 'host-dashboard.html';
+                    }
+                    else {
+                        alert("please select a valid role");
+                    }
+                }, 2000);
+            });
+
+            // Helper function to display error messages with shake effect
+            function showError(message) {
+                formError.textContent = message;
+                formError.style.display = 'block';
+
+                // Shake animation for error
+                gsap.fromTo(formError,
+                    { x: -5 },
+                    { x: 5, duration: 0.1, yoyo: true, repeat: 3, onComplete: () => gsap.set(formError, { x: 0 }) }
+                );
+            }
+        });
+    </script>
+</body>
+
+</html>

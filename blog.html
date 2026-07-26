@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Travel & Hospitality</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-items">
+            <a href="index.html" class="nav-logo">
+                <img src="./assets/Stackly-logo-Blue.webp" alt="Logo" class="logo">
+            </a>
+
+            <ul class="nav-links" id="navMenu" data-lenis-prevent>
+                <button class="menu-close-btn" aria-label="Close Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="experience.html">Experiences</a></li>
+                <li><a href="hotel.html">Hotels</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="blog.html" class="active">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="mob-view">
+                    <a href="signup.html" class="sign-in-link">Sign up</a>
+                    <a href="login.html" class="btn-solid-white">Login</a>
+                </div>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="signup.html" class="sign-in-link">Sign up</a>
+                <a href="login.html" class="btn-solid-white">Login</a>
+            </div>
+            <button class="menu-open-btn" aria-label="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="blog-message-hero">
+
+        <!-- Cinematic Background -->
+        <div class="blog-hero-bg" style="background-image: url('./assets/travel1.webp');">
+        </div>
+
+        <!-- Gradient Overlay for Legibility -->
+        <div class="blog-hero-overlay"></div>
+
+        <!-- Centered Welcome Message -->
+        <div class="blog-message-content">
+            <span class="blog-hero-badge">THE JOURNAL</span>
+            <h1 class="blog-hero-title">Inspiring stories for the modern explorer.</h1>
+            <p class="blog-hero-excerpt">Immerse yourself in our curated collection of travel guides, architectural
+                marvels, and cultural deep dives from every corner of the world.</p>
+        </div>
+
+    </section>
+
+    <!-- 2. Dedicated Featured Blog Section -->
+    <section class="featured-blog-section">
+        <div class="featured-container">
+
+            <div class="featured-section-header">
+                <span class="badge-text glass-badge-dark">EDITOR'S PICK</span>
+                <h2 class="section-title featured-section-title">Featured Story</h2>
+            </div>
+
+            <!-- Large Featured Post Card -->
+            <a href="404page.html" class="featured-post-card-large">
+                <div class="featured-img-wrap">
+                    <div class="featured-bg" style="background-image: url('./assets/prop3.webp');">
+                    </div>
+                    <div class="featured-img-overlay"></div>
+                    <div class="blog-category-badge">Exclusive</div>
+                </div>
+
+                <div class="featured-content-large">
+                    <div class="post-meta">
+                        <span class="meta-date"><i class="fa-regular fa-calendar"></i> July 18, 2026</span>
+                        <span class="meta-dot">•</span>
+                        <span class="meta-read"><i class="fa-regular fa-clock"></i> 6 min read</span>
+                    </div>
+
+                    <h3 class="featured-post-title-large">The Art of Slow Living in the Hidden Ryokans of Kyoto</h3>
+                    <p class="featured-post-excerpt-large">Step away from the crowded shrines and venture into the quiet
+                        bamboo groves where ancient hospitality traditions meet modern minimal architecture.</p>
+
+                    <div class="featured-author-bar">
+                        <div class="author-avatar" style="background-image: url('./assets/review1.webp');">
+                        </div>
+                        <div class="author-info">
+                            <span class="author-name">Sophia Laurent</span>
+                            <span class="author-role">Travel Curator</span>
+                        </div>
+                        <div class="btn-read-arrow">
+                            <span>Read Story</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+    <!-- Blog Categories & Latest Articles Section -->
+    <section class="latest-articles-section">
+        <div class="articles-container">
+
+            <!-- Interactive Category Filters -->
+            <div class="blog-filters">
+                <button class="filter-btn active" data-filter="all">All Stories</button>
+                <button class="filter-btn" data-filter="destinations">Destinations</button>
+                <button class="filter-btn" data-filter="guides">Travel Guides</button>
+                <button class="filter-btn" data-filter="culture">Culture</button>
+            </div>
+
+            <!-- 3-Column Articles Grid -->
+            <div class="articles-grid">
+
+                <!-- Article 1 -->
+                <a href="404page.html" class="article-card item-destinations">
+                    <div class="article-img-wrap">
+                        <div class="article-bg" style="background-image: url('./assets/stack1.webp');">
+                        </div>
+                        <div class="article-tag">Destinations</div>
+                    </div>
+                    <div class="article-content">
+                        <span class="article-date">July 15, 2026</span>
+                        <h3 class="article-title">A Weekend in the Amalfi Coast: Beyond the Guidebooks</h3>
+                        <div class="article-footer">
+                            <span class="read-time">4 min read</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Article 2 -->
+                <a href="404page.html" class="article-card item-guides">
+                    <div class="article-img-wrap">
+                        <div class="article-bg" style="background-image: url('./assets/blog1.webp');">
+                        </div>
+                        <div class="article-tag">Travel Guides</div>
+                    </div>
+                    <div class="article-content">
+                        <span class="article-date">July 10, 2026</span>
+                        <h3 class="article-title">How to Pack for a Two-Week Alpine Ski Retreat</h3>
+                        <div class="article-footer">
+                            <span class="read-time">7 min read</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Article 3 -->
+                <a href="404page.html" class="article-card item-culture">
+                    <div class="article-img-wrap">
+                        <div class="article-bg" style="background-image: url('./assets/about4.webp');">
+                        </div>
+                        <div class="article-tag">Culture</div>
+                    </div>
+                    <div class="article-content">
+                        <span class="article-date">July 02, 2026</span>
+                        <h3 class="article-title">Understanding the Japanese Tea Ceremony</h3>
+                        <div class="article-footer">
+                            <span class="read-time">5 min read</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Article 4 -->
+                <a href="404page.html" class="article-card item-destinations">
+                    <div class="article-img-wrap">
+                        <div class="article-bg" style="background-image: url('./assets/edit1.webp');">
+                        </div>
+                        <div class="article-tag">Destinations</div>
+                    </div>
+                    <div class="article-content">
+                        <span class="article-date">June 28, 2026</span>
+                        <h3 class="article-title">The Best Overwater Villas in the Maldives</h3>
+                        <div class="article-footer">
+                            <span class="read-time">6 min read</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Article 5 -->
+                <a href="404page.html" class="article-card item-guides">
+                    <div class="article-img-wrap">
+                        <div class="article-bg" style="background-image: url('./assets/about3.webp');">
+                        </div>
+                        <div class="article-tag">Travel Guides</div>
+                    </div>
+                    <div class="article-content">
+                        <span class="article-date">June 20, 2026</span>
+                        <h3 class="article-title">Navigating European Train Systems Like a Local</h3>
+                        <div class="article-footer">
+                            <span class="read-time">8 min read</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Article 6 -->
+                <a href="404page.html" class="article-card item-culture">
+                    <div class="article-img-wrap">
+                        <div class="article-bg" style="background-image: url('./assets/destination1.webp');">
+                        </div>
+                        <div class="article-tag">Culture</div>
+                    </div>
+                    <div class="article-content">
+                        <span class="article-date">June 14, 2026</span>
+                        <h3 class="article-title">Balinese Temple Etiquette: What You Need to Know</h3>
+                        <div class="article-footer">
+                            <span class="read-time">4 min read</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!-- Popular Topics / Categories Section (Dark Theme) -->
+    <section class="popular-topics-section">
+        <div class="topics-container">
+
+            <div class="topics-header">
+                <span class="badge-text glass-badge-dark">CATEGORIES</span>
+                <h2 class="section-title ">Popular topics</h2>
+            </div>
+
+            <div class="topics-grid">
+
+                <!-- Category 1 -->
+                <a href="404page.html" class="topic-card">
+                    <div class="topic-bg-img" style="background-image: url('./assets/blogt1.webp');">
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-icon-wrap">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <span class="topic-label">Luxury Travel</span>
+                    </div>
+                </a>
+
+                <!-- Category 2 -->
+                <a href="404page.html" class="topic-card">
+                    <div class="topic-bg-img" style="background-image: url('./assets/blogt2.webp');">
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-icon-wrap">
+                            <i class="fa-solid fa-mountain-sun"></i>
+                        </div>
+                        <span class="topic-label">Adventure</span>
+                    </div>
+                </a>
+
+                <!-- Category 3 -->
+                <a href="404page.html" class="topic-card">
+                    <div class="topic-bg-img" style="background-image: url('./assets/blogt3.webp');">
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-icon-wrap">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <span class="topic-label">Food</span>
+                    </div>
+                </a>
+
+                <!-- Category 4 -->
+                <a href="404page.html" class="topic-card">
+                    <div class="topic-bg-img" style="background-image: url('./assets/blog4.webp');">
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-icon-wrap">
+                            <i class="fa-solid fa-tree"></i>
+                        </div>
+                        <span class="topic-label">Nature</span>
+                    </div>
+                </a>
+
+                <!-- Category 5 -->
+                <a href="404page.html" class="topic-card">
+                    <div class="topic-bg-img" style="background-image: url('./assets/blogt5.webp');">
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-icon-wrap">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <span class="topic-label">Culture</span>
+                    </div>
+                </a>
+
+                <!-- Category 6 -->
+                <a href="404page.html" class="topic-card">
+                    <div class="topic-bg-img" style="background-image: url('./assets/blogt6.webp');">
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-icon-wrap">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <span class="topic-label">Budget Travel</span>
+                    </div>
+                </a>
+
+                <!-- Category 7 -->
+                <a href="404page.html" class="topic-card">
+                    <div class="topic-bg-img" style="background-image: url('./assets/blogt7.webp');">
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-icon-wrap">
+                            <i class="fa-solid fa-camera"></i>
+                        </div>
+                        <span class="topic-label">Photography</span>
+                    </div>
+                </a>
+
+                <!-- Category 8 -->
+                <a href="404page.html" class="topic-card">
+                    <div class="topic-bg-img" style="background-image: url('./assets/travel1.webp');">
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-icon-wrap">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <span class="topic-label">Road Trips</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <section class="latest-articles-section">
+        <div class="articles-container">
+
+            <div class="articles-header">
+                <span class="badge-text">JOURNAL</span>
+                <h2 class="section-title">Latest articles</h2>
+            </div>
+
+            <div class="articles-grid">
+
+                <!-- Article 1 -->
+                <a href="404page.html" class="article-card">
+                    <div class="article-img-wrap">
+                        <div class="article-bg" style="background-image: url('./assets/destination1.webp');">
+                        </div>
+                        <div class="article-category glass-tag">DESTINATIONS</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Bali beyond the beach: an inland guide</h3>
+                        <p class="article-excerpt">Rice terraces, spice markets and the villages your guidebook skipped.
+                        </p>
+
+                        <div class="article-meta">
+                            <span class="author"><i class="fa-regular fa-user"></i> Kadek W.</span>
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 6 min</span>
+                        </div>
+
+                        <div class="article-read-more">
+                            Read more <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Article 2 -->
+                <a href="404page.html" class="article-card">
+                    <div class="article-img-wrap">
+                        <div class="article-bg" style="background-image: url('./assets/blogt2.webp');">
+                        </div>
+                        <div class="article-category glass-tag">ADVENTURE</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Ski touring the Swiss Alps in shoulder season</h3>
+                        <p class="article-excerpt">When to go, what to pack and where the lifts stay empty.</p>
+
+                        <div class="article-meta">
+                            <span class="author"><i class="fa-regular fa-user"></i> Nikolas F.</span>
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 8 min</span>
+                        </div>
+
+                        <div class="article-read-more">
+                            Read more <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Article 3 -->
+                <a href="404page.html" class="article-card">
+                    <div class="article-img-wrap">
+                        <div class="article-bg" style="background-image: url('./assets/destination5.webp');">
+                        </div>
+                        <div class="article-category glass-tag">NATURE</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Chasing aurora: a photographer's Iceland playbook</h3>
+                        <p class="article-excerpt">Kp-index, camera settings and the roads worth driving after dark.</p>
+
+                        <div class="article-meta">
+                            <span class="author"><i class="fa-regular fa-user"></i> Sigga H.</span>
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 7 min</span>
+                        </div>
+
+                        <div class="article-read-more">
+                            Read more <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Article 4 -->
+                <a href="404page.html" class="article-card">
+                    <div class="article-img-wrap">
+                        <div class="article-bg" style="background-image: url('./assets/sig2.webp');">
+                        </div>
+                        <div class="article-category glass-tag">LUXURY</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">The Santorini suites that live up to the hype</h3>
+                        <p class="article-excerpt">Six caldera-view stays we book for our own trips.</p>
+
+                        <div class="article-meta">
+                            <span class="author"><i class="fa-regular fa-user"></i> Theo A.</span>
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 5 min</span>
+                        </div>
+
+                        <div class="article-read-more">
+                            Read more <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Article 5 -->
+                <a href="404page.html" class="article-card">
+                    <div class="article-img-wrap">
+                        <div class="article-bg" style="background-image: url('./assets/trend2.webp');">
+                        </div>
+                        <div class="article-category glass-tag">CITY</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Dubai in a long weekend: dunes, dinners and design</h3>
+                        <p class="article-excerpt">A modern city itinerary that skips the usual list.</p>
+
+                        <div class="article-meta">
+                            <span class="author"><i class="fa-regular fa-user"></i> Yara K.</span>
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 6 min</span>
+                        </div>
+
+                        <div class="article-read-more">
+                            Read more <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Article 6 -->
+                <a href="404page.html" class="article-card">
+                    <div class="article-img-wrap">
+                        <div class="article-bg" style="background-image: url('./assets/edit1.webp');">
+                        </div>
+                        <div class="article-category glass-tag">ISLANDS</div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Overwater or beach villa? A Maldives primer</h3>
+                        <p class="article-excerpt">The trade-offs no one tells you before you book.</p>
+
+                        <div class="article-meta">
+                            <span class="author"><i class="fa-regular fa-user"></i> Rina S.</span>
+                            <span class="read-time"><i class="fa-regular fa-clock"></i> 4 min</span>
+                        </div>
+
+                        <div class="article-read-more">
+                            Read more <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!-- Interactive Expanding Destinations Section (Dark Theme) -->
+    <section class="trending-accordion-section">
+        <div class="trending-container">
+
+            <div class="trending-header">
+                <span class="badge-text">WHERE WE'RE WRITING ABOUT</span>
+                <h2 class="section-title trending-title">Trending destinations</h2>
+            </div>
+
+            <!-- The Interactive Accordion Wrapper -->
+            <div class="accordion-gallery">
+
+                <!-- Panel 1 -->
+                <div class="accordion-panel">
+                    <div class="panel-bg" style="background-image: url('./assets/stor3.webp');">
+                    </div>
+                    <div class="panel-overlay"></div>
+
+                    <div class="panel-title-collapsed">Japan</div>
+
+                    <div class="panel-content-expanded">
+                        <h3 class="expanded-name">Japan</h3>
+                        <p class="expanded-desc">From neon-lit streets to ancient bamboo groves.</p>
+                        <a href="404page.html" class="btn-panel-action">Explore stories <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Panel 2 -->
+                <div class="accordion-panel">
+                    <div class="panel-bg" style="background-image: url('./assets/blog3.webp');">
+                    </div>
+                    <div class="panel-overlay"></div>
+
+                    <div class="panel-title-collapsed">Italy</div>
+
+                    <div class="panel-content-expanded">
+                        <h3 class="expanded-name">Italy</h3>
+                        <p class="expanded-desc">Clifftop villas, rich history, and coastal luxury.</p>
+                        <a href="404page.html" class="btn-panel-action">Explore stories <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Panel 3 -->
+                <div class="accordion-panel">
+                    <div class="panel-bg" style="background-image: url('./assets/blog5.webp');">
+                    </div>
+                    <div class="panel-overlay"></div>
+
+                    <div class="panel-title-collapsed">Norway</div>
+
+                    <div class="panel-content-expanded">
+                        <h3 class="expanded-name">Norway</h3>
+                        <p class="expanded-desc">Chasing the aurora through endless glacial fjords.</p>
+                        <a href="404page.html" class="btn-panel-action">Explore stories <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Panel 4 -->
+                <div class="accordion-panel">
+                    <div class="panel-bg" style="background-image: url('./assets/blog6.webp');">
+                    </div>
+                    <div class="panel-overlay"></div>
+
+                    <div class="panel-title-collapsed">Thailand</div>
+
+                    <div class="panel-content-expanded">
+                        <h3 class="expanded-name">Thailand</h3>
+                        <p class="expanded-desc">Hidden island retreats and vibrant street culture.</p>
+                        <a href="404page.html" class="btn-panel-action">Explore stories <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Panel 5 -->
+                <div class="accordion-panel">
+                    <!-- Starts open on desktop -->
+                    <div class="panel-bg" style="background-image: url('./assets/destination1.webp');">
+                    </div>
+                    <div class="panel-overlay"></div>
+
+                    <div class="panel-title-collapsed">Bali</div>
+
+                    <div class="panel-content-expanded">
+                        <h3 class="expanded-name">Bali</h3>
+                        <p class="expanded-desc">Volcanic landscapes, spiritual wellness, and luxury resorts.</p>
+                        <a href="404page.html" class="btn-panel-action">Explore stories <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Travel Tips & Guides Section -->
+    <section class="essentials-section">
+        <div class="essentials-container">
+
+            <div class="essentials-header">
+                <span class="badge-text">ESSENTIALS</span>
+                <h2 class="section-title">Travel tips & guides</h2>
+            </div>
+
+            <div class="tips-grid">
+
+                <!-- Tip 1 -->
+                <a href="404page.html" class="tip-card">
+                    <div class="tip-icon-wrap"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                    <div class="tip-content">
+                        <h4 class="tip-title">Packing Checklist</h4>
+                        <span class="tip-link">Read the full guide &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- Tip 2 -->
+                <a href="404page.html" class="tip-card">
+                    <div class="tip-icon-wrap"><i class="fa-regular fa-file-lines"></i></div>
+                    <div class="tip-content">
+                        <h4 class="tip-title">Visa Guide</h4>
+                        <span class="tip-link">Read the full guide &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- Tip 3 -->
+                <a href="404page.html" class="tip-card">
+                    <div class="tip-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="tip-content">
+                        <h4 class="tip-title">Safety Tips</h4>
+                        <span class="tip-link">Read the full guide &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- Tip 4 -->
+                <a href="404page.html" class="tip-card">
+                    <div class="tip-icon-wrap"><i class="fa-solid fa-camera-retro"></i></div>
+                    <div class="tip-content">
+                        <h4 class="tip-title">Photography</h4>
+                        <span class="tip-link">Read the full guide &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- Tip 5 -->
+                <a href="404page.html" class="tip-card">
+                    <div class="tip-icon-wrap"><i class="fa-solid fa-piggy-bank"></i></div>
+                    <div class="tip-content">
+                        <h4 class="tip-title">Budget Planning</h4>
+                        <span class="tip-link">Read the full guide &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- Tip 6 -->
+                <a href="404page.html" class="tip-card">
+                    <div class="tip-icon-wrap"><i class="fa-solid fa-umbrella"></i></div>
+                    <div class="tip-content">
+                        <h4 class="tip-title">Travel Insurance</h4>
+                        <span class="tip-link">Read the full guide &rarr;</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section (Dark Theme) -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+
+            <div class="newsletter-header">
+                <span class="badge-text glass-badge-dark">NEWSLETTER</span>
+                <h2 class="section-title">Stay Inspired</h2>
+                <p class="newsletter-desc">One thoughtful email a week — new stays, city guides and stories from the
+                    road.</p>
+            </div>
+
+            <form id="newsletterForm" class="blog-newsletter-form" novalidate>
+                <div class="input-wrapper">
+                    <input type="email" id="emailInput" placeholder="Enter your email" required autocomplete="off">
+                    <button type="submit" class="btn-subscribe">Subscribe</button>
+                </div>
+                <!-- Validation Message Container -->
+                <div id="formMessage" class="form-message"></div>
+            </form>
+
+        </div>
+    </section>
+    <footer class="site-footer">
+        <div class="footer-card">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="./assets/Stackly-logo-Blue.webp" alt="logo" class="logo" loading="lazy">
+                    </a>
+                    <p class="footer-description">
+                        A premium travel platform connecting explorers with extraordinary stays and unforgettable
+                        experiences across the globe.
+                    </p>
+                    <div class="footer-newsletter">
+                        <span class="newsletter-label">NEWSLETTER</span>
+                        <form class="newsletter-form" id="newsletterForm" novalidate>
+                            <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+                            <button type="submit" id="newsletterBtn">Subscribe</button>
+                        </form>
+                        <div id="newsletterMsg" class="newsletter-msg"></div>
+                    </div>
+                </div>
+                <div class="footer-link-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="experience.html">Experiences</a></li>
+                        <li><a href="hotel.html">Hotels</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="404page.html">Help Center</a></li>
+                        <li><a href="404page.html">FAQs</a></li>
+                        <li><a href="404page.html">Cancellation Policy</a></li>
+                        <li><a href="404page.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-col">
+                    <h4>Travel</h4>
+                    <ul>
+                        <li><a href="404page.html">Hotels</a></li>
+                        <li><a href="404page.html">Experiences</a></li>
+                        <li><a href="404page.html">Destinations</a></li>
+                        <li><a href="404page.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-app-col">
+                    <h4>Get the app</h4>
+                    <a href="404page.html" class="app-btn">
+                        <i class="fa-brands fa-apple"></i>
+                        App Store
+                    </a>
+                    <a href="404page.html" class="app-btn">
+                        <i class="fa-brands fa-google-play"></i>
+                        Google Play
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2026 Stackly. Crafted for explorers.
+                </div>
+                <div class="social-icons">
+                    <a href="404page.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404page.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="404page.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="404page.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Hero Message Animations (Plays on load)
+            const blogHeroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+            blogHeroTl.to(".blog-hero-bg", {
+                scale: 1,
+                duration: 2.5,
+                ease: "power2.out"
+            }, 0)
+                .from(".blog-hero-badge", { y: 20, opacity: 0, duration: 0.8 }, 0.3)
+                .from(".blog-hero-title", { y: 30, opacity: 0, duration: 1 }, 0.5)
+                .from(".blog-hero-excerpt", { y: 20, opacity: 0, duration: 0.8 }, 0.7);
+
+            // 2. Featured Blog Section Animations (Triggered on Scroll)
+            gsap.from(".featured-section-header > *", {
+                scrollTrigger: {
+                    trigger: ".featured-blog-section",
+                    start: "top 85%",
+                },
+                y: 20,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power2.out"
+            });
+
+            gsap.from(".featured-post-card-large", {
+                scrollTrigger: {
+                    trigger: ".featured-post-card-large",
+                    start: "top 80%",
+                },
+                y: 50,
+                opacity: 0,
+                scale: 0.98,
+                duration: 1,
+                ease: "power3.out"
+            });
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+
+
+            // 2. Category Filtering Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const articleCards = document.querySelectorAll('.article-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    articleCards.forEach(card => {
+                        // If "all" is selected, show everything
+                        if (filterValue === 'all') {
+                            card.classList.remove('hide');
+                        } else {
+                            // Check if the card has the class corresponding to the filter value
+                            if (card.classList.contains(`item-${filterValue}`)) {
+                                card.classList.remove('hide');
+                            } else {
+                                card.classList.add('hide');
+                            }
+                        }
+                    });
+
+                    // Refresh ScrollTrigger calculations after DOM elements hide/show
+                    ScrollTrigger.refresh();
+                });
+            });
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Reveal the dark container
+            gsap.from(".topics-container", {
+                scrollTrigger: {
+                    trigger: ".popular-topics-section",
+                    start: "top 85%",
+                },
+                y: 40,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+
+            // Reveal the header elements
+            gsap.from(".topics-header > *", {
+                scrollTrigger: {
+                    trigger: ".topics-container",
+                    start: "top 75%",
+                },
+                y: 20,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power2.out"
+            });
+
+            // Stagger the dark category cards into place
+            gsap.from(".topic-card", {
+                scrollTrigger: {
+                    trigger: ".topics-grid",
+                    start: "top 80%",
+                },
+                y: 40,
+                opacity: 0,
+                scale: 0.95,
+                duration: 0.7,
+                stagger: 0.1,
+                ease: "back.out(1.2)"
+            });
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const trendingTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".trending-accordion-section",
+                    start: "top 80%",
+                }
+            });
+
+            // Reveal Header
+            trendingTl.from(".trending-header > *", {
+                y: 20,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power2.out"
+            });
+
+            // Reveal the entire Accordion structure
+            trendingTl.from(".accordion-gallery", {
+                y: 50,
+                opacity: 0,
+                scale: 0.98,
+                duration: 1,
+                ease: "power3.out"
+            }, "-=0.4");
+
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- 1. GSAP Scroll Animations ---
+
+            // Essentials Section Animation
+            gsap.from(".essentials-container", {
+                scrollTrigger: { trigger: ".essentials-section", start: "top 85%" },
+                y: 40, opacity: 0, duration: 1, ease: "power3.out"
+            });
+
+            gsap.from(".essentials-header > *", {
+                scrollTrigger: { trigger: ".essentials-container", start: "top 80%" },
+                y: 20, opacity: 0, duration: 0.8, stagger: 0.15, ease: "power2.out"
+            });
+
+            gsap.from(".tip-card", {
+                scrollTrigger: { trigger: ".tips-grid", start: "top 85%" },
+                y: 40, opacity: 0, duration: 0.8, stagger: 0.1, ease: "back.out(1.2)"
+            });
+
+            // Newsletter Section Animation
+            gsap.from(".newsletter-container", {
+                scrollTrigger: { trigger: ".newsletter-section", start: "top 85%" },
+                y: 40, opacity: 0, scale: 0.98, duration: 1, ease: "power3.out"
+            });
+
+            gsap.from(".newsletter-container > *", {
+                scrollTrigger: { trigger: ".newsletter-container", start: "top 80%" },
+                y: 20, opacity: 0, duration: 0.8, stagger: 0.15, ease: "power2.out"
+            });
+
+
+            // --- 2. Newsletter Form Validation ---
+
+            const form = document.getElementById('newsletterForm');
+            const emailInput = document.getElementById('emailInput');
+            const formMessage = document.getElementById('formMessage');
+
+            // Simple Regex for validating email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent page reload
+
+                const emailValue = emailInput.value.trim();
+
+                // Reset classes
+                formMessage.className = 'form-message';
+
+                if (emailValue === '') {
+                    showValidationMessage('Please enter an email address.', 'error');
+                } else if (!emailRegex.test(emailValue)) {
+                    showValidationMessage('Please enter a valid email address.', 'error');
+                } else {
+                    // Success State (Here you would normally handle the API POST request)
+                    window.location.href='404page.html'
+                     emailInput.value = ''; // Clear input
+
+                    // Auto hide success message after 4 seconds
+                    setTimeout(() => {
+                        formMessage.classList.remove('show');
+                    }, 4000);
+                }
+            });
+
+            function showValidationMessage(message, type) {
+                formMessage.textContent = message;
+                formMessage.classList.add(type);
+                formMessage.classList.add('show');
+            }
+
+        });
+    </script>
+</body>
+
+</html>
