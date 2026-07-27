@@ -1,4 +1,4 @@
-/* --- About Us Hero Section (Dark Theme) --- */
+ 
 .about-hero-section {
     position: relative;
     height: 100vh;
@@ -8,10 +8,10 @@
     justify-content: center;
     overflow: hidden;
     color: #ffffff;
-    /* Changed to white text */
+    
 }
 
-/* Base Background Image */
+ 
 .about-hero-bg {
     position: absolute;
     top: 0;
@@ -23,19 +23,19 @@
     z-index: 0;
 }
 
-/* Overlay to protect Navbar and text readability */
+ 
 .about-hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Darker at the very top for the nav, fading to a semi-transparent dark center */
+    
     background: linear-gradient(to bottom, rgba(11, 15, 23, 0.9) 0%, rgba(11, 15, 23, 0.6) 20%, rgba(11, 15, 23, 0.7) 100%);
     z-index: 1;
 }
 
-/* Central Typography */
+ 
 .about-hero-content {
     position: relative;
     z-index: 10;
@@ -71,7 +71,7 @@
 
 .text-highlight {
     font-weight: 500;
-    /* Adjusted gradient to pop beautifully against a dark background */
+    
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -85,7 +85,7 @@
     margin: 0 auto;
 }
 
-/* Floating Parallax Gallery */
+ 
 .parallax-gallery {
     position: absolute;
     top: 0;
@@ -93,7 +93,7 @@
     width: 100%;
     height: 100%;
     z-index: 2;
-    /* Sits between the overlay and the text */
+    
 }
 
 .float-img {
@@ -102,13 +102,13 @@
     background-position: center;
     border-radius: 1.5rem;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-    /* Deeper shadow for dark theme */
+    
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* Subtle rim light */
+    
     will-change: transform;
 }
 
-/* Exact positioning for the floating images */
+ 
 .img-1 {
     width: 280px;
     height: 380px;
@@ -137,7 +137,7 @@
     right: 12%;
 }
 
-/* Scroll Down Indicator */
+ 
 .scroll-indicator {
     position: absolute;
     bottom: 3rem;
@@ -163,7 +163,7 @@
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
 }
 
-/* Responsive */
+ 
 @media (max-width: 1024px) {
     .about-title {
         font-size: 4rem;
@@ -205,11 +205,11 @@
 
     .parallax-gallery {
         display: none;
-        /* Hide floating images on mobile to keep focus on text and background */
+        
     }
 }
 
-/* --- Our Story Section --- */
+ 
 .our-story-section {
     background-color: #ffffff;
     padding: 8rem 4rem;
@@ -219,7 +219,7 @@
 
 .story-container {
     background-color: #f6f6fc;
-    /* Soft cool purple-gray tint matching the image */
+    
     border-radius: 2.5rem;
     padding: 5rem;
     width: 100%;
@@ -234,7 +234,7 @@
     align-items: center;
 }
 
-/* Left Image Styling */
+ 
 .story-image-wrapper {
     position: relative;
     width: 100%;
@@ -242,7 +242,7 @@
     border-radius: 2rem;
     overflow: hidden;
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
-    /* Set up for GSAP reveal mask */
+    
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
@@ -252,11 +252,11 @@
     background-size: cover;
     background-position: center;
     transform: scale(1.1);
-    /* Starts slightly zoomed in for GSAP animation */
+    
     will-change: transform;
 }
 
-/* Right Content Styling */
+ 
 .story-content {
     display: flex;
     flex-direction: column;
@@ -270,7 +270,7 @@
     text-transform: uppercase;
 }
 
-/* Gradient Title matching the UI */
+ 
 .story-title {
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
@@ -289,7 +289,7 @@
     margin-bottom: 3rem;
 }
 
-/* Timeline Styling */
+ 
 .story-timeline {
     display: flex;
     flex-direction: column;
@@ -304,7 +304,7 @@
     padding-right: 1rem;
 }
 
-/* The thin-bordered circle */
+ 
 .timeline-year {
     width: 60px;
     height: 60px;
@@ -327,7 +327,7 @@
     transition: transform 0.4s ease, color 0.4s ease;
 }
 
-/* --- Interactive Hover Effects for Timeline --- */
+ 
 .timeline-item:hover .timeline-year {
     background-color: #222222;
     border-color: #222222;
@@ -340,7 +340,7 @@
     color: #111111;
 }
 
-/* --- Responsive Adjustments --- */
+ 
 @media (max-width: 1024px) {
     .story-grid {
         grid-template-columns: 1fr;
@@ -372,10 +372,10 @@
     }
 }
 
-/* --- Mission, Vision, and Values Section --- */
+ 
 .mvv-section {
     background-color: #0b0f17;
-    /* Deep, premium dark background */
+    
     padding: 8rem 4rem;
     display: flex;
     justify-content: center;
@@ -388,10 +388,10 @@
     display: flex;
     flex-direction: column;
     gap: 8rem;
-    /* Large gap between the two halves */
+    
 }
 
-/* --- Top Half: Mission & Vision --- */
+ 
 .mission-vision-row {
     display: flex;
     align-items: flex-start;
@@ -423,7 +423,7 @@
     justify-content: center;
     font-size: 1.5rem;
     color: var(--color-secondary);
-    /* Brand highlight color */
+    
     margin-bottom: 2rem;
 }
 
@@ -442,10 +442,10 @@
     line-height: 1.7;
 }
 
-/* --- Bottom Half: Core Values --- */
+ 
 .values-header {
     text-align: center;
-    /* margin-bottom: 4rem; */
+    
 }
 
 .values-header .badge-text {
@@ -466,19 +466,19 @@
     gap: 2rem;
 }
 
-/* Core Value Cards (Animated Gradient Border Setup) */
+ 
 .value-card {
     position: relative;
     border-radius: 1.5rem;
     padding: 1px;
-    /* The 1px padding reveals the gradient background underneath */
+    
     background: rgba(255, 255, 255, 0.1);
-    /* Default subtle border */
+    
     transition: transform 0.4s ease;
     overflow: hidden;
 }
 
-/* The Glowing Gradient Background */
+ 
 .value-glow {
     position: absolute;
     top: 0;
@@ -491,13 +491,13 @@
     z-index: 0;
 }
 
-/* The Inner Content Area */
+ 
 .value-content {
     position: relative;
     background: #11151e;
-    /* Slightly lighter than the main bg */
+    
     border-radius: 1.45rem;
-    /* Slightly smaller than outer to fit inside */
+    
     padding: 3rem 2.5rem;
     height: 100%;
     z-index: 1;
@@ -525,23 +525,23 @@
     line-height: 1.6;
 }
 
-/* Hover Effects */
+ 
 .value-card:hover {
     transform: translateY(-10px);
 }
 
 .value-card:hover .value-glow {
     opacity: 1;
-    /* Reveals the vibrant gradient border */
+    
 }
 
 .value-card:hover .value-icon {
     color: #e87a5d;
-    /* Matches gradient */
+    
     transform: scale(1.1) rotate(5deg);
 }
 
-/* --- Responsive Adjustments --- */
+ 
 @media (max-width: 1024px) {
     .mission-vision-row {
         flex-direction: column;
@@ -582,16 +582,16 @@
     }
 }
 
-/* --- Stats Counter Section --- */
+ 
 .stats-section {
     background-color: #ffffff;
-    /* Clean white background */
+    
     padding: 2rem 4rem;
     display: flex;
     justify-content: center;
 }
 
-/* The Floating Pill Container */
+ 
 .stats-pill {
     background: #ffffff;
     border-radius: 999px;
@@ -601,7 +601,7 @@
     align-items: center;
     width: 100%;
     max-width: 1300px;
-    /* Soft, diffuse shadow matching the UI image */
+    
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
     border: 1px solid rgba(0, 0, 0, 0.03);
 }
@@ -613,11 +613,11 @@
     text-align: center;
 }
 
-/* Gradient Numbers */
+ 
 .stat-number {
     font-size: 3.8rem;
     font-weight: 300;
-    /* Warm gradient matching the screenshot */
+    
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -628,17 +628,17 @@
     line-height: 1;
 }
 
-/* Special treatment for the Star icon to accept the gradient */
+ 
 .stat-star {
     font-size: 2.2rem;
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transform: translateY(-3px);
-    /* Visually aligns the star with the numbers */
+    
 }
 
-/* Sub-labels */
+ 
 .stat-label {
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -647,12 +647,12 @@
     font-weight: 500;
 }
 
-/* --- Responsive Layout Adjustments --- */
+ 
 @media (max-width: 1100px) {
     .stats-pill {
         flex-wrap: wrap;
         border-radius: 2rem;
-        /* Falls back to rounded rectangle on smaller screens */
+        
         padding: 4rem 2rem;
         gap: 3rem;
         justify-content: center;
@@ -660,7 +660,7 @@
 
     .stat-item {
         flex: 1 1 30%;
-        /* 3 items per row on tablet */
+        
     }
 
     .stat-number {
@@ -675,11 +675,11 @@
 
     .stat-item {
         flex: 1 1 100%;
-        /* Stacks vertically on mobile */
+        
     }
 }
 
-/* --- Trusted By / Partners Section --- */
+ 
 .trusted-section {
     background-color: #ffffff;
     padding: 2rem 4rem 2rem;
@@ -689,7 +689,7 @@
 
 .trusted-container {
     background-color: #f6f6fc;
-    /* Matching soft purple-gray tint */
+    
     border-radius: 2.5rem;
     padding: 5rem 4rem;
     width: 100%;
@@ -724,7 +724,7 @@
     font-size: 1.1rem;
 }
 
-/* Press Cards Grid */
+ 
 .press-quotes-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -779,7 +779,7 @@
     box-shadow: 0 25px 45px -10px rgba(0, 0, 0, 0.12);
 }
 
-/* Infinite Logo Ticker */
+ 
 .logo-marquee-wrapper {
     width: 100%;
     overflow: hidden;
@@ -827,7 +827,7 @@
     }
 }
 
-/* Responsive */
+ 
 @media (max-width: 1024px) {
     .press-quotes-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -848,7 +848,7 @@
     }
 }
 
-/* --- Team Members Section --- */
+ 
 .team-section {
     background-color: #ffffff;
     padding: 2rem 4rem 2rem;
@@ -858,7 +858,7 @@
 
 .team-container {
     background-color: #f6f6fc;
-    /* Matching soft purple-gray tint */
+    
     border-radius: 2.5rem;
     padding: 5rem 4rem;
     width: 100%;
@@ -895,14 +895,14 @@
     margin: 0 auto;
 }
 
-/* 3-Column Grid */
+ 
 .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-/* Team Card */
+ 
 .team-card {
     background: #ffffff;
     border-radius: 1.5rem;
@@ -938,7 +938,7 @@
     z-index: 1;
 }
 
-/* Glassmorphic Role Badge */
+ 
 .team-role-badge {
     position: absolute;
     top: 1rem;
@@ -956,7 +956,7 @@
     z-index: 2;
 }
 
-/* Social Icon Bar (Hidden by default, slides up on hover) */
+ 
 .team-socials {
     position: absolute;
     bottom: 1rem;
@@ -989,7 +989,7 @@
     transform: scale(1.1);
 }
 
-/* Info Box */
+ 
 .team-info {
     padding: 1.75rem;
     display: flex;
@@ -1023,7 +1023,7 @@
     margin: 0;
 }
 
-/* --- Hover Effects --- */
+ 
 .team-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 25px 45px -10px rgba(0, 0, 0, 0.12);
@@ -1038,7 +1038,7 @@
     transform: translateY(0);
 }
 
-/* Responsive */
+ 
 @media (max-width: 1024px) {
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1063,7 +1063,7 @@
     }
 }
 
-/* --- Start Your Journey CTA Section --- */
+ 
 .cta-journey-section {
     background-color: #ffffff;
     padding: 6rem 4rem 8rem;
@@ -1071,10 +1071,10 @@
     justify-content: center;
 }
 
-/* Tinted Rounded Container matching the UI design */
+ 
 .cta-journey-container {
     background-color: #f6f6fc;
-    /* Cool purple-gray background tint */
+    
     border-radius: 2.5rem;
     padding: 6rem 4rem;
     width: 100%;
@@ -1086,7 +1086,7 @@
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
 }
 
-/* Top Icon Wrap */
+ 
 .cta-icon-wrap {
     font-size: 1.4rem;
     color: #444444;
@@ -1096,7 +1096,7 @@
     justify-content: center;
 }
 
-/* Sunset Gradient Title matching the screenshot */
+ 
 .cta-journey-title {
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
@@ -1108,7 +1108,7 @@
     margin-bottom: 1rem;
 }
 
-/* Description Text */
+ 
 .cta-journey-desc {
     font-size: 1.15rem;
     color: #555555;
@@ -1117,14 +1117,14 @@
     margin-bottom: 3rem;
 }
 
-/* Button Group Layout */
+ 
 .cta-buttons-group {
     display: flex;
     align-items: center;
     gap: 1.25rem;
 }
 
-/* Primary Button with Glowing Purple Drop Shadow */
+ 
 .btn-cta-solid {
     background: #ffffff;
     color: #111111;
@@ -1133,7 +1133,7 @@
     font-weight: 600;
     padding: 1rem 2.2rem;
     border-radius: 999px;
-    /* Soft glowing shadow underneath */
+    
     box-shadow: 0 15px 35px -5px rgba(147, 113, 172, 0.4), 0 5px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.8);
     transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1147,7 +1147,7 @@
     border-color: #111111;
 }
 
-/* Secondary Ghost/Glass Button */
+ 
 .btn-cta-glass {
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
@@ -1169,7 +1169,7 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-/* --- Responsive Adjustments --- */
+ 
 @media (max-width: 768px) {
     .cta-journey-section {
         padding: 4rem 1.5rem;

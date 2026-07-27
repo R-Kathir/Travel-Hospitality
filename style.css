@@ -1,4 +1,4 @@
-/* --- Layout --- */
+ 
 .hero-section {
     position: relative;
     min-height: 130vh;
@@ -10,7 +10,7 @@
     z-index: 1;
 }
 
-/* --- New Background Slider Styles --- */
+ 
 .hero-bg-container {
     position: absolute;
     top: 0;
@@ -18,7 +18,7 @@
     width: 100%;
     height: 100%;
     z-index: -2;
-    /* Pushes it behind all content */
+    
 }
 
 .hero-bg-slide {
@@ -30,11 +30,11 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* Optional: A slight scale makes the image feel like it's slowly zooming in */
+    
     transform: scale(1.05);
 }
 
-/* The Overlay */
+ 
 .hero-bg-overlay {
     position: absolute;
     top: 0;
@@ -217,7 +217,7 @@
 
 .search-error-message {
     color: #ff4757;
-    /* A soft, visible red */
+    
     font-size: 0.85rem;
     font-weight: 500;
     margin-top: 15px;
@@ -234,7 +234,7 @@
 }
 
 .input-error {
-    /* Adds a subtle red underline to the specific input that failed */
+    
     border-bottom: 1px solid #ff4757 !important;
 }
 
@@ -278,17 +278,17 @@
     }
 }
 
-/* --- Featured Destinations Section --- */
+ 
 .featured-destinations {
     background-color: var(--bg-color-1);
-    /* Light background from your variables */
+    
     padding: 6rem 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Header Text Styling */
+ 
 .destinations-header {
     text-align: center;
     margin-bottom: 4rem;
@@ -308,7 +308,7 @@
     font-size: 3rem;
     font-weight: 300;
     margin-bottom: 0.5rem;
-    /* Creating the warm gold/brown color seen in the design */
+    
     background: linear-gradient(to right, #b8860b, #8b4513);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -319,7 +319,7 @@
     color: #555;
 }
 
-/* Grid Layout */
+ 
 .destinations-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -328,7 +328,7 @@
     max-width: 1200px;
 }
 
-/* Destination Cards */
+ 
 .destination-card {
     position: relative;
     height: 420px;
@@ -349,7 +349,7 @@
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Glassmorphism Info Bar */
+ 
 .card-info-glass {
     position: absolute;
     bottom: 1rem;
@@ -367,7 +367,7 @@
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
         background 0.4s ease;
     color: var(--text-white);
-    /* transition: transform 0.4s ease, background 0.4s ease; */
+    
 }
 
 .info-header {
@@ -403,28 +403,28 @@
     transform: scale(1.1);
 }
 
-/* --- New Hover Reveal Content --- */
+ 
 .hover-content {
     width: 100%;
     max-height: 0;
-    /* Hidden by default */
+    
     opacity: 0;
     transform: translateY(10px);
-    /* Pushed down slightly */
+    
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     overflow: hidden;
-    /* Prevents button from overflowing when max-height is 0 */
+    
 }
 
-/* Specific styling to make the merged button fit nicely inside the card */
+ 
 .explore-btn {
     width: 100%;
     justify-content: space-between;
-    /* Pushes text left, icon right */
+    
     margin-top: 1rem;
 }
 
-/* --- Hover Triggers --- */
+ 
 .destination-card:hover .card-image {
     transform: scale(1.08);
 }
@@ -434,15 +434,15 @@
     transform: translateY(-5px);
 }
 
-/* Reveal the hidden content when hovering over the card */
+ 
 .destination-card:hover .hover-content {
     max-height: 100px;
-    /* Expands container to fit the button */
+    
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Responsive adjustments */
+ 
 @media (max-width: 992px) {
     .destinations-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -459,10 +459,10 @@
     }
 }
 
-/* --- Curated Experiences Section --- */
+ 
 .curated-section {
     background-color: var(--bg-color-2);
-    /* Using the dark theme background for contrast */
+    
     padding: 6rem 4rem;
     color: var(--text-white);
     display: flex;
@@ -475,14 +475,14 @@
     margin-bottom: 4rem;
 }
 
-/* Override the gradient text for the dark background to make it pop */
+ 
 .curated-section .section-title {
     background: linear-gradient(to right, #ffffff, #a0a0a0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* --- Bento Grid Layout --- */
+ 
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -499,7 +499,7 @@
     cursor: pointer;
 }
 
-/* Grid Spanning Rules */
+ 
 .feature-large {
     grid-column: span 2;
     grid-row: span 2;
@@ -510,7 +510,7 @@
     grid-row: span 1;
 }
 
-/* Backgrounds and Overlays */
+ 
 .bento-bg {
     position: absolute;
     top: 0;
@@ -532,7 +532,7 @@
     z-index: 1;
 }
 
-/* Content Styling */
+ 
 .bento-content {
     position: absolute;
     bottom: 0;
@@ -576,14 +576,14 @@
     margin-bottom: 1.5rem;
 }
 
-/* Keep button hidden on default for the bento items */
+ 
 .bento-btn {
     opacity: 0;
     transform: translateY(15px);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* --- Hover Effects --- */
+ 
 .bento-item:hover .bento-bg {
     transform: scale(1.08);
 }
@@ -593,12 +593,12 @@
     transform: translateY(0);
 }
 
-/* --- Responsive Layout --- */
+ 
 @media (max-width: 992px) {
     .bento-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
-        /* Let rows dictate their own height */
+        
     }
 
     .feature-large {
@@ -624,16 +624,16 @@
     }
 }
 
-/* --- Why Choose Us Section --- */
+ 
 .why-choose-us {
     background-color: var(--bg-color-1);
-    /* Light background */
+    
     padding: 6rem 4rem;
     display: flex;
     justify-content: center;
 }
 
-/* The large rounded container holding the section */
+ 
 .why-container {
     background-color: #ffffff;
     border-radius: 1.5rem;
@@ -653,7 +653,7 @@
     margin-bottom: 1.5rem;
 }
 
-/* Matching the gold/orange gradient title from the UI */
+ 
 .why-title {
     background: linear-gradient(to right, #d4af37, #e67e22);
     -webkit-background-clip: text;
@@ -668,7 +668,7 @@
     font-size: 1.1rem;
 }
 
-/* --- Features Grid --- */
+ 
 .features-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -685,7 +685,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* Creating that specific soft shadow from the image */
+    
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08), 0 0 15px rgba(0, 0, 0, 0.02);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
     cursor: pointer;
@@ -721,7 +721,7 @@
     line-height: 1.6;
 }
 
-/* --- Hover Effects --- */
+ 
 .feature-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.12), 0 0 20px rgba(0, 0, 0, 0.03);
@@ -731,7 +731,7 @@
     transform: scale(1.1) rotate(5deg);
 }
 
-/* --- Responsive adjustments --- */
+ 
 @media (max-width: 1024px) {
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -752,7 +752,7 @@
     }
 }
 
-/* --- Travel Insights: Editorial List Section --- */
+ 
 .insights-editorial {
     background-color: var(--bg-color-1);
     padding: 8rem 4rem;
@@ -768,7 +768,7 @@
     align-items: flex-start;
 }
 
-/* Left Sidebar */
+ 
 .editorial-sidebar {
     flex: 1;
     display: flex;
@@ -776,7 +776,7 @@
     gap: 20px;
     position: sticky;
     top: 120px;
-    /* Sticks to the top as the user scrolls the list */
+    
 }
 
 .editorial-sidebar .section-title {
@@ -805,14 +805,14 @@
     background-color: var(--color-secondary);
 }
 
-/* Right Side List */
+ 
 .editorial-list {
     flex: 1.8;
     display: flex;
     flex-direction: column;
 }
 
-/* Individual Row Styling */
+ 
 .editorial-row {
     display: flex;
     align-items: center;
@@ -823,7 +823,7 @@
     transition: padding 0.4s ease, border-color 0.4s ease;
 }
 
-/* Remove bottom border on last item */
+ 
 .editorial-row:last-child {
     border-bottom: none;
 }
@@ -855,11 +855,11 @@
     transition: all 0.4s ease;
 }
 
-/* --- The Magic: Hidden Image Container --- */
+ 
 .row-image-wrapper {
     width: 0;
     height: 150px;
-    /* Fixed height for the thumbnail */
+    
     opacity: 0;
     overflow: hidden;
     border-radius: 0.5rem;
@@ -868,7 +868,7 @@
 
 .row-image {
     width: 190px;
-    /* Fixed inner width to prevent squishing during animation */
+    
     height: 100%;
     background-position: center;
     background-size: cover;
@@ -882,33 +882,33 @@
     transition: transform 0.4s ease, color 0.3s ease;
 }
 
-/* --- Hover Effects --- */
+ 
 .editorial-row:hover {
     border-bottom-color: #111;
-    /* Darken the dividing line */
+    
 }
 
 .editorial-row:hover .row-title {
     color: var(--color-secondary);
     transform: translateX(10px);
-    /* Nudge text to the right */
+    
 }
 
 .editorial-row:hover .row-image-wrapper {
     width: 140px;
-    /* Expand the image */
+    
     opacity: 1;
     margin: 0 2rem;
-    /* Add spacing when visible */
+    
 }
 
 .editorial-row:hover .row-icon {
     transform: translateX(10px) rotate(-45deg);
-    /* Shoot arrow up and right */
+    
     color: var(--color-secondary);
 }
 
-/* --- Responsive Layout --- */
+ 
 @media (max-width: 992px) {
     .editorial-container {
         flex-direction: column;
@@ -923,7 +923,7 @@
 
     .editorial-row {
         flex-wrap: wrap;
-        /* Allows image to drop down on small screens if needed */
+        
     }
 
     .row-meta {
@@ -940,11 +940,11 @@
     }
 }
 
-/* --- Traveler Stories Section --- */
+ 
 .traveler-stories {
     position: relative;
     height: 90vh;
-    /* Immersive full-screen feel */
+    
     min-height: 600px;
     display: flex;
     align-items: center;
@@ -953,7 +953,7 @@
     color: var(--text-white);
 }
 
-/* Backgrounds & Overlays */
+ 
 .story-bg {
     position: absolute;
     top: 0;
@@ -975,7 +975,7 @@
     z-index: 2;
 }
 
-/* Content Container */
+ 
 .story-container {
     position: relative;
     z-index: 3;
@@ -1010,7 +1010,7 @@
     letter-spacing: -1px;
 }
 
-/* Bottom Row (Author & Controls) */
+ 
 .story-bottom-row {
     display: flex;
     justify-content: space-between;
@@ -1062,7 +1062,7 @@
     font-size: 1.1rem;
 }
 
-/* Controls */
+ 
 .story-controls {
     display: flex;
     gap: 1rem;
@@ -1088,7 +1088,7 @@
     transform: scale(1.05);
 }
 
-/* Responsive */
+ 
 @media (max-width: 992px) {
     .quote-text {
         font-size: 2.5rem;
@@ -1126,10 +1126,10 @@
     }
 }
 
-/* --- The Journey Section --- */
+ 
 .journey-section {
     background-color: var(--bg-color-2);
-    /* Dark theme */
+    
     padding: 8rem 4rem;
     display: flex;
     flex-direction: column;
@@ -1156,7 +1156,7 @@
     margin-top: 1rem;
 }
 
-/* --- Timeline Layout --- */
+ 
 .timeline-container {
     position: relative;
     width: 100%;
@@ -1165,7 +1165,7 @@
     padding: 2rem 0;
 }
 
-/* The Background Track */
+ 
 .timeline-track {
     position: absolute;
     top: 0;
@@ -1177,19 +1177,19 @@
     z-index: 1;
 }
 
-/* The Animated Glowing Line */
+ 
 .timeline-progress {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 0%;
-    /* Starts at 0, JS will animate it */
+    
     background: var(--color-secondary);
     box-shadow: 0 0 15px var(--color-secondary);
 }
 
-/* --- Timeline Steps --- */
+ 
 .timeline-step {
     position: relative;
     width: 50%;
@@ -1215,7 +1215,7 @@
     left: 50%;
 }
 
-/* The Dot on the Line */
+ 
 .step-dot {
     position: absolute;
     top: 50%;
@@ -1237,7 +1237,7 @@
     left: -8px;
 }
 
-/* The Glassmorphism Card */
+ 
 .glass-card-dark {
     background: rgba(20, 20, 20, 0.6);
     backdrop-filter: blur(12px);
@@ -1263,7 +1263,7 @@
     font-size: 4rem;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.05);
-    /* Very subtle watermark effect */
+    
     z-index: -1;
     transition: all 0.4s ease;
 }
@@ -1287,7 +1287,7 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* --- Responsive Adjustments --- */
+ 
 @media (max-width: 768px) {
     .timeline-track {
         left: 2rem;
@@ -1317,10 +1317,10 @@
     }
 }
 
-/* --- FAQ Section --- */
+ 
 .faq-section {
     background-color: var(--bg-color-1);
-    /* Light theme to contrast the VIP section */
+    
     padding: 8rem 4rem;
     display: flex;
     justify-content: center;
@@ -1354,7 +1354,7 @@
     font-size: 1.1rem;
 }
 
-/* --- Accordion List --- */
+ 
 .faq-list {
     display: flex;
     flex-direction: column;
@@ -1402,19 +1402,19 @@
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Rotate icon when active (handled by a class toggle in JS) */
+ 
 .faq-item.active .faq-icon {
     background: #111;
     color: #fff;
     transform: rotate(45deg);
-    /* Turns the 'add' plus into an 'x' */
+    
 }
 
 .faq-item.active .question-text {
     color: var(--color-secondary);
 }
 
-/* Answer Container */
+ 
 .faq-answer {
     height: 0;
     overflow: hidden;
@@ -1423,7 +1423,7 @@
 .answer-content {
     padding-bottom: 2rem;
     padding-right: 3rem;
-    /* Prevents text from hitting the icon area */
+    
 }
 
 .answer-content p {
@@ -1432,7 +1432,7 @@
     line-height: 1.6;
 }
 
-/* --- Responsive Layout --- */
+ 
 @media (max-width: 768px) {
     .faq-section {
         padding: 5rem 2rem;
@@ -1494,9 +1494,9 @@
     left: 0;
 }
 
-/* Add a red border or outline when invalid */
+ 
 .vip-input.is-invalid {
     border: 1px solid #ff3333;
-    /* Optional: add a subtle red glow */
+    
     box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.1);
 }

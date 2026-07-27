@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traveler Dashboard | Stackly</title>
+    <title>Traveler Dashboard | Travel & Hospitality</title>
     <link rel="stylesheet" href="dashboard.css">
-    <!-- Font Awesome -->
+     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Chart.js -->
+     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -16,7 +16,7 @@
 
     <div class="dashboard-layout">
 
-        <!-- Left Sidebar -->
+         
         <aside class="sidebar">
             <div class="sidebar-header">
                 <a href="index.html" class="sidebar-logo">
@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <!-- Updated Sidebar Nav -->
+             
             <nav class="sidebar-nav">
                 <a href="404page.html" class="nav-item active" data-tab="overview"><i
                         class="fa-solid fa-border-all"></i>
@@ -58,13 +58,13 @@
             </div>
         </aside>
 
-        <!-- Updated Main Content Area -->
+         
         <main class="dashboard-main">
 
-            <!-- Dashboard Header (Remains visible across all tabs) -->
+             
             <header class="dashboard-header">
                 <div class="header-greeting">
-                    <h1 id="dynamic-greeting">Welcome back, Elena</h1>
+                    <h1 id="dynamic-greeting">Welcome back, <span id="top-username">User</span></h1>
                     <p id="dynamic-subtitle">Ready for your next extraordinary journey?</p>
                 </div>
                 <div class="header-profile">
@@ -80,14 +80,14 @@
                 <button class="mobile-sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
             </header>
 
-            <!-- Tab Container -->
+             
             <div class="tab-content-container">
 
-                <!-- TAB 1: OVERVIEW (Your existing dashboard content goes here) -->
+                 
                 <div class="tab-pane active" id="overview">
                     <div class="dashboard-content">
 
-                        <!-- Stats Row -->
+                         
                         <div class="stats-grid">
                             <div class="stat-card glass-panel">
                                 <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
@@ -120,10 +120,10 @@
                             </div>
                         </div>
 
-                        <!-- Charts & Recent Activity Split -->
+                         
                         <div class="bento-split">
 
-                            <!-- Chart Panel -->
+                             
                             <div class="chart-panel glass-panel">
                                 <div class="panel-header">
                                     <h3>Travel Activity</h3>
@@ -137,7 +137,7 @@
                                 </div>
                             </div>
 
-                            <!-- Recent Activity Panel -->
+                             
                             <div class="activity-panel glass-panel">
                                 <div class="panel-header">
                                     <h3>Recent Bookings</h3>
@@ -176,7 +176,7 @@
                             </div>
                         </div>
 
-                        <!-- NEW CONTENT: Curated Recommendations Row -->
+                         
                         <div class="recommendations-section">
                             <div class="panel-header">
                                 <h3>Curated for Elena</h3>
@@ -185,7 +185,7 @@
 
                             <div class="recommendations-grid">
 
-                                <!-- Rec Card 1 -->
+                                 
                                 <a href="404page.html" class="rec-card">
                                     <div class="rec-bg" style="background-image: url('./assets/DESH1.webp');">
                                     </div>
@@ -199,7 +199,7 @@
                                     </div>
                                 </a>
 
-                                <!-- Rec Card 2 -->
+                                 
                                 <a href="404page.html" class="rec-card">
                                     <div class="rec-bg" style="background-image: url('./assets/dash2.webp');">
                                     </div>
@@ -213,7 +213,7 @@
                                     </div>
                                 </a>
 
-                                <!-- Rec Card 3 -->
+                                 
                                 <a href="404page.html" class="rec-card">
                                     <div class="rec-bg" style="background-image: url('./assets/dash3.webp');">
                                     </div>
@@ -232,11 +232,11 @@
 
                     </div>
                 </div>
-                <!-- TAB 2: MY TRIPS -->
+                 
                 <div class="tab-pane" id="trips">
                     <div class="trips-container">
 
-                        <!-- SECTION 1: Upcoming Journey (Hero Card) -->
+                         
                         <div class="trips-section">
                             <div class="section-header-flex">
                                 <h3 class="pane-section-title">Upcoming Journey</h3>
@@ -284,7 +284,7 @@
                             </div>
                         </div>
 
-                        <!-- SECTION 2: Past Itineraries (Grid) -->
+                         
                         <div class="trips-section">
                             <div class="section-header-flex">
                                 <h3 class="pane-section-title">Past Itineraries</h3>
@@ -292,7 +292,7 @@
                             </div>
 
                             <div class="past-trips-grid">
-                                <!-- Past Trip 1 -->
+                                 
                                 <div class="glass-panel past-trip-card">
                                     <img src="./assets/destination1.webp" alt="Bali" class="past-trip-img">
                                     <div class="past-trip-info">
@@ -302,7 +302,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Past Trip 2 -->
+                                 
                                 <div class="glass-panel past-trip-card">
                                     <img src="./assets/dd1.webp" alt="Italy" class="past-trip-img">
                                     <div class="past-trip-info">
@@ -312,7 +312,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Past Trip 3 -->
+                                 
                                 <div class="glass-panel past-trip-card">
                                     <img src="./assets/stor3.webp" alt="Japan" class="past-trip-img">
                                     <div class="past-trip-info">
@@ -324,10 +324,10 @@
                             </div>
                         </div>
 
-                        <!-- SECTION 3 & 4 SPLIT: Drafts & Travel Wallet -->
+                         
                         <div class="bottom-split-grid">
 
-                            <!-- SECTION 3: Planning & Drafts -->
+                             
                             <div class="trips-section">
                                 <h3 class="pane-section-title">In-Progress Plans</h3>
                                 <div class="glass-panel drafts-container">
@@ -379,11 +379,11 @@
 
                     </div>
                 </div>
-                <!-- TAB 3: SAVED STAYS -->
+                 
                 <div class="tab-pane" id="saved">
                     <div class="saved-container">
 
-                        <!-- SECTION 1: Curated Collections -->
+                         
                         <div class="saved-section">
                             <div class="section-header-flex">
                                 <h3 class="pane-section-title">Your Collections</h3>
@@ -391,7 +391,7 @@
                             </div>
 
                             <div class="collections-grid">
-                                <!-- Collection 1 -->
+                                 
                                 <a href="404page.html" class="collection-card">
                                     <div class="collection-bg" style="background-image: url('./assets/dash5.webp');">
                                     </div>
@@ -402,7 +402,7 @@
                                     </div>
                                 </a>
 
-                                <!-- Collection 2 -->
+                                 
                                 <a href="404page.html" class="collection-card">
                                     <div class="collection-bg" style="background-image: url('./assets/dash3.webp');">
                                     </div>
@@ -413,7 +413,7 @@
                                     </div>
                                 </a>
 
-                                <!-- Collection 3 -->
+                                 
                                 <a href="404page.html" class="collection-card">
                                     <div class="collection-bg" style="background-image: url('./assets/dash6.webp');">
                                     </div>
@@ -426,13 +426,13 @@
                             </div>
                         </div>
 
-                        <!-- SECTION 2: Recently Added Stays -->
+                         
                         <div class="saved-section">
                             <h3 class="pane-section-title">Recently Added</h3>
 
                             <div class="recent-stays-grid">
 
-                                <!-- Stay Card 1 -->
+                                 
                                 <div class="glass-panel stay-card">
                                     <div class="stay-img-wrapper">
                                         <img src="./assets/dd2.webp" alt="Resort" class="stay-img">
@@ -451,7 +451,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Stay Card 2 -->
+                                 
                                 <div class="glass-panel stay-card">
                                     <div class="stay-img-wrapper">
                                         <img src="./assets/dd3.webp" alt="Resort" class="stay-img">
@@ -470,7 +470,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Stay Card 3 -->
+                                 
                                 <div class="glass-panel stay-card">
                                     <div class="stay-img-wrapper">
                                         <img src="./assets/dd4.webp" alt="Resort" class="stay-img">
@@ -491,10 +491,10 @@
                             </div>
                         </div>
 
-                        <!-- SECTION 3 & 4 SPLIT: Offers & Map View -->
+                         
                         <div class="bottom-split-grid">
 
-                            <!-- SECTION 3: Exclusive Member Offers -->
+                             
                             <div class="saved-section">
                                 <h3 class="pane-section-title">Price Drops on Saved</h3>
                                 <div class="glass-panel offers-container">
@@ -524,11 +524,11 @@
                                 </div>
                             </div>
 
-                            <!-- SECTION 4: Interactive Map Widget -->
+                             
                             <div class="saved-section">
                                 <h3 class="pane-section-title">Map View</h3>
                                 <a href="404page.html" class="glass-panel map-widget-card">
-                                    <!-- Note: In production, this bg image would be an actual map integration -->
+                                     
                                     <div class="map-bg"
                                         style="background-image: url('./assets/dash7.webp'); filter: grayscale(100%) invert(100%) brightness(50%) sepia(100%) hue-rotate(140deg) saturate(300%);">
                                     </div>
@@ -547,11 +547,11 @@
                     </div>
                 </div>
 
-                <!-- TAB 4: PAYMENTS & BILLING -->
+                 
                 <div class="tab-pane" id="payments">
                     <div class="payments-container">
 
-                        <!-- SECTION 1: Stackly Wallet & Credits -->
+                         
                         <div class="payments-section">
                             <h3 class="pane-section-title">Your Stackly Wallet</h3>
                             <div class="glass-panel wallet-hero">
@@ -574,7 +574,7 @@
                             </div>
                         </div>
 
-                        <!-- SECTION 2: Saved Payment Methods -->
+                         
                         <div class="payments-section">
                             <div class="section-header-flex">
                                 <h3 class="pane-section-title">Payment Methods</h3>
@@ -582,7 +582,7 @@
                             </div>
 
                             <div class="cards-grid">
-                                <!-- Card 1: Black Card -->
+                                 
                                 <div class="credit-card dark-card">
                                     <div class="card-top">
                                         <i class="fa-solid fa-microchip chip-icon"></i>
@@ -602,7 +602,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Card 2: Platinum Card -->
+                                 
                                 <div class="credit-card light-card">
                                     <div class="card-top">
                                         <i class="fa-solid fa-microchip chip-icon"></i>
@@ -624,7 +624,7 @@
                             </div>
                         </div>
 
-                        <!-- SECTION 3: Recent Transactions -->
+                         
                         <div class="payments-section">
                             <div class="section-header-flex">
                                 <h3 class="pane-section-title">Billing History</h3>
@@ -672,10 +672,10 @@
                             </div>
                         </div>
 
-                        <!-- SECTION 4: Split - Upcoming & Invoices -->
+                         
                         <div class="bottom-split-grid">
 
-                            <!-- Upcoming Payment -->
+                             
                             <div class="payments-section">
                                 <h3 class="pane-section-title">Upcoming Payment</h3>
                                 <div class="glass-panel upcoming-payment-card">
@@ -693,7 +693,7 @@
                                 </div>
                             </div>
 
-                            <!-- Tax / Invoices -->
+                             
                             <div class="payments-section">
                                 <h3 class="pane-section-title">Recent Invoices</h3>
                                 <div class="glass-panel invoices-container">
@@ -723,11 +723,11 @@
 
                     </div>
                 </div>
-                <!-- TAB 5: SETTINGS -->
+                 
                 <div class="tab-pane" id="settings">
                     <div class="settings-container">
 
-                        <!-- SECTION 1: Personal Profile -->
+                         
                         <div class="settings-section">
                             <h3 class="pane-section-title">Personal Profile</h3>
                             <div class="glass-panel settings-panel">
@@ -772,10 +772,10 @@
                             </div>
                         </div>
 
-                        <!-- SECTION 2 & 3 SPLIT: Preferences & Security -->
+                         
                         <div class="bottom-split-grid">
 
-                            <!-- SECTION 2: Travel Preferences -->
+                             
                             <div class="settings-section">
                                 <h3 class="pane-section-title">Travel Preferences</h3>
                                 <div class="glass-panel settings-panel">
@@ -819,12 +819,12 @@
                                 </div>
                             </div>
 
-                            <!-- SECTION 3: Security & Notifications -->
+                             
                             <div class="settings-section">
                                 <h3 class="pane-section-title">Security & Alerts</h3>
                                 <div class="glass-panel settings-panel flex-panel">
 
-                                    <!-- Notifications -->
+                                     
                                     <div class="settings-subsection">
                                         <h4>Notification Preferences</h4>
 
@@ -851,7 +851,7 @@
                                         </div>
                                     </div>
 
-                                    <!-- Security -->
+                                     
                                     <div class="settings-subsection security-section">
                                         <h4>Account Security</h4>
                                         <p class="security-desc">Ensure your account uses a strong password and
@@ -874,28 +874,29 @@
         </main>
     </div>
 
-    <!-- GSAP -->
+     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
             const userMail = localStorage.getItem("userMail");
-            const userName = localStorage.getItem("UserName");
+            const userName = localStorage.getItem("userName");
 
             if (userMail) {
                 document.getElementById('useremail').textContent = userMail;
                 document.getElementById('username').textContent = userName;
                 document.getElementById('useremail1').textContent = userMail;
                 document.getElementById('username1').textContent = userName;
+                document.getElementById('top-username').textContent = userName;
             }
 
-            // --- 1. GSAP Entrance Animations ---
+ 
             const dashTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
             dashTl.from(".sidebar", { x: -50, opacity: 0, duration: 0.8 })
                 .from(".dashboard-header > *", { y: -20, opacity: 0, duration: 0.6, stagger: 0.1 }, "-=0.4")
 
-            // --- 2. Mobile Sidebar Toggle ---
+ 
             const sidebar = document.querySelector('.sidebar');
             const toggleBtn = document.querySelector('.mobile-sidebar-toggle');
 
@@ -904,7 +905,7 @@
                     sidebar.classList.toggle('is-open');
                 });
 
-                // Close sidebar if clicking outside on mobile
+ 
                 document.addEventListener('click', (e) => {
                     if (window.innerWidth <= 900 && !sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
                         sidebar.classList.remove('is-open');
@@ -912,13 +913,13 @@
                 });
             }
 
-            // --- 3. Chart.js Initialization ---
+ 
             const ctx = document.getElementById('travelChart');
 
             if (ctx) {
-                // Create a custom gradient for the line chart
+ 
                 const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 300);
-                gradient.addColorStop(0, 'rgba(91, 192, 190, 0.4)'); // Theme accent color
+                gradient.addColorStop(0, 'rgba(91, 192, 190, 0.4)');
                 gradient.addColorStop(1, 'rgba(91, 192, 190, 0.0)');
 
                 new Chart(ctx, {
@@ -937,7 +938,7 @@
                             pointRadius: 4,
                             pointHoverRadius: 6,
                             fill: true,
-                            tension: 0.4 // Smooth curves
+                            tension: 0.4
                         }]
                     },
                     options: {
@@ -975,11 +976,11 @@
         }); const sidebarLinks = document.querySelectorAll('.sidebar-nav .nav-item');
         const tabPanes = document.querySelectorAll('.tab-pane');
 
-        // Dynamic Header Elements
+ 
         const dynamicGreeting = document.getElementById('dynamic-greeting');
         const dynamicSubtitle = document.getElementById('dynamic-subtitle');
 
-        // Content configurations for the header based on the active tab
+ 
         const tabHeaders = {
             'overview': { title: 'Welcome back, Elena', subtitle: 'Ready for your next extraordinary journey?' },
             'trips': { title: 'My Trips', subtitle: 'Review and manage your itineraries.' },
@@ -990,27 +991,27 @@
 
         sidebarLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevent page reload
+                e.preventDefault();
 
-                // 1. Remove active class from all links
+ 
                 sidebarLinks.forEach(item => item.classList.remove('active'));
 
-                // 2. Add active class to clicked link
+ 
                 link.classList.add('active');
 
-                // 3. Get the target tab id
+ 
                 const targetId = link.getAttribute('data-tab');
 
-                // 4. Hide all tab panes
+ 
                 tabPanes.forEach(pane => pane.classList.remove('active'));
 
-                // 5. Show the target tab pane
+ 
                 const targetPane = document.getElementById(targetId);
                 if (targetPane) {
                     targetPane.classList.add('active');
                 }
 
-                // 6. Update the header text with GSAP fade effect
+ 
                 gsap.to([dynamicGreeting, dynamicSubtitle], {
                     opacity: 0,
                     y: -10,
@@ -1022,7 +1023,7 @@
                     }
                 });
 
-                // 7. If on mobile, automatically close the sidebar after clicking a link
+ 
                 const sidebar = document.querySelector('.sidebar');
                 if (window.innerWidth <= 900 && sidebar.classList.contains('is-open')) {
                     sidebar.classList.remove('is-open');

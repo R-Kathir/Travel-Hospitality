@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Host Dashboard | Stackly</title>
+    <title>Host Dashboard | Travel & Hospitality</title>
     <link rel="stylesheet" href="dashboard.css">
-    <!-- Font Awesome -->
+     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Chart.js -->
+     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="dashboard-body">
     <style>
-        /* --- Host Specific Overrides --- */
+        
 
-        /* Trend indicators for Host Stats */
+        
         .stat-trend {
             font-size: 0.8rem;
             font-weight: 500;
@@ -31,20 +31,20 @@
             color: #e74c3c;
         }
 
-        /* Subtext for stats */
+        
         .stat-sub {
             font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.5);
             margin-top: 0.4rem;
         }
 
-        /* Pending/In-Progress status badge */
+        
         .activity-status.pending {
             background: rgba(241, 196, 15, 0.15);
             color: #f1c40f;
         }
 
-        /* Universal Placeholder Panel for other tabs */
+        
         .placeholder-panel {
             padding: 4rem 2rem;
             text-align: center;
@@ -78,7 +78,7 @@
             margin-top: 1.5rem;
         }
 
-        /* --- "My Properties" Tab Layout --- */
+        
         .properties-container {
             display: flex;
             flex-direction: column;
@@ -129,7 +129,7 @@
             transform: scale(1.05);
         }
 
-        /* Status Badges within Images */
+        
         .property-img-wrapper .status-badge {
             position: absolute;
             top: 1rem;
@@ -146,7 +146,7 @@
             border: 1px solid rgba(243, 156, 18, 0.4);
         }
 
-        /* Property Details */
+        
         .property-details {
             display: flex;
             flex-direction: column;
@@ -179,7 +179,7 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
-        /* Property Metrics Grid */
+        
         .property-metrics {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -210,14 +210,14 @@
             color: #ffffff;
         }
 
-        /* Property Actions */
+        
         .property-actions {
             display: flex;
             gap: 0.8rem;
             margin-top: auto;
         }
 
-        /* --- Responsive Layout Adjustments --- */
+        
         @media (max-width: 1400px) {
             .properties-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -246,14 +246,14 @@
             }
         }
 
-        /* --- "Bookings" Tab Layout --- */
+        
         .bookings-container {
             display: flex;
             flex-direction: column;
             gap: 2rem;
         }
 
-        /* Filters */
+        
         .booking-filters {
             display: flex;
             gap: 0.5rem;
@@ -285,7 +285,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Layout Split */
+        
         .bookings-split-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -293,7 +293,7 @@
             align-items: start;
         }
 
-        /* --- Left Column: Booking Cards --- */
+        
         .main-bookings-list {
             display: flex;
             flex-direction: column;
@@ -419,9 +419,9 @@
             margin-left: auto;
         }
 
-        /* Helper to push elements to the right */
+        
 
-        /* --- Right Column: Widgets --- */
+        
         .booking-widgets-col {
             display: flex;
             flex-direction: column;
@@ -454,7 +454,7 @@
             line-height: 1.5;
         }
 
-        /* Messages Inbox Widget */
+        
         .message-list {
             display: flex;
             flex-direction: column;
@@ -516,7 +516,7 @@
         }
 
 
-        /* --- Responsive Adjustments --- */
+        
         @media (max-width: 1300px) {
             .booking-card-body {
                 flex-direction: column;
@@ -563,7 +563,7 @@
             }
         }
 
-        /* --- "Earnings" Tab Layout --- */
+        
         .earnings-container {
             display: flex;
             flex-direction: column;
@@ -583,7 +583,7 @@
             gap: 1.25rem;
         }
 
-        /* --- Section 2: Payout Ledger --- */
+        
         .payouts-list {
             padding: 0 1.5rem;
             display: flex;
@@ -637,21 +637,21 @@
             color: #2ecc71;
         }
 
-        /* Status badge reuse from Bookings tab */
+        
         .payout-row .status-badge {
             justify-self: start;
             padding: 0.3rem 0.8rem;
             font-size: 0.75rem;
         }
 
-        /* --- Right Column Widgets --- */
+        
         .earnings-widgets-col {
             display: flex;
             flex-direction: column;
             gap: 2rem;
         }
 
-        /* Section 3: Property Breakdown Progress Bars */
+        
         .property-breakdown-widget {
             padding: 1.5rem;
             display: flex;
@@ -686,11 +686,11 @@
             height: 100%;
             background: #5bc0be;
             border-radius: 999px;
-            /* Transition added for smooth load-in effect if desired */
+            
             transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Section 4: Tax Documents */
+        
         .tax-docs-widget {
             padding: 1.5rem;
             display: flex;
@@ -740,7 +740,7 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
-        /* --- Responsive Layout Adjustments --- */
+        
         @media (max-width: 1200px) {
             .payout-row {
                 grid-template-columns: 1fr 1.5fr 1fr 1fr;
@@ -770,7 +770,7 @@
 
             .header-row {
                 display: none;
-                /* Hide headers on mobile for a cleaner stacked look */
+                
             }
 
             .payout-date {
@@ -786,15 +786,15 @@
             }
         }
 
-        /* --- Host Settings Specific Overrides --- */
+        
 
-        /* Textarea focus state */
+        
         .settings-form textarea:focus {
             background: rgba(255, 255, 255, 0.08) !important;
             border-color: #5bc0be !important;
         }
 
-        /* Payout Method Cards */
+        
         .payout-method-card {
             display: flex;
             align-items: flex-start;
@@ -871,7 +871,7 @@
     </style>
     <div class="dashboard-layout">
 
-        <!-- Left Sidebar -->
+         
         <aside class="sidebar">
             <div class="sidebar-header">
                 <a href="index.html" class="sidebar-logo">
@@ -910,13 +910,13 @@
             </div>
         </aside>
 
-        <!-- Main Content Area -->
+         
         <main class="dashboard-main">
 
-            <!-- Dashboard Header -->
+             
             <header class="dashboard-header">
                 <div class="header-greeting">
-                    <h1 id="dynamic-greeting">Welcome back, Marcus</h1>
+                    <h1 id="dynamic-greeting">Welcome back, <span id="top-username">User</span></h1>
                     <p id="dynamic-subtitle">Here is what is happening with your properties today.</p>
                 </div>
                 <div class="header-profile">
@@ -932,14 +932,14 @@
                 <button class="mobile-sidebar-toggle"><i class="fa-solid fa-bars"></i></button>
             </header>
 
-            <!-- Tab Container -->
+             
             <div class="tab-content-container">
 
-                <!-- TAB 1: OVERVIEW -->
+                 
                 <div class="tab-pane active" id="overview">
                     <div class="dashboard-content">
 
-                        <!-- Stats Row -->
+                         
                         <div class="stats-grid">
                             <div class="stat-card glass-panel">
                                 <div class="stat-icon"><i class="fa-solid fa-wallet"></i></div>
@@ -969,10 +969,10 @@
                             </div>
                         </div>
 
-                        <!-- Charts & Recent Activity Split -->
+                         
                         <div class="bento-split">
 
-                            <!-- Revenue Chart Panel -->
+                             
                             <div class="chart-panel glass-panel">
                                 <div class="panel-header">
                                     <h3>Revenue Overview</h3>
@@ -986,7 +986,7 @@
                                 </div>
                             </div>
 
-                            <!-- Recent Reservations Panel -->
+                             
                             <div class="activity-panel glass-panel">
                                 <div class="panel-header">
                                     <h3>Recent Reservations</h3>
@@ -1027,11 +1027,11 @@
 
                     </div>
                 </div>
-                <!-- TAB 2: MY PROPERTIES -->
+                 
                 <div class="tab-pane" id="properties">
                     <div class="properties-container">
 
-                        <!-- Header Section -->
+                         
                         <div class="section-header-flex">
                             <div>
                                 <h3 class="pane-section-title">Your Portfolio</h3>
@@ -1040,10 +1040,10 @@
                             <a href="404page.html"  class="btn-solid-accent"><i class="fa-solid fa-plus"></i> Add New Property</a>
                         </div>
 
-                        <!-- Properties Grid -->
+                         
                         <div class="properties-grid">
 
-                            <!-- Property Card 1 -->
+                             
                             <div class="glass-panel property-card">
                                 <div class="property-img-wrapper">
                                     <img src="./assets/dd1.webp" alt="Villa Treville" class="property-img">
@@ -1083,7 +1083,7 @@
                                 </div>
                             </div>
 
-                            <!-- Property Card 2 -->
+                             
                             <div class="glass-panel property-card">
                                 <div class="property-img-wrapper">
                                     <img src="./assets/stor3.webp" alt="Kyoto Retreat" class="property-img">
@@ -1123,7 +1123,7 @@
                                 </div>
                             </div>
 
-                            <!-- Property Card 3 (Maintenance/Paused) -->
+                             
                             <div class="glass-panel property-card">
                                 <div class="property-img-wrapper">
                                     <img src="./assets/dash3.webp" alt="Paris Penthouse" class="property-img"
@@ -1168,18 +1168,18 @@
                     </div>
                 </div>
 
-                <!-- TAB 3: BOOKINGS -->
+                 
                 <div class="tab-pane" id="bookings">
                     <div class="bookings-container">
 
-                        <!-- Header & Filters -->
+                         
                         <div class="section-header-flex">
                             <div>
                                 <h3 class="pane-section-title">Reservation Management</h3>
                                 <p class="section-subtitle">Approve requests, manage schedules, and message guests.</p>
                             </div>
 
-                            <!-- Booking Filters -->
+                             
                             <div class="booking-filters">
                                 <a href="404page.html"  class="filter-btn active">All</a>
                                 <a href="404page.html"  class="filter-btn">Pending</a>
@@ -1190,10 +1190,10 @@
 
                         <div class="bookings-split-grid">
 
-                            <!-- LEFT COLUMN: Main Booking List -->
+                             
                             <div class="main-bookings-list">
 
-                                <!-- Pending Booking Request -->
+                                 
                                 <div class="glass-panel booking-card pending-request">
                                     <div class="booking-card-header">
                                         <span class="status-badge warning-badge"><i class="fa-regular fa-clock"></i>
@@ -1240,7 +1240,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Confirmed Upcoming Booking -->
+                                 
                                 <div class="glass-panel booking-card">
                                     <div class="booking-card-header">
                                         <span class="status-badge success-badge"><i
@@ -1285,7 +1285,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Confirmed Upcoming Booking 2 -->
+                                 
                                 <div class="glass-panel booking-card">
                                     <div class="booking-card-header">
                                         <span class="status-badge success-badge"><i
@@ -1332,10 +1332,10 @@
 
                             </div>
 
-                            <!-- RIGHT COLUMN: Widgets -->
+                             
                             <div class="booking-widgets-col">
 
-                                <!-- Mini Calendar Widget -->
+                                 
                                 <div class="glass-panel widget-card">
                                     <div class="widget-header">
                                         <h4>Availability Sync</h4>
@@ -1346,7 +1346,7 @@
                                     <a href="404page.html"  class="btn-outline-small w-100 mt-2">Manage Calendars</a>
                                 </div>
 
-                                <!-- Guest Messages Inbox -->
+                                 
                                 <div class="glass-panel widget-card messages-widget">
                                     <div class="widget-header">
                                         <h4>Recent Messages</h4>
@@ -1384,11 +1384,11 @@
                     </div>
                 </div>
 
-                <!-- TAB 4: EARNINGS -->
+                 
                 <div class="tab-pane" id="earnings">
                     <div class="earnings-container">
 
-                        <!-- Header & Export -->
+                         
                         <div class="section-header-flex">
                             <div>
                                 <h3 class="pane-section-title">Financial Reports</h3>
@@ -1397,7 +1397,7 @@
                             <a href="404page.html"  class="btn-outline"><i class="fa-solid fa-file-csv"></i> Export to CSV</a>
                         </div>
 
-                        <!-- SECTION 1: Financial Overview (Stats) -->
+                         
                         <div class="stats-grid">
                             <div class="stat-card glass-panel">
                                 <div class="stat-icon" style="color: #2ecc71; background: rgba(46, 204, 113, 0.1);"><i
@@ -1429,10 +1429,10 @@
                             </div>
                         </div>
 
-                        <!-- Layout Split for Details -->
+                         
                         <div class="earnings-split-grid">
 
-                            <!-- SECTION 2: Payout History -->
+                             
                             <div class="earnings-section main-payouts">
                                 <h3 class="pane-section-title">Payout History</h3>
                                 <div class="glass-panel payouts-list">
@@ -1487,10 +1487,10 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: Widgets -->
+                             
                             <div class="earnings-widgets-col">
 
-                                <!-- SECTION 3: Earnings by Property -->
+                                 
                                 <div class="earnings-section">
                                     <h3 class="pane-section-title">Earnings by Property</h3>
                                     <div class="glass-panel property-breakdown-widget">
@@ -1528,7 +1528,7 @@
                                     </div>
                                 </div>
 
-                                <!-- SECTION 4: Tax Documents -->
+                                 
                                 <div class="earnings-section">
                                     <h3 class="pane-section-title">Tax Documents</h3>
                                     <div class="glass-panel tax-docs-widget">
@@ -1559,11 +1559,11 @@
 
                     </div>
                 </div>
-                <!-- TAB 5: SETTINGS -->
+                 
                 <div class="tab-pane" id="settings">
                     <div class="settings-container">
 
-                        <!-- SECTION 1: Host Profile -->
+                         
                         <div class="settings-section">
                             <h3 class="pane-section-title">Host Profile</h3>
                             <div class="glass-panel settings-panel">
@@ -1621,10 +1621,10 @@
                             </div>
                         </div>
 
-                        <!-- SECTION 2 & 3 SPLIT -->
+                         
                         <div class="bottom-split-grid">
 
-                            <!-- SECTION 2: Payout Methods -->
+                             
                             <div class="settings-section">
                                 <div class="section-header-flex">
                                     <h3 class="pane-section-title">Payout Methods</h3>
@@ -1634,7 +1634,7 @@
 
                                 <div class="glass-panel settings-panel flex-panel">
 
-                                    <!-- Default Bank Account -->
+                                     
                                     <div class="payout-method-card active-method">
                                         <div class="method-icon"><i class="fa-solid fa-building-columns"></i></div>
                                         <div class="method-details">
@@ -1651,7 +1651,7 @@
                                                 class="fa-solid fa-ellipsis-vertical"></i></a>
                                     </div>
 
-                                    <!-- Secondary Payout -->
+                                     
                                     <div class="payout-method-card">
                                         <div class="method-icon"
                                             style="background: rgba(255,255,255,0.05); color: #fff;"><i
@@ -1669,7 +1669,7 @@
                                 </div>
                             </div>
 
-                            <!-- SECTION 3: Hosting Preferences & Security -->
+                             
                             <div class="settings-section">
                                 <h3 class="pane-section-title">Hosting Preferences</h3>
                                 <div class="glass-panel settings-panel flex-panel">
@@ -1732,25 +1732,26 @@
         </main>
     </div>
 
-    <!-- GSAP -->
+     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const userMail = localStorage.getItem("userMail");
-            const userName = localStorage.getItem("UserName");
+            const userName = localStorage.getItem("userName");
 
             if (userMail) {
                 document.getElementById('useremail').textContent = userMail;
                 document.getElementById('username').textContent = userName;
                 document.getElementById('useremail1').textContent = userMail;
                 document.getElementById('username1').textContent = userName;
+                document.getElementById('top-username').textContent = userName;
             }
-            // --- 1. GSAP Entrance Animations ---
+ 
             const dashTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
             dashTl.from(".sidebar", { x: -50, opacity: 0, duration: 0.8 })
 
-            // --- 2. Mobile Sidebar Toggle ---
+ 
             const sidebar = document.querySelector('.sidebar');
             const toggleBtn = document.querySelector('.mobile-sidebar-toggle');
 
@@ -1766,7 +1767,7 @@
                 });
             }
 
-            // --- 3. Sidebar Tab Switching Logic (Host Specific) ---
+ 
             const sidebarLinks = document.querySelectorAll('.sidebar-nav .nav-item');
             const tabPanes = document.querySelectorAll('.tab-pane');
 
@@ -1814,11 +1815,11 @@
                 });
             });
 
-            // --- 4. Chart.js Initialization (Host Revenue Chart) ---
+ 
             const ctx = document.getElementById('revenueChart');
 
             if (ctx) {
-                // Create a custom gradient for the revenue chart
+ 
                 const gradient = ctx.getContext('2d').createLinearGradient(0, 0, 0, 300);
                 gradient.addColorStop(0, 'rgba(91, 192, 190, 0.5)');
                 gradient.addColorStop(1, 'rgba(91, 192, 190, 0.0)');
@@ -1839,7 +1840,7 @@
                             pointRadius: 5,
                             pointHoverRadius: 7,
                             fill: true,
-                            tension: 0.3 // Smooth curves
+                            tension: 0.3 
                         }]
                     },
                     options: {
@@ -1877,7 +1878,7 @@
                                 ticks: {
                                     color: 'rgba(255, 255, 255, 0.5)',
                                     callback: function (value) {
-                                        return '$' + value / 1000 + 'k'; // Formats as $10k
+                                        return '$' + value / 1000 + 'k'; 
                                     }
                                 }
                             }

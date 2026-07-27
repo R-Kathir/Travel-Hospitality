@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Stackly</title>
+    <title>Login | Travel & Hospitality</title>
     <link rel="stylesheet" href="signin.css">
     <link rel="stylesheet" href="shared.css">
-    <!-- Font Awesome for Icons -->
+     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -55,7 +55,7 @@
     <div class="auth-layout">
         <div class="auth-container login-container">
 
-            <!-- Left: Glass Login Form -->
+             
             <div class="auth-form-glass">
                 <form id="loginForm" novalidate>
 
@@ -76,7 +76,7 @@
                         </div>
                     </div>
 
-                    <!-- Role Selector (New Feature) -->
+                     
                     <div class="input-group">
                         <label><i class="fa-solid fa-user-tag"></i> ROLE</label>
                         <div class="select-wrapper">
@@ -91,7 +91,7 @@
 
                     <a href="404page.html" class="forgot-pass-link">Forgot password?</a>
 
-                    <!-- Error Message Container -->
+                     
                     <div id="formError" class="form-error-msg"></div>
 
                     <button type="submit" class="btn-submit-auth">
@@ -102,7 +102,7 @@
                 </form>
             </div>
 
-            <!-- Right: Promotional Text (Same Design Language) -->
+             
             <div class="auth-text-content">
                 <span class="auth-subtitle">WELCOME BACK</span>
                 <h1 class="auth-title">Begin an<br>extraordinary<br>journey</h1>
@@ -199,62 +199,62 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            // --- 1. GSAP Entrance Animations (Paused or Reset structure) ---
+ 
             const authTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-            // Animate Navbar
+ 
             authTl.from(".auth-navbar > *", {
                 y: -20, opacity: 0, duration: 0.8, stagger: 0.1
             })
-                // Animate Text Content (Same structure)
+ 
                 .from(".auth-text-content > *", {
                     y: 30, opacity: 0, duration: 0.8, stagger: 0.1
                 }, "-=0.4")
-                // Animate Glass Form
+ 
                 .from(".auth-form-glass", {
                     x: -40, opacity: 0, backdropFilter: "blur(0px)", duration: 1
                 }, "-=0.6")
-                // Stagger inputs sequentially
+ 
                 .from(".input-group, .forgot-pass-link, .btn-submit-auth, .auth-switch", {
                     y: 15, opacity: 0, duration: 0.5, stagger: 0.05
                 }, "-=0.4");
 
 
-            // --- 2. Form Validation & Interactions ---
+ 
             const loginForm = document.getElementById('loginForm');
             const togglePassBtn = document.querySelector('.btn-toggle-pass');
             const passwordInput = document.getElementById('password');
             const formError = document.getElementById('formError');
 
-            // Toggle Password Visibility
+ 
             togglePassBtn.addEventListener('click', () => {
                 const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
                 passwordInput.setAttribute('type', type);
 
-                // Toggle icon class
+ 
                 const icon = togglePassBtn.querySelector('i');
                 icon.classList.toggle('fa-eye');
                 icon.classList.toggle('fa-eye-slash');
             });
 
-            // Handle Form Submission with validations
+ 
             loginForm.addEventListener('submit', (e) => {
                 e.preventDefault();
 
-                // Reset Error Message
+ 
                 formError.style.display = 'none';
                 formError.textContent = '';
 
-                // Fetch values
+ 
                 const email = document.getElementById('email').value.trim();
                 const username = document.getElementById('username').value;
                 const pass = passwordInput.value;
-                const role = document.getElementById('role').value; // Fetch selected role
+                const role = document.getElementById('role').value;
 
-                // Basic Regex for Email
+ 
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-                // Validation Checks
+ 
                 if (!email || !pass) {
                     showError("Please fill out Email and Password.");
                     return;
@@ -300,12 +300,12 @@
                 }, 2000);
             });
 
-            // Helper function to display error messages with shake effect
+ 
             function showError(message) {
                 formError.textContent = message;
                 formError.style.display = 'block';
 
-                // Shake animation for error
+ 
                 gsap.fromTo(formError,
                     { x: -5 },
                     { x: 5, duration: 0.1, yoyo: true, repeat: 3, onComplete: () => gsap.set(formError, { x: 0 }) }

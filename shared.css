@@ -27,7 +27,7 @@
 body {
     font-family: var(--font-family-primary);
     color: var(--text-white);
-    /* Fallback background image matching the vibe */
+    
     min-height: 100vh;
 }
 
@@ -36,7 +36,7 @@ a {
     font-family: var(--font-family-secondary);
 }
 
-/* --- Navigation --- */
+ 
 .navbar {
 
     width: 100%;
@@ -135,7 +135,7 @@ a {
     display: none;
 }
 
-/* --- Responsive Layout (Tablet & Mobile) --- */
+ 
 @media (max-width: 1024px) {
     .navbar {
         padding: 1.25rem 2rem;
@@ -173,12 +173,12 @@ a {
         padding: none;
     }
 
-    /* Hide the auth actions on mobile to save space */
+    
     .nav-actions {
         display: none;
     }
 
-    /* Show the Hamburger Button */
+    
     .menu-open-btn {
         display: block;
         background: transparent;
@@ -188,7 +188,7 @@ a {
         cursor: pointer;
     }
 
-    /* Transform the UL into a full-screen overlay */
+    
     .nav-links {
         position: fixed;
         top: 0;
@@ -209,21 +209,21 @@ a {
         transition: opacity 0.4s ease, visibility 0.4s ease;
     }
 
-    /* Toggled active state */
+    
     .nav-links.is-active {
         opacity: 1;
         pointer-events: auto;
         visibility: visible;
     }
 
-    /* Enlarge Mobile Links */
+    
     .nav-links li a {
         font-size: 1.6rem;
         font-weight: 300;
         color: #111111;
     }
 
-    /* Show and Style the Close Button inside the UL */
+    
     .menu-close-btn {
         display: flex;
         position: absolute;
@@ -309,7 +309,7 @@ a {
     cursor: pointer;
 }
 
-/* --- Merged Glass Button --- */
+ 
 .btn-merged-glass {
     display: flex;
     align-items: center;
@@ -318,7 +318,7 @@ a {
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #ffffff;
     padding: 0.4rem 0.4rem 0.4rem 1.25rem;
-    /* Less padding on the right to hug the circle */
+    
     border-radius: 999px;
     font-size: 0.85rem;
     font-weight: 500;
@@ -328,7 +328,7 @@ a {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* The circular icon inside the button */
+ 
 .btn-merged-glass .icon-circle {
     display: flex;
     align-items: center;
@@ -342,7 +342,7 @@ a {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* --- Hover State Animations --- */
+ 
 .btn-merged-glass:hover {
     background: #ffffff;
     color: #000000;
@@ -351,12 +351,12 @@ a {
     box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15);
 }
 
-/* Invert the icon circle on hover and add a slight rotation */
+ 
 .btn-merged-glass:hover .icon-circle {
     background: #000000;
     color: #ffffff;
     transform: rotate(45deg);
-    /* Adds a playful dynamic motion */
+    
 }
 
 .search-bar-glass {
@@ -428,14 +428,14 @@ a {
     font-size: 3rem;
     font-weight: 300;
     margin-bottom: 0.5rem;
-    /* Creating the warm gold/brown color seen in the design */
+    
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 
-/* --- VIP Travel Club Section --- */
+ 
 .vip-club-section {
     position: relative;
     min-height: 80vh;
@@ -446,11 +446,11 @@ a {
     padding: 4rem;
 }
 
-/* Parallax Image Setup */
+ 
 .vip-bg {
     position: absolute;
     top: -20%;
-    /* Extra height to allow for scrolling movement */
+    
     left: 0;
     width: 100%;
     height: 140%;
@@ -470,7 +470,7 @@ a {
     background: linear-gradient(to bottom, rgba(1, 15, 29, 0.2), rgba(1, 15, 29, 0.6));
 }
 
-/* Premium Glass Card */
+ 
 .vip-content {
     position: relative;
     z-index: 1;
@@ -507,7 +507,7 @@ a {
     line-height: 1.6;
 }
 
-/* Form & Inputs */
+ 
 .vip-form {
     display: flex;
     gap: 1rem;
@@ -535,7 +535,7 @@ a {
     border-color: #fff;
 }
 
-/* Magnetic Button Base Styles */
+ 
 .btn-magnetic {
     background: #fff;
     color: #000;
@@ -547,10 +547,10 @@ a {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    /* Will be animated by GSAP */
+    
 }
 
-/* Responsive */
+ 
 @media (max-width: 768px) {
     .glass-card-premium {
         padding: 3rem 2rem;
@@ -569,15 +569,15 @@ a {
     }
 }
 
-/* --- Footer Section --- */
+ 
 .site-footer {
     background-color: var(--bg-color-1);
-    /* padding: 2rem 4rem 10px 4rem; */
+    
     display: flex;
     justify-content: center;
 }
 
-/* The White Floating Card */
+ 
 .footer-card {
     background-color: #ffffff;
     border-radius: 2rem;
@@ -590,7 +590,7 @@ a {
     gap: 4rem;
 }
 
-/* --- Top Row (Columns) --- */
+ 
 .footer-top {
     display: flex;
     justify-content: space-between;
@@ -598,7 +598,7 @@ a {
     gap: 3rem;
 }
 
-/* Column 1: Brand & Newsletter */
+ 
 .footer-brand-col {
     flex: 0 0 320px;
     display: flex;
@@ -616,23 +616,23 @@ a {
     margin-bottom: 2rem;
 }
 
-/* Newsletter Validation Messages */
+ 
 .newsletter-msg {
     font-size: 0.8rem;
     margin-top: 0.8rem;
     display: none;
-    /* Hidden by default */
+    
     font-weight: 500;
 }
 
 .newsletter-msg.error {
     color: #ff6b6b;
-    /* Soft red for errors */
+    
 }
 
 .newsletter-msg.success {
     color: #5bc0be;
-    /* Stackly accent color for success */
+    
 }
 
 .newsletter-label {
@@ -645,7 +645,7 @@ a {
     margin-bottom: 1rem;
 }
 
-/* Newsletter Input Form */
+ 
 .newsletter-form {
     display: flex;
     align-items: center;
@@ -690,7 +690,7 @@ a {
     background-color: #333;
 }
 
-/* Standard Link Columns */
+ 
 .footer-link-col {
     display: flex;
     flex-direction: column;
@@ -723,7 +723,7 @@ a {
     color: var(--color-secondary);
 }
 
-/* App Buttons Column */
+ 
 .footer-app-col {
     display: flex;
     flex-direction: column;
@@ -757,7 +757,7 @@ a {
     background: #f9f9f9;
 }
 
-/* --- Bottom Row (Copyright & Socials) --- */
+ 
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -794,7 +794,7 @@ a {
     transform: translateY(-2px);
 }
 
-/* --- Responsive Adjustments --- */
+ 
 @media (max-width: 992px) {
     .footer-top {
         grid-template-columns: repeat(2, 1fr);
@@ -846,11 +846,11 @@ a {
 
 }
 
-/* --- Font Awesome Adjustments --- */
+ 
 .footer-logo i {
     font-size: 1.4rem;
     color: var(--color-primary);
-    /* Uses your primary variable */
+    
 }
 
 .app-btn i {
@@ -861,10 +861,10 @@ a {
     font-size: 1rem;
 }
 
-/* --- Mobile App CTA Section --- */
+ 
 .app-cta-section {
     background-color: #0b0f17;
-    /* Deep, premium dark background */
+    
     padding: 8rem 4rem;
     display: flex;
     justify-content: center;
@@ -873,17 +873,15 @@ a {
 }
 
 .app-cta-container {
-    /* display: flex;
-    align-items: center;
-    justify-content: space-between; */
+    
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    /* gap: 6rem; */
+    
     text-align: center;
 }
 
-/* --- Left: Text Content --- */
+ 
 .cta-text-content {
      max-width: 600px;
      margin: auto;
@@ -916,7 +914,7 @@ a {
     margin-bottom: 3rem;
 }
 
-/* App Store Buttons */
+ 
 .app-buttons-group {
     display: flex;
     gap: 1.5rem;
@@ -965,7 +963,7 @@ a {
     line-height: 1.1;
 }
 
-/* --- Right: Phone Mockup --- */
+ 
 .cta-mockup-wrapper {
     position: relative;
     flex: 0 0 350px;
@@ -973,7 +971,7 @@ a {
     justify-content: center;
 }
 
-/* Pure CSS Phone Frame */
+ 
 .phone-frame {
     width: 280px;
     height: 580px;
@@ -986,7 +984,7 @@ a {
     z-index: 1;
 }
 
-/* Fake iPhone Notch */
+ 
 .phone-frame::before {
     content: '';
     position: absolute;
@@ -1009,7 +1007,7 @@ a {
     position: relative;
 }
 
-/* --- Floating Glass Badges --- */
+ 
 .floating-badge {
     position: absolute;
     background: rgba(255, 255, 255, 0.15);
@@ -1070,7 +1068,7 @@ a {
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* --- Responsive Layout --- */
+ 
 @media (max-width: 992px) {
     .app-cta-container {
         flex-direction: column;
@@ -1119,7 +1117,7 @@ a {
     .badge-1,
     .badge-2 {
         display: none;
-        /* Hide badges on tiny screens to avoid overflow */
+        
     }
 }
 

@@ -1,19 +1,19 @@
-/* --- Experience Page Hero --- */
+ 
 .experience-hero {
     position: relative;
     min-height: 85vh;
-    /* Slightly shorter than the home page hero */
+    
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     padding: 8rem 4rem 4rem;
-    /* Extra top padding to account for the fixed navbar */
+    
     color: var(--text-white);
     text-align: center;
 }
 
-/* Parallax Setup */
+ 
 .exp-bg {
     position: absolute;
     top: -15%;
@@ -60,7 +60,7 @@
     max-width: 600px;
 }
 
-/* Specific Experience Search Bar */
+ 
 .exp-search-glass {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(16px);
@@ -80,7 +80,7 @@
     border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Responsive Adjustments */
+ 
 @media (max-width: 992px) {
     .exp-title {
         font-size: 3.5rem;
@@ -118,7 +118,7 @@
     }
 }
 
-/* --- Split Layout Container --- */
+ 
 .exp-content.split-layout {
     display: flex;
     flex-direction: row;
@@ -126,13 +126,13 @@
     justify-content: space-between;
     width: 100%;
     max-width: 1280px;
-    /* Widened to fit the side-by-side layout */
+    
     text-align: left;
-    /* Reset from center */
+    
     gap: 4rem;
 }
 
-/* Left Side: Text */
+ 
 .exp-text-content {
     flex: 1;
     max-width: 600px;
@@ -140,14 +140,14 @@
 
 .exp-text-content .glass-badge {
     align-self: flex-start;
-    /* Keeps the badge aligned left */
+    
     display: inline-block;
 }
 
-/* Right Side: Vertical Search Column */
+ 
 .exp-search-wrapper {
     flex: 0 0 400px;
-    /* Fixed width for the widget */
+    
 }
 
 .exp-search-column {
@@ -170,7 +170,7 @@
     color: var(--text-white);
 }
 
-/* Updated Input Groups for Column Layout */
+ 
 .exp-search-column .search-input-group {
     display: flex;
     flex-direction: column;
@@ -203,10 +203,10 @@
     outline: none;
 }
 
-/* Full Width Submit Button */
+ 
 .search-submit-btn-full {
     background-color: var(--color-primary);
-    /* Use your primary brand color */
+    
     color: #fff;
     border: none;
     padding: 1.2rem;
@@ -223,7 +223,7 @@
     transform: translateY(-2px);
 }
 
-/* --- Responsive Adjustments --- */
+ 
 @media (max-width: 992px) {
     .exp-content.split-layout {
         flex-direction: column;
@@ -248,10 +248,10 @@
     }
 }
 
-/* --- Signature Experiences Section --- */
+ 
 .signature-experiences {
     background-color: #f8f9fb;
-    /* Soft, cool gray from the UI */
+    
     padding: 6rem 4rem;
     display: flex;
     flex-direction: column;
@@ -270,7 +270,7 @@
     letter-spacing: 2px;
 }
 
-/* Matching the warm orange-to-purple gradient title */
+ 
 .sig-title {
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
@@ -285,7 +285,7 @@
     font-size: 1.1rem;
 }
 
-/* Grid Layout */
+ 
 .sig-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -294,7 +294,7 @@
     max-width: 1200px;
 }
 
-/* --- Card Styles --- */
+ 
 .sig-card {
     background: #ffffff;
     border-radius: 1.5rem;
@@ -343,7 +343,7 @@
     font-size: 0.7rem;
 }
 
-/* Card Content Details */
+ 
 .sig-content {
     padding: 1.5rem;
     display: flex;
@@ -384,7 +384,7 @@
     gap: 0.4rem;
 }
 
-/* Footer (Price & Button) */
+ 
 .sig-footer {
     display: flex;
     justify-content: space-between;
@@ -421,7 +421,7 @@
     transition: all 0.3s ease;
 }
 
-/* --- Hover Effects --- */
+ 
 .sig-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
@@ -437,7 +437,7 @@
     color: #fff;
 }
 
-/* Responsive */
+ 
 @media (max-width: 992px) {
     .sig-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -454,7 +454,7 @@
     }
 }
 
-/* --- Browse Section --- */
+ 
 .browse-section {
     background-color: #ffffff;
     padding: 6rem 4rem;
@@ -462,10 +462,10 @@
     justify-content: center;
 }
 
-/* The large rounded wrapper from the UI design */
+ 
 .browse-container {
     background-color: #f7f7fc;
-    /* Very subtle purplish-gray tint */
+    
     border-radius: 2.5rem;
     padding: 5rem 4rem;
     width: 100%;
@@ -485,7 +485,7 @@
     letter-spacing: 2px;
 }
 
-/* Matching the gradient title from the UI */
+ 
 .browse-title {
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
@@ -494,14 +494,14 @@
     font-weight: 300;
 }
 
-/* Grid Layout */
+ 
 .browse-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
 }
 
-/* --- Interactive Cards --- */
+ 
 .browse-card {
     position: relative;
     background-color: #ffffff;
@@ -512,12 +512,12 @@
     align-items: center;
     text-decoration: none;
     overflow: hidden;
-    /* Soft shadow to make the white cards pop against the tinted container */
+    
     box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.06);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
 }
 
-/* Hidden Background Image layers */
+ 
 .browse-hover-bg {
     position: absolute;
     top: 0;
@@ -528,7 +528,7 @@
     background-position: center;
     opacity: 0;
     transform: scale(1.1);
-    /* Starts slightly zoomed in */
+    
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 0;
 }
@@ -540,13 +540,13 @@
     width: 100%;
     height: 100%;
     background: rgba(1, 15, 29, 0.6);
-    /* Darkens the image for text readability */
+    
     opacity: 0;
     transition: opacity 0.5s ease;
     z-index: 1;
 }
 
-/* Visible Text and Icon Content */
+ 
 .browse-content {
     position: relative;
     z-index: 2;
@@ -555,7 +555,7 @@
     align-items: center;
     gap: 1rem;
     color: #222;
-    /* Default dark text */
+    
     transition: color 0.4s ease;
 }
 
@@ -569,13 +569,13 @@
     font-weight: 500;
 }
 
-/* --- Hover Effects --- */
+ 
 .browse-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.15);
 }
 
-/* Reveal Background */
+ 
 .browse-card:hover .browse-hover-bg {
     opacity: 1;
     transform: scale(1);
@@ -585,7 +585,7 @@
     opacity: 1;
 }
 
-/* Change Text Color */
+ 
 .browse-card:hover .browse-content {
     color: #ffffff;
 }
@@ -594,7 +594,7 @@
     transform: scale(1.1);
 }
 
-/* Responsive */
+ 
 @media (max-width: 1024px) {
     .browse-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -620,17 +620,17 @@
     }
 }
 
-/* --- Pinned Trending Section --- */
+ 
 .trending-pin-wrapper {
     overflow: hidden;
-    /* Hides horizontal scrolling */
+    
     background-color: var(--bg-color-2);
 
 }
 
 .trending-section {
     height: 100vh;
-    /* Fills viewport while pinned */
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -670,11 +670,11 @@
     font-weight: 300;
 }
 
-/* --- GSAP Track Setup --- */
+ 
 .trending-track-container {
     width: 100%;
-    /* overflow: hidden; */
-    /* Hides the cards that spill off-screen */
+    
+    
 }
 
 .trending-track {
@@ -683,15 +683,15 @@
     padding: 0 4rem;
     width: max-content;
     height: 100%;
-    /* Allows track to be as wide as the cards dictate */
+    
     will-change: transform;
 }
 
-/* --- Trending Cards --- */
+ 
 .trend-card {
     position: relative;
     flex: 0 0 380px;
-    /* Made slightly wider for desktop */
+    
     height: 500px;
     border-radius: 1.5rem;
     overflow: hidden;
@@ -734,7 +734,7 @@
     pointer-events: none;
 }
 
-/* Content Details */
+ 
 .trend-content {
     position: absolute;
     bottom: 0;
@@ -799,7 +799,7 @@
     transition: all 0.3s ease;
 }
 
-/* Hover Effects */
+ 
 .trend-card:hover .trend-bg {
     transform: scale(1.08);
 }
@@ -813,7 +813,7 @@
     transform: translateX(5px);
 }
 
-/* Responsive */
+ 
 @media (max-width: 768px) {
     .trending-header {
         padding: 0 2rem;
@@ -834,7 +834,7 @@
     }
 }
 
-/* --- Why Stackly (Experiences) Section --- */
+ 
 .why-exp-section {
     background-color: #ffffff;
     padding: 6rem 4rem;
@@ -842,16 +842,16 @@
     justify-content: center;
 }
 
-/* The Large Tinted Container */
+ 
 .why-exp-container {
     background-color: #f7f7fc;
-    /* Soft cool/purple tint */
+    
     border-radius: 2.5rem;
     padding: 5rem 4rem;
     width: 100%;
     max-width: 1280px;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
-    /* Subtle inner border */
+    
 }
 
 .why-exp-header {
@@ -866,7 +866,7 @@
     letter-spacing: 2px;
 }
 
-/* Gradient text matching the image */
+ 
 .why-exp-title {
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
@@ -875,7 +875,7 @@
     font-weight: 300;
 }
 
-/* --- Card Grid --- */
+ 
 .why-exp-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -889,12 +889,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* Deep, soft shadow mimicking the design */
+    
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
 }
 
-/* The Icon Circle */
+ 
 .why-icon-circle {
     width: 3.5rem;
     height: 3.5rem;
@@ -922,15 +922,15 @@
     line-height: 1.6;
 }
 
-/* --- Rich Hover Animations --- */
+ 
 .why-exp-card:hover {
     transform: translateY(-10px);
-    /* Floats up */
+    
     box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15);
-    /* Shadow deepens */
+    
 }
 
-/* The icon circle fills in on hover */
+ 
 .why-exp-card:hover .why-icon-circle {
     background-color: #222;
     border-color: #222;
@@ -938,7 +938,7 @@
     transform: scale(1.1) rotate(5deg);
 }
 
-/* --- Responsive Adjustments --- */
+ 
 @media (max-width: 1024px) {
     .why-exp-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -964,10 +964,10 @@
     }
 }
 
-/* --- Reviews Section --- */
+ 
 .reviews-section {
     background-color: #0b0f17;
-    /* Deep, rich dark blue/black */
+    
     padding: 8rem 0;
     overflow: hidden;
     color: var(--text-white);
@@ -981,14 +981,14 @@
 
 
 
-/* --- Infinite Marquee Logic --- */
+ 
 .marquee-container {
     width: 100vw;
     max-width: 100%;
     overflow: hidden;
     display: flex;
     margin-bottom: 2rem;
-    /* Adds a slight fade effect on the left and right edges */
+    
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
@@ -1000,17 +1000,17 @@
     width: max-content;
 }
 
-/* Scroll Animations */
+ 
 .track-left {
     animation: scroll-left 40s linear infinite;
 }
 
 .track-right {
     animation: scroll-right 45s linear infinite;
-    /* Slightly slower to offset the rhythm */
+    
 }
 
-/* Pause on hover for readability */
+ 
 .marquee-container:hover .marquee-track {
     animation-play-state: paused;
 }
@@ -1024,7 +1024,7 @@
         transform: translateX(calc(-50% - 1rem));
     }
 
-    /* Scrolls exactly half the width to loop */
+    
 }
 
 @keyframes scroll-right {
@@ -1037,7 +1037,7 @@
     }
 }
 
-/* --- Review Cards --- */
+ 
 .review-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1058,7 +1058,7 @@
 
 .review-stars {
     color: #e67e22;
-    /* Warm gold/orange */
+    
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
     display: flex;
@@ -1074,7 +1074,7 @@
     flex-grow: 1;
 }
 
-/* Author Section */
+ 
 .review-author {
     display: flex;
     align-items: center;
@@ -1101,7 +1101,7 @@
     color: #888;
 }
 
-/* Responsive */
+ 
 @media (max-width: 768px) {
     .review-card {
         width: 320px;
@@ -1130,7 +1130,7 @@
 .search-input-group {
     position: relative;
     margin-bottom: 1.5rem;
-    /* Ensures space for the error message */
+    
     display: flex;
     flex-direction: column;
 }
@@ -1142,7 +1142,7 @@
     margin-top: 0.25rem;
     position: absolute;
     bottom: -1.25rem;
-    /* Pushes the text just below the input */
+    
     left: 0;
 }
 
@@ -1166,9 +1166,9 @@
     left: 0;
 }
 
-/* Add a red border or outline when invalid */
+ 
 .vip-input.is-invalid {
     border: 1px solid #ff3333;
-    /* Optional: add a subtle red glow */
+    
     box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.1);
 }

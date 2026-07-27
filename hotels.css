@@ -1,19 +1,19 @@
-/* --- Hotels Editorial Hero --- */
+ 
 .hotel-editorial-hero {
     display: flex;
     flex-direction: row-reverse;
     min-height: 100vh;
     background-color: #0b0f17;
-    /* Deep luxury dark background */
+    
     color: #ffffff;
     overflow: hidden;
     padding-top: 80px;
     position: relative;
     align-items: center;
-    /* Accounts for fixed navbar */
+    
 }
 
-/* Left Canvas (60% Width) */
+ 
 .hero-left-canvas {
     flex: 0 0 55%;
     position: relative;
@@ -41,11 +41,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* background: linear-gradient(to top, rgba(11, 15, 23, 0.95) 0%, rgba(11, 15, 23, 0.2) 60%); */
+    
     z-index: 1;
 }
 
-/* Embedded Search Panel */
+ 
 .search-panel-embedded {
     position: relative;
     z-index: 2;
@@ -147,7 +147,7 @@
     transform: translateY(-2px);
 }
 
-/* Right Narrative Content (45% Width) */
+ 
 .hero-right-content {
     flex: 0 0 45%;
     display: flex;
@@ -189,7 +189,7 @@
     margin-bottom: 3rem;
 }
 
-/* Quick Filter Pills */
+ 
 .quick-filter-pills {
     margin-bottom: 3.5rem;
 }
@@ -230,7 +230,7 @@
     color: #fff;
 }
 
-/* Stats Row */
+ 
 .hero-stats-row {
     display: flex;
     align-items: center;
@@ -266,7 +266,7 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive */
+ 
 @media (max-width: 1024px) {
     .hotel-editorial-hero {
         flex-direction: column-reverse;
@@ -299,10 +299,10 @@
     justify-content: center;
 }
 
-/* Rounded, Tinted Wrapper */
+ 
 .editors-container {
     background-color: #f6f6fc;
-    /* Cool purple-gray background tint */
+    
     border-radius: 2.5rem;
     padding: 5rem 4rem;
     width: 100%;
@@ -323,7 +323,7 @@
     font-size: 0.75rem;
 }
 
-/* Gradient Title matching the screenshot */
+ 
 .editors-title {
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
@@ -338,14 +338,14 @@
     font-size: 1.1rem;
 }
 
-/* --- 3D Perspective Grid --- */
+ 
 .editors-3d-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-/* Perspective Container for 3D calculations */
+ 
 .tilt-card-wrapper {
     perspective: 1000px;
 }
@@ -364,7 +364,7 @@
     cursor: pointer;
 }
 
-/* Glass Sheen Light Overlay */
+ 
 .tilt-sheen {
     position: absolute;
     top: 0;
@@ -415,7 +415,7 @@
     font-size: 0.75rem;
 }
 
-/* Card Body Content & Drawer Reveal */
+ 
 .card-info {
     padding: 1.5rem;
     display: flex;
@@ -441,7 +441,7 @@
     margin-bottom: 0.5rem;
 }
 
-/* Hidden Drawer: Collapsed by Default */
+ 
 .reveal-drawer {
     max-height: 0;
     opacity: 0;
@@ -472,7 +472,7 @@
     font-size: 0.7rem;
 }
 
-/* Card Footer & Action Button */
+ 
 .card-footer {
     display: flex;
     justify-content: space-between;
@@ -514,7 +514,7 @@
     transition: all 0.3s ease;
 }
 
-/* --- Hover Reveal Interactions --- */
+ 
 .tilt-card-wrapper:hover .tilt-card {
     box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.18);
     border-color: rgba(0, 0, 0, 0.08);
@@ -524,14 +524,14 @@
     opacity: 1;
 }
 
-/* Drawer Expands Smoothly */
+ 
 .tilt-card-wrapper:hover .reveal-drawer {
     max-height: 120px;
     opacity: 1;
     margin-bottom: 0.5rem;
 }
 
-/* Button Fills with Brand Color on Hover */
+ 
 .tilt-card-wrapper:hover .btn-action-fill {
     background: #111111;
     color: #ffffff;
@@ -541,7 +541,7 @@
     transform: translateX(3px);
 }
 
-/* Responsive */
+ 
 @media (max-width: 1024px) {
     .editors-3d-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -554,10 +554,10 @@
     }
 }
 
-/* --- Browse Stays: Accordion Strip Section --- */
+ 
 .expanding-stays-section {
     background-color: #0b0f17;
-    /* Dark background */
+    
     padding: 8rem 4rem;
     display: flex;
     justify-content: center;
@@ -590,7 +590,7 @@
     font-weight: 300;
 }
 
-/* Accordion Strip Track */
+ 
 .accordion-strip-track {
     display: flex;
     gap: 1.25rem;
@@ -598,17 +598,17 @@
     width: 100%;
 }
 
-/* Base Strip Card */
+ 
 .strip-card {
     position: relative;
     flex: 1;
-    /* All cards start at equal width */
+    
     border-radius: 1.5rem;
     overflow: hidden;
     text-decoration: none;
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* Transition flex value for smooth expansion */
+    
     transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease;
     cursor: pointer;
 }
@@ -635,7 +635,7 @@
     z-index: 1;
 }
 
-/* Collapsed Vertical Title */
+ 
 .collapsed-label {
     position: absolute;
     bottom: 2.5rem;
@@ -662,12 +662,12 @@
     font-weight: 500;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    /* Text flows bottom-to-top */
+    
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.85);
 }
 
-/* Expanded Glassmorphic Panel (Hidden by default) */
+ 
 .expanded-panel {
     position: absolute;
     bottom: 2rem;
@@ -738,11 +738,11 @@
     transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
-/* --- Expanded Hover State --- */
+ 
 .strip-card:hover,
 .strip-card.active {
     flex: 3.5;
-    /* Takes up significantly more horizontal space */
+    
     border-color: rgba(255, 255, 255, 0.35);
 }
 
@@ -768,7 +768,7 @@
     transform: translateX(3px);
 }
 
-/* Responsive */
+ 
 @media (max-width: 992px) {
     .accordion-strip-track {
         flex-direction: column;
@@ -778,7 +778,7 @@
     .strip-card {
         height: 450px;
         flex: none !important;
-        /* Stack vertically on mobile/tablets */
+        
     }
 
     .collapsed-label {
@@ -794,7 +794,7 @@
     }
 }
 
-/* --- Exclusive Deals Section --- */
+ 
 .exclusive-deals-section {
     background-color: #ffffff;
     padding: 6rem 4rem;
@@ -802,10 +802,10 @@
     justify-content: center;
 }
 
-/* Tinted Container matching the UI design */
+ 
 .deals-container {
     background-color: #f6f6fc;
-    /* Subtle purple-gray background tint */
+    
     border-radius: 2.5rem;
     padding: 5rem 4rem;
     width: 100%;
@@ -826,7 +826,7 @@
     font-size: 0.75rem;
 }
 
-/* Soft gradient header title */
+ 
 .deals-title {
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
@@ -841,14 +841,14 @@
     font-size: 1.1rem;
 }
 
-/* 3-Column Grid */
+ 
 .deals-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.75rem;
 }
 
-/* Card Outer Styling */
+ 
 .deal-card {
     position: relative;
     height: 260px;
@@ -885,7 +885,7 @@
     z-index: 1;
 }
 
-/* Glassmorphism Pill Badge at Bottom */
+ 
 .deal-glass-pill {
     position: relative;
     z-index: 2;
@@ -936,7 +936,7 @@
     transition: transform 0.3s ease, background 0.3s ease, opacity 0.3s ease;
 }
 
-/* --- Hover Effects --- */
+ 
 .deal-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
@@ -958,14 +958,14 @@
     transform: translateX(3px);
 }
 
-/* --- Radial Spotlight Glow Overlay --- */
+ 
 .deal-spotlight {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Creates a soft radial light circle at mouse X/Y coordinates */
+    
     background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.25), transparent 60%);
     opacity: 0;
     z-index: 2;
@@ -973,12 +973,12 @@
     transition: opacity 0.3s ease;
 }
 
-/* Reveal spotlight on hover */
+ 
 .deal-card:hover .deal-spotlight {
     opacity: 1;
 }
 
-/* Responsive */
+ 
 @media (max-width: 1024px) {
     .deals-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1003,12 +1003,12 @@
     }
 }
 
-/* --- Iconic Places Section --- */
+ 
 .iconic-places-section {
     background-color: #0b0f17;
-    /* Deep dark background */
+    
     padding: 8rem 0;
-    /* Full bleed cards look better without side padding on the wrapper */
+    
     color: #ffffff;
 }
 
@@ -1039,20 +1039,20 @@
     margin-bottom: 1rem;
 }
 
-/* --- The Stacking Wrapper --- */
+ 
 .iconic-stack-wrapper {
     display: flex;
     flex-direction: column;
     gap: 4rem;
-    /* Space between cards before they stack */
+    
     padding-bottom: 4rem;
 }
 
-/* Base Card Styling */
+ 
 .stack-card {
     position: sticky;
     top: 12vh;
-    /* Where the card pins on the screen */
+    
     height: 75vh;
     min-height: 600px;
     border-radius: 2rem;
@@ -1060,9 +1060,9 @@
     display: flex;
     align-items: flex-end;
     box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.4);
-    /* Shadow cast onto the card below it */
+    
     transform-origin: top center;
-    /* Ensures the scale-down animation shrinks towards the top */
+    
     will-change: transform, opacity;
 }
 
@@ -1083,12 +1083,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* Dark gradient at the bottom to ensure text readability */
+    
     background: linear-gradient(to top, rgba(11, 15, 23, 0.95) 0%, rgba(11, 15, 23, 0.1) 70%);
     z-index: 1;
 }
 
-/* Card Content */
+ 
 .stack-content {
     position: relative;
     z-index: 2;
@@ -1108,7 +1108,7 @@
     text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Glassmorphism Info Box */
+ 
 .stack-glass-box {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(16px);
@@ -1160,7 +1160,7 @@
     transform: translateX(4px);
 }
 
-/* Responsive Adjustments */
+ 
 @media (max-width: 1024px) {
     .stack-content {
         flex-direction: column;
@@ -1199,10 +1199,10 @@
 }
 
 
-/* --- Reviews Section --- */
+ 
 .reviews-section {
     background-color: #0b0f17;
-    /* Deep, rich dark blue/black */
+    
     padding: 8rem 0;
     overflow: hidden;
     color: var(--text-white);
@@ -1216,14 +1216,14 @@
 
 
 
-/* --- Infinite Marquee Logic --- */
+ 
 .marquee-container {
     width: 100vw;
     max-width: 100%;
     overflow: hidden;
     display: flex;
     margin-bottom: 2rem;
-    /* Adds a slight fade effect on the left and right edges */
+    
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
@@ -1235,17 +1235,17 @@
     width: max-content;
 }
 
-/* Scroll Animations */
+ 
 .track-left {
     animation: scroll-left 40s linear infinite;
 }
 
 .track-right {
     animation: scroll-right 45s linear infinite;
-    /* Slightly slower to offset the rhythm */
+    
 }
 
-/* Pause on hover for readability */
+ 
 .marquee-container:hover .marquee-track {
     animation-play-state: paused;
 }
@@ -1259,7 +1259,7 @@
         transform: translateX(calc(-50% - 1rem));
     }
 
-    /* Scrolls exactly half the width to loop */
+    
 }
 
 @keyframes scroll-right {
@@ -1272,7 +1272,7 @@
     }
 }
 
-/* --- Review Cards --- */
+ 
 .review-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1293,7 +1293,7 @@
 
 .review-stars {
     color: #e67e22;
-    /* Warm gold/orange */
+    
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
     display: flex;
@@ -1309,7 +1309,7 @@
     flex-grow: 1;
 }
 
-/* Author Section */
+ 
 .review-author {
     display: flex;
     align-items: center;
@@ -1336,7 +1336,7 @@
     color: #888;
 }
 
-/* Responsive */
+ 
 @media (max-width: 768px) {
     .review-card {
         width: 320px;
@@ -1348,7 +1348,7 @@
     }
 }
 
-/* --- Amenities / What to Expect Section --- */
+ 
 .amenities-section {
     background-color: #ffffff;
     padding: 6rem 4rem;
@@ -1356,10 +1356,10 @@
     justify-content: center;
 }
 
-/* Rounded, Tinted Wrapper */
+ 
 .amenities-container {
     background-color: #f6f6fc;
-    /* Soft cool purple-gray tint */
+    
     border-radius: 2.5rem;
     padding: 5rem 4rem;
     width: 100%;
@@ -1380,7 +1380,7 @@
     font-size: 0.75rem;
 }
 
-/* Gradient Title matching the screenshot */
+ 
 .amenities-title {
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
@@ -1389,28 +1389,28 @@
     font-weight: 300;
 }
 
-/* 4-Column Grid */
+ 
 .amenities-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
 }
 
-/* Pill-Shaped Amenity Card */
+ 
 .amenity-card {
     background: #ffffff;
     border-radius: 999px;
-    /* Creates the perfect pill shape */
+    
     display: flex;
     align-items: center;
     padding: 0.8rem 1.5rem 0.8rem 0.8rem;
     gap: 1.25rem;
-    /* Soft, deep shadow matching the UI image */
+    
     box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
 }
 
-/* Icon Circular Border */
+ 
 .amenity-icon-circle {
     width: 2.8rem;
     height: 2.8rem;
@@ -1430,7 +1430,7 @@
     color: #333;
 }
 
-/* --- Hover Effects --- */
+ 
 .amenity-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
@@ -1443,11 +1443,11 @@
     transform: scale(1.05);
 }
 
-/* --- Responsive Layout --- */
+ 
 @media (max-width: 1024px) {
     .amenities-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 columns on tablet */
+        
     }
 }
 
@@ -1463,7 +1463,7 @@
 
     .amenities-grid {
         grid-template-columns: 1fr;
-        /* 1 column on mobile */
+        
     }
 
     .amenities-title {
@@ -1508,7 +1508,7 @@
 
 .form-row {
     position: relative;
-    /* Ensure there is enough bottom margin so the error text doesn't overlap the next field */
+    
     margin-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -1521,17 +1521,17 @@
     margin-top: 0.25rem;
     position: absolute;
     bottom: -1.25rem;
-    /* Aligns the text just below the input wrap */
+    
     left: 0;
 }
 
-/* Apply invalid styling to the wrapper containing the icon */
+ 
 .input-wrap.is-invalid {
     border: 1px solid #ff3333 !important;
     box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.1);
 }
 
-/* Ensure the input itself doesn't show its own outline when the wrapper is red */
+ 
 .input-wrap.is-invalid input:focus {
     outline: none;
 }

@@ -1,4 +1,4 @@
-/* --- Authentication Page Layout --- */
+ 
 .auth-body {
     margin: 0;
     padding: 0;
@@ -45,7 +45,7 @@
     padding: 2rem 4rem;
 }
 
-/* --- Auth Navbar --- */
+ 
 .auth-navbar {
     display: flex;
     justify-content: space-between;
@@ -129,7 +129,7 @@
     transform: translateY(-2px);
 }
 
-/* --- Auth Main Container --- */
+ 
 .auth-container {
     flex-grow: 1;
     display: grid;
@@ -142,7 +142,7 @@
 
 }
 
-/* Glass Form Panel */
+ 
 .auth-form-glass {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(24px);
@@ -196,7 +196,7 @@
     border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Password Toggle Wrapper */
+ 
 .password-wrapper {
     position: relative;
     display: flex;
@@ -223,7 +223,7 @@
     color: #ffffff;
 }
 
-/* Checklist Perks */
+ 
 .auth-perks {
     list-style: none;
     padding: 0;
@@ -246,7 +246,7 @@
     font-size: 0.9rem;
 }
 
-/* Checkbox */
+ 
 .checkbox-group {
     display: flex;
     align-items: flex-start;
@@ -266,13 +266,13 @@
     cursor: pointer;
 }
 
-/* Submit & Error Messages */
+ 
 .form-error-msg {
     color: #ff6b6b;
     font-size: 0.85rem;
     margin-bottom: 1rem;
     display: none;
-    /* Hidden by default */
+    
 }
 
 .btn-submit-auth {
@@ -310,7 +310,7 @@
     text-decoration: none;
 }
 
-/* --- Right Text Content --- */
+ 
 .auth-subtitle {
     font-size: 0.8rem;
     letter-spacing: 3px;
@@ -354,7 +354,7 @@
     font-weight: 500;
 }
 
-/* --- Responsive Adjustments --- */
+ 
 @media (max-width: 1024px) {
     .auth-container {
         grid-template-columns: 1fr;
@@ -405,7 +405,7 @@
 
 .select-wrapper select {
     width: 100%;
-    /* Override default browser styling */
+    
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -415,7 +415,7 @@
     border-radius: 999px;
     padding: 0.8rem 1.2rem;
     padding-right: 3rem;
-    /* Space for the custom icon */
+    
     color: #ffffff;
     font-size: 0.95rem;
     outline: none;
@@ -423,14 +423,14 @@
     cursor: pointer;
 }
 
-/* Ensure the initial placeholder color is styled */
+ 
 .select-wrapper select:invalid {
     color: rgba(255, 255, 255, 0.4);
 }
 
 .select-wrapper select option {
     background-color: #0d1b2a;
-    /* Dark background for dropdown options */
+    
     color: #ffffff;
 }
 
@@ -444,14 +444,14 @@
     right: 1.2rem;
     color: rgba(255, 255, 255, 0.6);
     pointer-events: none;
-    /* Icon shouldn't interfere with clicks */
+    
     font-size: 0.8rem;
 }
 
-/* Adjust Login Container gap if needed */
+ 
 .login-container {
     gap: 7rem;
-    /* grid-template-columns: 1fr 1fr; */
+    
 }
 
 .login-container .auth-text-content{
@@ -461,7 +461,7 @@
 .login-container .auth-form-glass{
     order: 2;
 }
-/* Forgot Password Link */
+ 
 .forgot-pass-link {
     display: block;
     font-size: 0.8rem;
@@ -476,4 +476,4 @@
     color: #ffffff;
 }
 
-/* ...Rest of common styles from signup.html... */
+ 

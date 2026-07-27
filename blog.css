@@ -1,4 +1,4 @@
-/* --- 1. Blog Message Hero Section --- */
+ 
 .blog-message-hero {
     position: relative;
     height: 70vh;
@@ -25,7 +25,7 @@
     will-change: transform;
 }
 
-/* Dark center gradient for text focus */
+ 
 .blog-hero-overlay {
     position: absolute;
     top: 0;
@@ -76,7 +76,7 @@
     max-width: 700px;
 }
 
-/* --- 2. Featured Blog Section --- */
+ 
 .featured-blog-section {
     background-color: #ffffff;
     padding: 6rem 4rem 2rem;
@@ -107,7 +107,7 @@
     font-weight: 300;
 }
 
-/* Large Featured Card Layout */
+ 
 .featured-post-card-large {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -165,7 +165,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: #f6f6fc;
-    /* Subtle tint on the right panel */
+    
 }
 
 .post-meta {
@@ -193,7 +193,7 @@
     margin-bottom: 3rem;
 }
 
-/* Author Bar */
+ 
 .featured-author-bar {
     display: flex;
     align-items: center;
@@ -250,7 +250,7 @@
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Hover Effects */
+ 
 .featured-post-card-large:hover {
     transform: translateY(-8px);
     box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.12);
@@ -269,7 +269,7 @@
     transform: translateX(4px);
 }
 
-/* Responsive */
+ 
 @media (max-width: 1024px) {
     .blog-hero-title {
         font-size: 3.5rem;
@@ -320,7 +320,7 @@
     max-width: 1300px;
 }
 
-/* Category Filter Tabs */
+ 
 .blog-filters {
     display: flex;
     justify-content: center;
@@ -346,21 +346,21 @@
     color: #111111;
 }
 
-/* Active State for Filters */
+ 
 .filter-btn.active {
     background: #111111;
     color: #ffffff;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Articles Grid Layout */
+ 
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
 }
 
-/* Individual Article Card */
+ 
 .article-card {
     background: #ffffff;
     border-radius: 1.5rem;
@@ -445,7 +445,7 @@
     transition: transform 0.3s ease;
 }
 
-/* Hover Effects */
+ 
 .article-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
@@ -463,12 +463,12 @@
     transform: translateX(4px);
 }
 
-/* Hiding Elements via JS Filtering */
+ 
 .article-card.hide {
     display: none;
 }
 
-/* Responsive */
+ 
 @media (max-width: 1024px) {
     .articles-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -494,7 +494,7 @@
     }
 }
 
-/* --- Latest Articles Section --- */
+ 
 .latest-articles-section {
     background-color: #ffffff;
     padding: 2rem 4rem 8rem;
@@ -502,10 +502,10 @@
     justify-content: center;
 }
 
-/* Rounded, Tinted Wrapper */
+ 
 .articles-container {
     background-color: #f6f6fc;
-    /* Soft cool purple-gray tint matching the image */
+    
     border-radius: 2.5rem;
     padding: 5rem 4rem;
     width: 100%;
@@ -526,7 +526,7 @@
     font-size: 0.75rem;
 }
 
-/* Gradient Title matching the screenshot */
+ 
 .articles-title {
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
@@ -535,14 +535,14 @@
     font-weight: 300;
 }
 
-/* 3-Column Grid */
+ 
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-/* Individual Card Styling */
+ 
 .article-card {
     background: #ffffff;
     border-radius: 1.5rem;
@@ -551,7 +551,7 @@
     color: #111111;
     display: flex;
     flex-direction: column;
-    /* Soft diffuse shadow matching the design */
+    
     box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.06);
     border: 1px solid rgba(0, 0, 0, 0.02);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
@@ -571,7 +571,7 @@
     transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Glassmorphic Category Tag */
+ 
 .glass-tag {
     position: absolute;
     top: 1rem;
@@ -589,7 +589,7 @@
     text-transform: uppercase;
 }
 
-/* Card Content Area */
+ 
 .article-content {
     padding: 2rem;
     display: flex;
@@ -614,7 +614,7 @@
     flex-grow: 1;
 }
 
-/* Meta Info (Author & Time) */
+ 
 .article-meta {
     display: flex;
     justify-content: space-between;
@@ -628,7 +628,7 @@
     margin-right: 0.4rem;
 }
 
-/* Read More Link */
+ 
 .article-read-more {
     font-size: 0.9rem;
     font-weight: 500;
@@ -644,7 +644,7 @@
     transition: transform 0.3s ease;
 }
 
-/* --- Premium Hover Effects --- */
+ 
 .article-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.12);
@@ -652,12 +652,12 @@
 
 .article-card:hover .article-bg {
     transform: scale(1.08);
-    /* Cinematic zoom */
+    
 }
 
 .article-card:hover .article-title {
     color: #bdcb1d;
-    /* Changes to theme gradient color */
+    
 }
 
 .article-card:hover .article-read-more {
@@ -666,10 +666,10 @@
 
 .article-card:hover .article-read-more i {
     transform: translateX(5px);
-    /* Arrow slides right */
+    
 }
 
-/* --- Responsive Adjustments --- */
+ 
 @media (max-width: 1024px) {
     .articles-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -695,20 +695,20 @@
     }
 }
 
-/* --- Popular Topics Section (Dark Theme) --- */
+ 
 .popular-topics-section {
     background-color: #0b0f17;
-    /* Deep dark background */
+    
     padding: 8rem 4rem;
     display: flex;
     justify-content: center;
     color: #ffffff;
 }
 
-/* Dark Container */
+ 
 .topics-container {
     background-color: #11151e;
-    /* Slightly lighter than the main bg */
+    
     border-radius: 2.5rem;
     padding: 5rem 4rem;
     width: 100%;
@@ -741,18 +741,18 @@
     font-weight: 300;
 }
 
-/* 4-Column Grid */
+ 
 .topics-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
 }
 
-/* Base Category Card */
+ 
 .topic-card {
     position: relative;
     background-color: #1a1e27;
-    /* Dark matte finish */
+    
     border: 1px solid rgba(255, 255, 255, 0.03);
     border-radius: 1.5rem;
     text-decoration: none;
@@ -766,7 +766,7 @@
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
 }
 
-/* The Image Reveal Layer */
+ 
 .topic-bg-img {
     position: absolute;
     top: 0;
@@ -776,14 +776,14 @@
     background-size: cover;
     background-position: center;
     opacity: 0;
-    /* Hidden by default */
+    
     transform: scale(1.1);
-    /* Starts slightly zoomed in */
+    
     transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 0;
 }
 
-/* Dark overlay on top of the image to ensure text readability */
+ 
 .topic-bg-img::after {
     content: '';
     position: absolute;
@@ -794,7 +794,7 @@
     background: rgba(11, 15, 23, 0.6);
 }
 
-/* Inner Content Layer */
+ 
 .topic-content {
     position: relative;
     z-index: 1;
@@ -805,7 +805,7 @@
     text-align: center;
 }
 
-/* Icon Circle */
+ 
 .topic-icon-wrap {
     width: 3.5rem;
     height: 3.5rem;
@@ -829,7 +829,7 @@
     transition: color 0.4s ease;
 }
 
-/* --- Unique Image Reveal Hover Effects --- */
+ 
 .topic-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
@@ -838,14 +838,14 @@
 
 .topic-card:hover .topic-bg-img {
     opacity: 1;
-    /* Fades the image in */
+    
     transform: scale(1);
-    /* Smooth cinematic zoom-out */
+    
 }
 
 .topic-card:hover .topic-icon-wrap {
     transform: scale(1.15);
-    /* Pops the icon out */
+    
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.6);
     color: #ffffff;
@@ -855,10 +855,10 @@
 
 .topic-card:hover .topic-label {
     color: #ffffff;
-    /* Brightens text */
+    
 }
 
-/* --- Responsive Layout --- */
+ 
 @media (max-width: 1024px) {
     .topics-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -884,10 +884,10 @@
     }
 }
 
-/* --- Expanding Accordion Section (Dark Theme) --- */
+ 
 .trending-accordion-section {
     background-color: #0b0f17;
-    /* Deep cinematic dark background */
+    
     padding: 8rem 4rem;
     display: flex;
     justify-content: center;
@@ -896,13 +896,13 @@
 
 .trending-container {
     background-color: #11151e;
-    /* Darker container panel */
+    
     border-radius: 2.5rem;
     padding: 5rem 4rem;
     width: 100%;
     max-width: 1300px;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-    /* Subtle bright rim light */
+    
 }
 
 .trending-header {
@@ -931,7 +931,7 @@
     font-weight: 300;
 }
 
-/* --- The Flexbox Accordion --- */
+ 
 .accordion-gallery {
     display: flex;
     gap: 1rem;
@@ -946,11 +946,11 @@
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    /* Deeper shadow for dark mode */
+    
     transition: flex 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Background Image */
+ 
 .panel-bg {
     position: absolute;
     top: 0;
@@ -962,7 +962,7 @@
     transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Gradient Overlay */
+ 
 .panel-overlay {
     position: absolute;
     bottom: 0;
@@ -974,7 +974,7 @@
     transition: opacity 0.4s ease;
 }
 
-/* Collapsed Title */
+ 
 .panel-title-collapsed {
     position: absolute;
     bottom: 2rem;
@@ -990,7 +990,7 @@
     white-space: nowrap;
 }
 
-/* Expanded Content */
+ 
 .panel-content-expanded {
     position: absolute;
     bottom: 2.5rem;
@@ -1042,7 +1042,7 @@
     transform: translateY(-2px);
 }
 
-/* --- The Hover Interaction Magic --- */
+ 
 .accordion-gallery:hover .accordion-panel:hover,
 .accordion-panel.active-default {
     flex: 5;
@@ -1081,7 +1081,7 @@
     transition-delay: 0s;
 }
 
-/* --- Responsive Adjustments --- */
+ 
 @media (max-width: 1024px) {
     .accordion-gallery {
         flex-direction: column;
@@ -1123,7 +1123,7 @@
     }
 }
 
-/* --- Common Utilities --- */
+ 
 .gradient-title {
     background: var(--gradient-yellow-black);
     -webkit-background-clip: text;
@@ -1132,7 +1132,7 @@
     font-weight: 300;
 }
 
-/* --- Essentials / Travel Tips Section --- */
+ 
 .essentials-section {
     background-color: #ffffff;
     padding: 2rem 4rem 4rem;
@@ -1142,7 +1142,7 @@
 
 .essentials-container {
     background-color: #f6f6fc;
-    /* Cool purple-gray tint */
+    
     border-radius: 2.5rem;
     padding: 5rem 4rem;
     width: 100%;
@@ -1163,7 +1163,7 @@
     font-size: 0.75rem;
 }
 
-/* 3-Column Pill Grid */
+ 
 .tips-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1173,7 +1173,7 @@
 .tip-card {
     background: #ffffff;
     border-radius: 999px;
-    /* Pill shape */
+    
     padding: 1.5rem 2rem;
     display: flex;
     align-items: center;
@@ -1182,7 +1182,7 @@
     color: #111111;
     border: 1px solid rgba(0, 0, 0, 0.03);
     box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.08);
-    /* Deep, soft shadow matching the image */
+    
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
 }
 
@@ -1218,7 +1218,7 @@
     transition: color 0.3s ease;
 }
 
-/* Hover Effects */
+ 
 .tip-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.12);
@@ -1234,7 +1234,7 @@
     color: #bdcb1d;
 }
 
-/* --- Newsletter Section (Dark Theme) --- */
+ 
 .newsletter-section {
     background-color: #0b0f17;
     padding: 4rem 4rem 2rem;
@@ -1244,7 +1244,7 @@
 
 .newsletter-container {
     background-color: #0b0f17;
-    /* Deep cinematic dark mode */
+    
     border-radius: 2.5rem;
     padding: 6rem 4rem;
     width: 100%;
@@ -1280,7 +1280,7 @@
     line-height: 1.6;
 }
 
-/* Form Styles */
+ 
 .blog-newsletter-form {
     width: 100%;
     max-width: 500px;
@@ -1295,7 +1295,7 @@
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.05);
-    /* border: 1px solid rgba(255, 255, 255, 0.15); */
+    
     border-radius: 999px;
     padding: 0.5rem;
     transition: border-color 0.3s ease, background 0.3s ease;
@@ -1337,13 +1337,13 @@
     transform: scale(1.03);
 }
 
-/* Validation Messages */
+ 
 .form-message {
     margin-top: 1rem;
     font-size: 0.85rem;
     font-weight: 500;
     opacity: 0;
-    /* Hidden by default */
+    
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -1355,15 +1355,15 @@
 
 .form-message.error {
     color: #ff6b6b;
-    /* Soft red */
+    
 }
 
 .form-message.success {
     color: #51cf66;
-    /* Soft green */
+    
 }
 
-/* --- Responsive --- */
+ 
 @media (max-width: 1024px) {
     .tips-grid {
         grid-template-columns: repeat(2, 1fr);
