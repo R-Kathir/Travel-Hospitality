@@ -52,46 +52,44 @@
 
     <section class="hero-section">
         <div class="hero-content">
-            <div class="badge-glass">PREMIUM TRAVEL · EST. 2013</div>
+            <div class="badge-glass">Premium Travel · Est. 2013</div>
+
             <h1 class="hero-title">
-                <span class="font-light">Your Destination is</span> <span class="font-bold">Our Destination</span>
+                <span class="font-light">Your Destination is</span>
+                <span class="font-bold hero-italic">Our Destination</span>
             </h1>
+
             <p class="hero-subtitle">
                 Curated stays, unforgettable experiences and iconic destinations, thoughtfully<br>
                 assembled for the modern explorer.
             </p>
-             
-            <form class="search-bar-glass" id="heroSearchForm">
-                <div class="search-input-group">
-                    <label>Where</label>
+            <form class="search-bar-row" id="heroSearchForm">
+                 <div class="search-input-box">
+                    <span class="input-accent"></span>
+                    <label for="destInput">Where</label>
                     <input type="text" id="destInput" placeholder="Search destinations">
                 </div>
 
-                <div class="search-divider"></div>
-
-                <div class="search-input-group">
-                    <label>When</label>
-                     
-                    <input type="date" id="dateInput" placeholder="Add dates">
-                </div>
-
-                <div class="search-divider"></div>
-
-                <div class="search-input-group">
-                    <label>Who</label>
-                     
+                 <div class="search-input-box">
+                    <span class="input-accent"></span>
+                    <label for="dateInput">When</label>
+                    <input type="text" id="dateInput" placeholder="Add dates" onfocus="(this.type='date')"
+                        onblur="(this.type='text')">
+                </div> 
+                <div class="search-input-box">
+                    <span class="input-accent"></span>
+                    <label for="guestInput">Who</label>
                     <input type="number" id="guestInput" placeholder="Add guests" min="1">
-                </div>
-
+                </div> 
                 <button type="submit" class="search-submit-btn" aria-label="Search">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                 </button>
             </form>
 
-             
             <div id="searchError" class="search-error-message"></div>
             <div class="hero-bg-container">
                 <div class="hero-bg-slide" style="background-image: url('./assets/herobg1.webp'); opacity: 1;">
@@ -100,7 +98,7 @@
                 </div>
                 <div class="hero-bg-slide" style="background-image: url('./assets/herobg3.webp'); opacity: 0;">
                 </div>
-                <div class="hero-bg-overlay"></div>  
+                <div class="hero-bg-overlay"></div>
             </div>
         </div>
         <aside class="floating-card-glass" id="floatingCard">
@@ -134,7 +132,7 @@
         </div>
 
         <div class="destinations-grid">
-             
+
             <div class="destination-card">
                 <div class="card-image" style="background-image: url('./assets/destination1.webp');">
                 </div>
@@ -157,7 +155,7 @@
                 </div>
             </div>
 
-             
+
             <div class="destination-card">
                 <div class="card-image" style="background-image: url('./assets/destination2.webp');">
                 </div>
@@ -181,7 +179,7 @@
                 </div>
             </div>
 
-             
+
             <div class="destination-card">
                 <div class="card-image" style="background-image: url('./assets/destination3.webp');">
                 </div>
@@ -204,7 +202,7 @@
                 </div>
             </div>
 
-             
+
             <div class="destination-card">
                 <div class="card-image" style="background-image: url('./assets/destination4.webp');">
                 </div>
@@ -228,7 +226,7 @@
                 </div>
             </div>
 
-             
+
             <div class="destination-card">
                 <div class="card-image" style="background-image: url('./assets/destination5.webp');">
                 </div>
@@ -252,7 +250,7 @@
                 </div>
             </div>
 
-             
+
             <div class="destination-card">
                 <div class="card-image" style="background-image: url('./assets/destination6.webp');">
                 </div>
@@ -299,7 +297,7 @@
                 </div>
             </div>
 
-             
+
             <div class="bento-item feature-small">
                 <div class="bento-bg" style="background-image: url('./assets/exp2.webp');">
                 </div>
@@ -310,7 +308,7 @@
                 </div>
             </div>
 
-             
+
             <div class="bento-item feature-small">
                 <div class="bento-bg" style="background-image: url('./assets/exp3.webp');">
                 </div>
@@ -322,7 +320,7 @@
             </div>
         </div>
     </section>
-     
+
     <section class="why-choose-us">
         <div class="why-container">
             <div class="why-header">
@@ -332,7 +330,7 @@
             </div>
 
             <div class="features-grid">
-                 
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <span class="material-icons">handshake</span>
@@ -341,7 +339,7 @@
                     <p>Every hotel and guide personally vetted.</p>
                 </div>
 
-                 
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <span class="material-icons">auto_awesome</span>
@@ -350,7 +348,7 @@
                     <p>Recommendations tuned to your taste.</p>
                 </div>
 
-                 
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <span class="material-icons">favorite_border</span>
@@ -359,7 +357,7 @@
                     <p>Free cancellation on most stays.</p>
                 </div>
 
-                 
+
                 <div class="feature-card">
                     <div class="feature-icon">
                         <span class="material-icons">language</span>
@@ -370,11 +368,11 @@
             </div>
         </div>
     </section>
-     
+
     <section class="insights-editorial">
         <div class="editorial-container">
 
-             
+
             <div class="editorial-sidebar">
                 <span class="badge-text">TRAVEL INSIGHTS</span>
                 <h2 class="section-title">Stories from the road</h2>
@@ -382,10 +380,10 @@
                 <a href="404page.html" class="btn-solid-dark mt-4">View All Stories</a>
             </div>
 
-             
+
             <div class="editorial-list">
 
-                 
+
                 <a href="404page.html" class="editorial-row">
                     <div class="row-meta">
                         <span class="row-date">Oct 12, 2026</span>
@@ -401,7 +399,7 @@
                     </div>
                 </a>
 
-                 
+
                 <a href="404page.html" class="editorial-row">
                     <div class="row-meta">
                         <span class="row-date">Sep 28, 2026</span>
@@ -417,7 +415,7 @@
                     </div>
                 </a>
 
-                 
+
                 <a href="404page.html" class="editorial-row">
                     <div class="row-meta">
                         <span class="row-date">Sep 15, 2026</span>
@@ -433,7 +431,7 @@
                     </div>
                 </a>
 
-                 
+
                 <a href="404page.html" class="editorial-row">
                     <div class="row-meta">
                         <span class="row-date">Aug 04, 2026</span>
@@ -449,7 +447,7 @@
                     </div>
                 </a>
 
-                 
+
                 <a href="404page.html" class="editorial-row">
                     <div class="row-meta">
                         <span class="row-date">Jul 10, 2026</span>
@@ -465,7 +463,7 @@
                     </div>
                 </a>
 
-                 
+
                 <a href="404page.html" class="editorial-row">
                     <div class="row-meta">
                         <span class="row-date">Jun 18, 2026</span>
@@ -492,7 +490,7 @@
         <div class="story-bg" id="bg-3" style="background-image: url('./assets/stor3.webp'); z-index: 0; opacity: 0;">
         </div>
 
-         
+
         <div class="story-overlay"></div>
 
         <div class="story-container">
@@ -506,7 +504,7 @@
             </div>
 
             <div class="story-bottom-row">
-                 
+
                 <div class="author-glass-card" id="authorCard">
                     <div class="author-avatar" id="authorAvatar"
                         style="background-image: url('./assets/review1.webp');">
@@ -524,7 +522,7 @@
                     </div>
                 </div>
 
-                 
+
                 <div class="story-controls">
                     <button class="ctrl-btn" id="prevStory" aria-label="Previous Story">
                         <span class="material-icons">arrow_back</span>
@@ -536,7 +534,7 @@
             </div>
         </div>
     </section>
-     
+
     <section class="journey-section">
         <div class="journey-header">
             <span class="badge-text glass-badge-dark">THE PROCESS</span>
@@ -545,12 +543,12 @@
         </div>
 
         <div class="timeline-container">
-             
+
             <div class="timeline-track">
                 <div class="timeline-progress"></div>
             </div>
 
-             
+
             <div class="timeline-step step-left">
                 <div class="step-dot"></div>
                 <div class="step-content glass-card-dark">
@@ -561,7 +559,7 @@
                 </div>
             </div>
 
-             
+
             <div class="timeline-step step-right">
                 <div class="step-dot"></div>
                 <div class="step-content glass-card-dark">
@@ -572,7 +570,7 @@
                 </div>
             </div>
 
-             
+
             <div class="timeline-step step-left">
                 <div class="step-dot"></div>
                 <div class="step-content glass-card-dark">
@@ -583,7 +581,7 @@
                 </div>
             </div>
 
-             
+
             <div class="timeline-step step-right">
                 <div class="step-dot"></div>
                 <div class="step-content glass-card-dark">
@@ -595,13 +593,13 @@
             </div>
         </div>
     </section>
-     
+
     <section class="vip-club-section">
-         
+
         <div class="vip-bg" id="vipParallax" style="background-image: url('./assets/bip1.webp');">
         </div>
 
-         
+
         <div class="vip-content glass-card-premium">
             <span class="badge-text glass-badge">JOIN THE INVITATION LIST</span>
             <h2 class="vip-title">Unlock Secret Stays</h2>
@@ -611,7 +609,7 @@
             <form class="vip-form" id="vipForm" novalidate>
                 <div class="input-wrapper">
                     <input type="email" id="emailInput" placeholder="Email address" class="vip-input" required>
-                     
+
                     <span class="error-message" id="emailError"></span>
                 </div>
 
@@ -621,7 +619,7 @@
             </form>
         </div>
     </section>
-     
+
     <section class="faq-section">
         <div class="faq-container">
             <div class="faq-header">
@@ -631,7 +629,7 @@
             </div>
 
             <div class="faq-list">
-                 
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span class="question-text">How fully customized are the itineraries?</span>
@@ -648,7 +646,7 @@
                     </div>
                 </div>
 
-                 
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span class="question-text">Are flights and transfers included in the booking?</span>
@@ -665,7 +663,7 @@
                     </div>
                 </div>
 
-                 
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span class="question-text">What is your cancellation and refund policy?</span>
@@ -682,7 +680,7 @@
                     </div>
                 </div>
 
-                 
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span class="question-text">Do you offer 24/7 support while I am traveling?</span>
@@ -785,7 +783,7 @@
             const emailInput = document.getElementById('emailInput');
             const emailError = document.getElementById('emailError');
 
- 
+
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             form.addEventListener('submit', function (e) {
@@ -793,30 +791,30 @@
 
                 const emailValue = emailInput.value.trim();
 
- 
+
                 if (!emailValue) {
                     showError('Email address is required.');
                     return;
                 }
 
- 
+
                 if (!emailRegex.test(emailValue)) {
                     showError('Please enter a valid email address.');
                     return;
                 }
 
- 
+
                 clearError();
 
- 
+
                 const btnText = document.querySelector('.btn-text');
                 const originalText = btnText.textContent;
                 btnText.textContent = 'Requesting...';
 
- 
+
                 console.log('Success! Submitting email:', emailValue);
 
- 
+
                 setTimeout(() => {
                     form.reset();
                     btnText.textContent = originalText;
@@ -824,7 +822,7 @@
                 }, 1500);
             });
 
- 
+
             function showError(message) {
                 emailInput.classList.add('is-invalid');
                 emailError.textContent = message;
@@ -837,15 +835,15 @@
                 emailError.style.display = 'none';
             }
 
- 
+
             emailInput.addEventListener('input', clearError);
         });
         document.addEventListener('DOMContentLoaded', () => {
 
- 
+
             const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
 
- 
+
             tl.from(".badge-glass", { y: 30, opacity: 0, delay: 0.2 })
                 .from(".hero-title", { y: 30, opacity: 0 }, "-=0.7")
                 .from(".hero-subtitle", { y: 30, opacity: 0 }, "-=0.7")
@@ -853,21 +851,21 @@
                 .from("#floatingCard", { x: -10, opacity: 0, duration: 1.2, ease: "power4.out" }, "-=0.5");
 
 
- 
+
             const slides = document.querySelectorAll(".hero-bg-slide");
             let currentSlide = 0;
 
             function nextSlide() {
                 const nextIndex = (currentSlide + 1) % slides.length;
 
- 
+
                 gsap.to(slides[currentSlide], {
                     opacity: 0,
                     duration: 2,
                     ease: "power2.inOut"
                 });
 
- 
+
                 gsap.to(slides[nextIndex], {
                     opacity: 1,
                     duration: 2,
@@ -877,11 +875,11 @@
                 currentSlide = nextIndex;
             }
 
- 
+
             setInterval(nextSlide, 3000);
 
 
- 
+
             const navbar = document.querySelector('.navbar');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -891,7 +889,7 @@
                 }
             });
 
- 
+
             const searchBar = document.querySelector('.search-bar-glass');
             const searchInputs = document.querySelectorAll('.search-input-group input');
 
@@ -906,7 +904,7 @@
                     searchBar.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
                 });
             });
- 
+
             const searchForm = document.getElementById('heroSearchForm');
             const destInput = document.getElementById('destInput');
             const dateInput = document.getElementById('dateInput');
@@ -914,68 +912,68 @@
             const errorMessage = document.getElementById('searchError');
 
             searchForm.addEventListener('submit', (e) => {
-                e.preventDefault(); 
+                e.preventDefault();
 
                 let isValid = true;
                 let errorText = '';
 
- 
+
                 [destInput, dateInput, guestInput].forEach(input => input.classList.remove('input-error'));
                 errorMessage.classList.remove('show');
                 errorMessage.innerText = '';
 
- 
+
                 if (destInput.value.trim().length < 2) {
                     isValid = false;
                     errorText = 'Please enter a valid destination.';
                     destInput.classList.add('input-error');
                 }
- 
+
                 else if (dateInput.value.trim() === '') {
                     isValid = false;
                     errorText = 'Please select your travel dates.';
                     dateInput.classList.add('input-error');
                 }
- 
+
                 else if (guestInput.value.trim() === '' || isNaN(guestInput.value) || parseInt(guestInput.value) < 1) {
                     isValid = false;
                     errorText = 'Please enter at least 1 guest.';
                     guestInput.classList.add('input-error');
                 }
 
- 
+
                 if (!isValid) {
- 
+
                     errorMessage.innerText = errorText;
                     errorMessage.classList.add('show');
 
- 
+
                     gsap.fromTo(searchForm,
                         { x: -5 },
                         { x: 5, duration: 0.08, yoyo: true, repeat: 5, clearProps: "x" }
                     );
                 } else {
- 
+
                     errorMessage.style.color = '#2ed573';
                     errorMessage.innerText = 'Searching for best places...';
                     errorMessage.classList.add('show');
                     searchForm.reset()
- 
+
                     window.location.href = '404page.html'
                 }
             });
 
- 
+
             [destInput, dateInput, guestInput].forEach(input => {
                 input.addEventListener('input', () => {
                     input.classList.remove('input-error');
                     errorMessage.classList.remove('show');
                 });
             });
- 
+
             gsap.registerPlugin(ScrollTrigger);
 
- 
+
             gsap.from(".destinations-header > *", {
                 scrollTrigger: {
                     trigger: ".featured-destinations",
@@ -984,11 +982,11 @@
                 y: 30,
                 opacity: 0,
                 duration: 0.8,
-                stagger: 0.2, 
+                stagger: 0.2,
                 ease: "power3.out"
             });
 
- 
+
             gsap.from(".destination-card", {
                 scrollTrigger: {
                     trigger: ".destinations-grid",
@@ -1000,7 +998,7 @@
                 stagger: 0.15,
                 ease: "power3.out"
             });
- 
+
             gsap.from(".curated-header > *", {
                 scrollTrigger: {
                     trigger: ".curated-section",
@@ -1019,13 +1017,13 @@
                     start: "top 80%",
                 },
                 y: 60,
-                scale: 0.95, 
+                scale: 0.95,
                 opacity: 0,
                 duration: 1,
-                stagger: 0.2, 
+                stagger: 0.2,
                 ease: "power4.out"
             });
- 
+
             gsap.from(".why-header > *", {
                 scrollTrigger: {
                     trigger: ".why-choose-us",
@@ -1047,10 +1045,10 @@
                 opacity: 0,
                 duration: 0.9,
                 stagger: 0.15,
- 
+
                 ease: "back.out(1.2)"
             });
- 
+
             gsap.from(".editorial-sidebar > *", {
                 scrollTrigger: {
                     trigger: ".insights-editorial",
@@ -1074,7 +1072,7 @@
                 stagger: 0.15,
                 ease: "power2.out"
             });
- 
+
             const stories = [
                 {
                     quote: '"The private yacht tour in Santorini was the highlight of our honeymoon. Every single detail was flawlessly executed."',
@@ -1115,28 +1113,28 @@
                 const newBg = document.getElementById(`bg-${stories[newIndex].bgIndex}`);
                 const newStory = stories[newIndex];
 
- 
+
                 gsap.to([quoteText, authorName, authorDest, authorAvatar], { opacity: 0, y: 10, duration: 0.4 });
 
- 
+
                 newBg.style.zIndex = 1;
                 oldBg.style.zIndex = 0;
 
- 
+
                 gsap.to(newBg, {
                     opacity: 1,
                     duration: 1,
                     ease: "power2.inOut",
                     onComplete: () => {
-                        oldBg.style.opacity = 0; 
+                        oldBg.style.opacity = 0;
 
- 
+
                         quoteText.innerText = newStory.quote;
                         authorName.innerText = newStory.name;
                         authorDest.innerText = newStory.dest;
                         authorAvatar.style.backgroundImage = `url('${newStory.avatar}')`;
 
- 
+
                         gsap.to([quoteText, authorName, authorDest, authorAvatar], {
                             opacity: 1,
                             y: 0,
@@ -1161,7 +1159,7 @@
                 updateStory(prevIndex);
             });
 
- 
+
             gsap.from(".story-container > *", {
                 scrollTrigger: {
                     trigger: ".traveler-stories",
@@ -1173,9 +1171,9 @@
                 stagger: 0.2,
                 ease: "power3.out"
             });
- 
 
- 
+
+
             gsap.to(".timeline-progress", {
                 scrollTrigger: {
                     trigger: ".timeline-container",
@@ -1187,18 +1185,18 @@
                 ease: "none"
             });
 
- 
+
             const steps = gsap.utils.toArray(".timeline-step");
 
             steps.forEach((step, i) => {
                 const card = step.querySelector(".glass-card-dark");
                 const dot = step.querySelector(".step-dot");
 
- 
+
                 const isLeft = step.classList.contains("step-left");
                 const xOffset = isLeft ? -50 : 50;
 
- 
+
                 gsap.from(card, {
                     scrollTrigger: {
                         trigger: step,
@@ -1210,7 +1208,7 @@
                     ease: "power3.out"
                 });
 
- 
+
                 gsap.to(dot, {
                     scrollTrigger: {
                         trigger: step,
@@ -1222,9 +1220,9 @@
                     duration: 0.3
                 });
             });
- 
 
- 
+
+
             gsap.to("#vipParallax", {
                 scrollTrigger: {
                     trigger: ".vip-club-section",
@@ -1236,37 +1234,37 @@
                 ease: "none"
             });
 
- 
+
             const magBtn = document.getElementById('magneticBtn');
 
- 
+
             magBtn.addEventListener('mousemove', (e) => {
                 const rect = magBtn.getBoundingClientRect();
 
- 
+
                 const x = (e.clientX - rect.left) - rect.width / 2;
                 const y = (e.clientY - rect.top) - rect.height / 2;
 
- 
+
                 gsap.to(magBtn, {
-                    x: x * 0.3, 
+                    x: x * 0.3,
                     y: y * 0.3,
                     duration: 0.4,
                     ease: "power3.out"
                 });
             });
 
- 
+
             magBtn.addEventListener('mouseleave', () => {
                 gsap.to(magBtn, {
                     x: 0,
                     y: 0,
                     duration: 0.7,
-                    ease: "elastic.out(1, 0.3)" 
+                    ease: "elastic.out(1, 0.3)"
                 });
             });
 
- 
+
             gsap.from(".vip-content", {
                 scrollTrigger: {
                     trigger: ".vip-club-section",
@@ -1277,7 +1275,7 @@
                 duration: 1,
                 ease: "power3.out"
             });
- 
+
             const faqItems = document.querySelectorAll(".faq-item");
 
             faqItems.forEach(item => {
@@ -1288,7 +1286,7 @@
                 questionBtn.addEventListener("click", () => {
                     const isOpen = item.classList.contains("active");
 
- 
+
                     faqItems.forEach(otherItem => {
                         if (otherItem !== item && otherItem.classList.contains("active")) {
                             otherItem.classList.remove("active");
@@ -1304,17 +1302,17 @@
                         }
                     });
 
- 
+
                     if (!isOpen) {
                         item.classList.add("active");
 
- 
+
                         gsap.to(answer, {
                             height: "auto",
                             duration: 0.4,
                             ease: "power2.inOut"
                         });
- 
+
                         gsap.to(icon, {
                             rotation: 45,
                             duration: 0.3,
@@ -1323,13 +1321,13 @@
                     } else {
                         item.classList.remove("active");
 
- 
+
                         gsap.to(answer, {
                             height: 0,
                             duration: 0.4,
                             ease: "power2.inOut"
                         });
- 
+
                         gsap.to(icon, {
                             rotation: 0,
                             duration: 0.3,
@@ -1339,7 +1337,7 @@
                 });
             });
 
- 
+
             gsap.from(".faq-container > *", {
                 scrollTrigger: {
                     trigger: ".faq-section",

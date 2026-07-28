@@ -16,6 +16,14 @@
     --border-color-default: #e5e7eb;
     --box-shadow-default: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --gradient-yellow-black: linear-gradient(135deg, #FFD700 0%, #000000 100%);
+    --gradient-yellow-black1: linear-gradient(
+        120deg, 
+        #FFD700 0%, 
+        #FFD700 35%, 
+        #FFF8DC 50%, /* Shimmer beam highlight */
+        #FFD700 65%, 
+        #FFD700 100%
+    );
 }
 
 * {
