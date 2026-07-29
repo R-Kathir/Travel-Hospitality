@@ -51,14 +51,14 @@
     </nav>
     <section class="contact-message-hero">
 
-         
+
         <div class="contact-hero-bg" style="background-image: url('./assets/contact.webp');">
         </div>
 
-         
+
         <div class="contact-hero-overlay"></div>
 
-         
+
         <div class="contact-hero-content">
             <span class="contact-hero-badge">GET IN TOUCH</span>
             <h1 class="contact-hero-title">Let's craft your next journey.</h1>
@@ -67,11 +67,11 @@
         </div>
 
     </section>F
-     
+
     <section class="contact-section">
         <div class="contact-container">
 
-             
+
             <div class="contact-header">
                 <span class="badge-text">GET IN TOUCH</span>
                 <h1 class="contact-title">Let's craft your next journey</h1>
@@ -80,11 +80,8 @@
             </div>
 
             <div class="contact-grid">
-
-                 
                 <div class="contact-info-bento">
-
-                     
+                    <!-- Existing Email Card -->
                     <div class="info-card">
                         <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
                         <div>
@@ -93,7 +90,7 @@
                         </div>
                     </div>
 
-                     
+                    <!-- Existing Phone Card -->
                     <div class="info-card">
                         <div class="info-icon"><i class="fa-solid fa-phone-volume"></i></div>
                         <div>
@@ -101,12 +98,29 @@
                             <p>+91 9876543210</p>
                         </div>
                     </div>
-
-
-
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h3>Office Location</h3>
+                            <p>Salem<br>Tamil Nadu, 636001</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fa-solid fa-hashtag"></i></div>
+                        <div>
+                            <h3>Follow Us</h3>
+                            <div class="social-icons-group">
+                                <a href="404page.html" target="_blank" aria-label="LinkedIn"><i
+                                        class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="404page.html" target="_blank" aria-label="Instagram"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                                <a href="404page.html" target="_blank" aria-label="Facebook"><i
+                                        class="fa-brands fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                 
                 <div class="contact-form-wrapper">
                     <form id="contactForm" class="premium-form" novalidate>
 
@@ -114,16 +128,19 @@
                             <div class="input-group">
                                 <input type="text" id="firstName" required>
                                 <label for="firstName">First Name</label>
+                                <span class="error-text"></span>
                             </div>
                             <div class="input-group">
                                 <input type="text" id="lastName" required>
                                 <label for="lastName">Last Name</label>
+                                <span class="error-text"></span>
                             </div>
                         </div>
 
                         <div class="input-group">
                             <input type="email" id="contactEmail" required>
                             <label for="contactEmail">Email Address</label>
+                            <span class="error-text"></span>
                         </div>
 
                         <div class="input-group">
@@ -135,11 +152,13 @@
                                 <option value="other">Other</option>
                             </select>
                             <label for="inquiryType">Subject</label>
+                            <span class="error-text"></span>
                         </div>
 
                         <div class="input-group">
                             <textarea id="message" rows="5" required></textarea>
                             <label for="message">How can we help you?</label>
+                            <span class="error-text"></span>
                         </div>
 
                         <button type="submit" class="btn-submit-contact">
@@ -149,11 +168,10 @@
                         <div id="contactFormMessage" class="form-message"></div>
                     </form>
                 </div>
-
             </div>
         </div>
     </section>
-     
+
     <section class="map-section-dark">
         <div class="map-container-dark">
 
@@ -163,9 +181,9 @@
                 <p class="map-subtitle">Visit our flagship design studio located in the heart of India.</p>
             </div>
 
-             
+
             <div class="map-wrapper">
-                 
+
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.1616098770783!2d78.17140487459903!3d11.68295658852636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1785086794316!5m2!1sen!2sin"
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
@@ -184,7 +202,7 @@
 
             <div class="faq-list">
 
-                 
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>How far in advance should I book my trip?</span>
@@ -197,7 +215,7 @@
                     </div>
                 </div>
 
-                 
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>Do you handle commercial flights, or just private charters?</span>
@@ -210,7 +228,7 @@
                     </div>
                 </div>
 
-                 
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>Is there a consultation fee for trip planning?</span>
@@ -223,7 +241,7 @@
                     </div>
                 </div>
 
-                 
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>What happens if I need assistance during my trip?</span>
@@ -236,7 +254,7 @@
                     </div>
                 </div>
 
-                 
+
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>Can you accommodate specific dietary or mobility needs?</span>
@@ -252,10 +270,10 @@
             </div>
         </div>
     </section>
-     
+
     <section class="premium-app-section">
 
-         
+
         <div class="glow-orb orb-1"></div>
         <div class="glow-orb orb-2"></div>
 
@@ -268,7 +286,7 @@
 
             <div class="app-bento-grid">
 
-                 
+
                 <div class="bento-card bento-large">
                     <div class="bento-content">
                         <h3 class="bento-title">Frictionless travel, anywhere.</h3>
@@ -295,7 +313,7 @@
 
                 </div>
 
-                 
+
                 <div class="bento-card bento-small support-card">
                     <div class="card-glass-icon"><i class="fa-solid fa-headset"></i></div>
                     <h4 class="bento-title-small">24/7 Global Support</h4>
@@ -303,7 +321,7 @@
                     </p>
                 </div>
 
-                 
+
                 <div class="bento-card bento-small perks-card">
                     <div class="card-glass-icon"><i class="fa-solid fa-gem"></i></div>
                     <h4 class="bento-title-small">Private Member Perks</h4>
@@ -395,16 +413,16 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
- 
+
             const contactHeroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
- 
+
             contactHeroTl.to(".contact-hero-bg", {
                 scale: 1,
                 duration: 2.5,
                 ease: "power2.out"
             }, 0)
- 
+
                 .from(".contact-hero-badge", { y: 20, opacity: 0, duration: 0.8 }, 0.3)
                 .from(".contact-hero-title", { y: 30, opacity: 0, duration: 1 }, 0.5)
                 .from(".contact-hero-excerpt", { y: 20, opacity: 0, duration: 0.8 }, 0.7);
@@ -412,7 +430,7 @@
         });
         document.addEventListener('DOMContentLoaded', () => {
 
- 
+
             const contactTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".contact-section",
@@ -431,35 +449,84 @@
                 }, "-=0.8");
 
 
- 
+
             const contactForm = document.getElementById('contactForm');
             const formMessage = document.getElementById('contactFormMessage');
 
+            // Helper function to generate specific error messages
+            const getErrorMessage = (input) => {
+                if (input.validity.valueMissing) {
+                    // Specific messages for empty fields based on ID
+                    switch (input.id) {
+                        case 'firstName': return 'Please enter your first name.';
+                        case 'lastName': return 'Please enter your last name.';
+                        case 'contactEmail': return 'Email address is required.';
+                        case 'inquiryType': return 'Please select a subject.';
+                        case 'message': return 'Please let us know how we can help.';
+                        default: return 'This field is required.';
+                    }
+                }
+                if (input.validity.typeMismatch && input.type === 'email') {
+                    return 'Please enter a valid email address.';
+                }
+                return 'Invalid input.';
+            };
+
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
+                let isValid = true;
+                const inputs = contactForm.querySelectorAll('input, select, textarea');
 
- 
-                if (!contactForm.checkValidity()) {
-                    formMessage.textContent = 'Please fill out all required fields.';
+                inputs.forEach(input => {
+                    const inputGroup = input.closest('.input-group');
+                    const errorText = inputGroup.querySelector('.error-text');
+
+                    inputGroup.classList.remove('error');
+                    if (errorText) errorText.textContent = '';
+
+                    if (!input.checkValidity()) {
+                        inputGroup.classList.add('error');
+                        if (errorText) {
+                            errorText.textContent = getErrorMessage(input);
+                        }
+                        isValid = false;
+                    }
+                });
+
+                if (!isValid) {
+                    formMessage.textContent = 'Please fix the errors above before submitting.';
                     formMessage.className = 'form-message error show';
                     return;
                 }
-                window.location.href = '404page.html';
- 
+
                 formMessage.textContent = 'Thank you! Your message has been sent successfully.';
                 formMessage.className = 'form-message success show';
+                window.location.href = '404page.html'
 
-                contactForm.reset(); 
+                contactForm.reset();
 
                 setTimeout(() => {
                     formMessage.classList.remove('show');
-                }, 5000);
-            });
+                    // window.location.href='404page.html'
+                }, 500);
 
+                contactForm.querySelectorAll('input, select, textarea').forEach(input => {
+                    input.addEventListener('input', () => {
+                        const inputGroup = input.closest('.input-group');
+                        if (inputGroup) {
+                            inputGroup.classList.remove('error');
+                            const errorText = inputGroup.querySelector('.error-text');
+                            if (errorText) {
+                                errorText.textContent = '';
+                            }
+                        }
+                    });
+                });
+            });
         });
         document.addEventListener('DOMContentLoaded', () => {
 
- 
+
             const faqTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".faq-section",
@@ -475,7 +542,7 @@
                 }, "-=0.4");
 
 
- 
+
             const faqItems = document.querySelectorAll('.faq-item');
 
             faqItems.forEach(item => {
@@ -485,20 +552,20 @@
                 questionBtn.addEventListener('click', () => {
                     const isActive = item.classList.contains('active');
 
- 
+
                     faqItems.forEach(otherItem => {
                         otherItem.classList.remove('active');
                         otherItem.querySelector('.faq-answer').style.maxHeight = null;
                     });
 
- 
+
                     if (!isActive) {
                         item.classList.add('active');
- 
+
                         answerPanel.style.maxHeight = answerPanel.scrollHeight + "px";
                     }
 
- 
+
                     setTimeout(() => {
                         ScrollTrigger.refresh();
                     }, 400);
@@ -508,7 +575,7 @@
         });
         document.addEventListener('DOMContentLoaded', () => {
 
- 
+
             gsap.from(".map-container-dark", {
                 scrollTrigger: {
                     trigger: ".map-section-dark",
@@ -521,7 +588,7 @@
                 ease: "power3.out"
             });
 
- 
+
             gsap.from(".map-container-dark > *", {
                 scrollTrigger: {
                     trigger: ".map-container-dark",
@@ -544,7 +611,7 @@
                 }
             });
 
- 
+
             appSectionTl.from(".app-header > *", {
                 y: 20,
                 opacity: 0,
@@ -553,7 +620,7 @@
                 ease: "power2.out"
             });
 
- 
+
             appSectionTl.from(".bento-card", {
                 y: 40,
                 opacity: 0,
@@ -562,7 +629,7 @@
                 ease: "power3.out"
             }, "-=0.4");
 
- 
+
             appSectionTl.from(".btn-store", {
                 y: 15,
                 opacity: 0,
